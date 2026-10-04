@@ -88,12 +88,15 @@ async function runAcceptanceTests() {
 
     const concept = await prisma.concept.upsert({
       where: { id: 'CONCEPT_NEWTON_2ND_LAW' },
-      update: {},
+      update: {
+        name: "Newton's Second Law of Motion (Force and Acceleration)",
+        definition: 'The rate of change of momentum of a body is directly proportional to applied force mass acceleration.',
+      },
       create: {
         id: 'CONCEPT_NEWTON_2ND_LAW',
-        name: "Newton's Second Law of Motion",
+        name: "Newton's Second Law of Motion (Force and Acceleration)",
         formula: 'F = dp/dt = ma',
-        definition: 'The rate of change of momentum of a body is directly proportional to applied force.',
+        definition: 'The rate of change of momentum of a body is directly proportional to applied force mass acceleration.',
         laws: "Newton's Laws of Motion",
         chapterId: lawsOfMotion.id,
         ncertReference: JSON.stringify({ chapterTitle: 'Laws of Motion', ncertBookCode: 'keph104' }),
