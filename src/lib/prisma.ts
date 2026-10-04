@@ -1,5 +1,10 @@
 import { PrismaClient } from '@prisma/client';
 
+// Prevent build-time crashes during Next.js static analysis/prerendering when DATABASE_URL is not yet configured in cloud dashboards
+if (!process.env.DATABASE_URL) {
+  process.env.DATABASE_URL = 'file:./dev.db';
+}
+
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };

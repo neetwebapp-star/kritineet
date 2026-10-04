@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { resolveActor } from '@/lib/command-center/auth-utils';
 import { AccountEngine } from '@/lib/saas/account/account-engine';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
   try {
     const actor = await resolveActor(req, 'STUDENT');
