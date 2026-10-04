@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +10,69 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# Testing & Coverage
 /coverage
 
-# next.js
+# Next.js Build Outputs
 /.next/
 /out/
+/build/
+*.tsbuildinfo
+next-env.d.ts
 
-# production
-/build
-
-# misc
+# Production & Misc Artifacts
 .DS_Store
+Thumbs.db
 *.pem
+*.key
+*.crt
+.cert/
 
-# debug
+# Debug and Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
+# Environment Files (Keep .env.example tracked)
 .env*
+!.env.example
 
-# vercel
+# Vercel & Deployment Caches
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Databases, WAL files, Locks, and Backups
+*.db
+*.db-shm
+*.db-wal
+*.db*
+*.sqlite
+*.sqlite3
+*.backup
+prisma/*.db*
+prisma/backups/
+
+# Heavy Local Ingestion Sources & Scratch (PDFs, dumps > 50MB)
+temp_ingestion/
+temp_titles/
+scratch/
+scratch_*
+*.pdf
+*.zip
+*.tar.gz
+*.7z
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# IDE Configuration
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
