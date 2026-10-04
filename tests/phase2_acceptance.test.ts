@@ -29,17 +29,133 @@ async function runAcceptanceTests() {
     }
   }
 
-  // Fetch student user
-  const student = await prisma.user.findUnique({
-    where: { email: 'student@neet2027.com' },
-  });
-  if (!student) throw new Error('Seeded student user not found');
+  async function ensureFixtures() {
+    const class11 = await prisma.classLevel.upsert({
+      where: { code: 'CLASS_11' },
+      update: {},
+      create: { name: 'Class 11', code: 'CLASS_11', order: 1 },
+    });
 
-  // Fetch a chapter
-  const lawsOfMotion = await prisma.chapter.findUnique({
-    where: { slug: 'laws-of-motion' },
-  });
-  if (!lawsOfMotion) throw new Error('Laws of Motion chapter not found');
+    const phy11 = await prisma.subject.upsert({
+      where: { code_classLevelId: { code: 'PHYSICS', classLevelId: class11.id } },
+      update: {},
+      create: { name: 'Physics (Class 11)', code: 'PHYSICS', classLevelId: class11.id },
+    });
+
+    const bio11 = await prisma.subject.upsert({
+      where: { code_classLevelId: { code: 'BIOLOGY', classLevelId: class11.id } },
+      update: {},
+      create: { name: 'Biology (Class 11)', code: 'BIOLOGY', classLevelId: class11.id },
+    });
+
+    const lawsOfMotion = await prisma.chapter.upsert({
+      where: { slug: 'laws-of-motion' },
+      update: {},
+      create: {
+        title: 'Laws of Motion',
+        slug: 'laws-of-motion',
+        chapterNumber: 4,
+        subjectId: phy11.id,
+        ncertBookCode: 'keph104',
+      },
+    });
+
+    await prisma.chapter.upsert({
+      where: { slug: 'plant-kingdom' },
+      update: { biologyCategory: 'BOTANY' },
+      create: {
+        title: 'Plant Kingdom',
+        slug: 'plant-kingdom',
+        chapterNumber: 3,
+        subjectId: bio11.id,
+        biologyCategory: 'BOTANY',
+        ncertBookCode: 'kebo103',
+      },
+    });
+
+    await prisma.chapter.upsert({
+      where: { slug: 'animal-kingdom' },
+      update: { biologyCategory: 'ZOOLOGY' },
+      create: {
+        title: 'Animal Kingdom',
+        slug: 'animal-kingdom',
+        chapterNumber: 4,
+        subjectId: bio11.id,
+        biologyCategory: 'ZOOLOGY',
+        ncertBookCode: 'kebo104',
+      },
+    });
+
+    const concept = await prisma.concept.upsert({
+      where: { id: 'CONCEPT_NEWTON_2ND_LAW' },
+      update: {},
+      create: {
+        id: 'CONCEPT_NEWTON_2ND_LAW',
+        name: "Newton's Second Law of Motion",
+        formula: 'F = dp/dt = ma',
+        definition: 'The rate of change of momentum of a body is directly proportional to applied force.',
+        laws: "Newton's Laws of Motion",
+        chapterId: lawsOfMotion.id,
+        ncertReference: JSON.stringify({ chapterTitle: 'Laws of Motion', ncertBookCode: 'keph104' }),
+      },
+    });
+
+    const student = await prisma.user.upsert({
+      where: { email: 'student@neet2027.com' },
+      update: {},
+      create: {
+        email: 'student@neet2027.com',
+        name: 'NEET 2027 Aspirant',
+        role: 'STUDENT',
+        profile: {
+          create: {
+            targetExamYear: 2027,
+            dailyTargetQuestions: 50,
+            dailyTargetMinutes: 180,
+            currentStreak: 7,
+            totalAttempted: 120,
+            totalCorrect: 96,
+            accuracyRate: 80.0,
+          },
+        },
+      },
+    });
+
+    await prisma.question.upsert({
+      where: { id: 'Q_AIIMS_2006_PHY_002' },
+      update: {},
+      create: {
+        id: 'Q_AIIMS_2006_PHY_002',
+        questionText: 'Two spheres of same size, one of mass 2 kg and another of mass 4 kg are dropped simultaneously from the top of Qutab Minar (height = 72m). When they are 1 m above the ground the two spheres have the same',
+        questionType: 'SINGLE_CORRECT',
+        difficulty: 'EASY',
+        subjectId: phy11.id,
+        classLevelId: class11.id,
+        chapterId: lawsOfMotion.id,
+        primaryConceptId: concept.id,
+        sourceType: 'PYQ',
+        examName: 'AIIMS',
+        examYear: 2006,
+        correctOption: 'D',
+        explanation: 'Acceleration due to gravity (g) is independent of the mass of the falling body.',
+        verificationStatus: 'VERIFIED',
+        publicationStatus: 'PUBLISHED',
+        fingerprint: 'c46061eed7e0898461762298f32d833a6075989fad677f90f26753084db0aea4',
+        options: {
+          create: [
+            { label: 'A', text: 'momentum', orderIndex: 1 },
+            { label: 'B', text: 'kinetic energy', orderIndex: 2 },
+            { label: 'C', text: 'potential energy', orderIndex: 3 },
+            { label: 'D', text: 'acceleration', orderIndex: 4 },
+          ],
+        },
+      },
+    });
+
+    return { student, lawsOfMotion };
+  }
+
+  const { student, lawsOfMotion } = await ensureFixtures();
 
   // TEST 1: Canonical Content Hierarchy & Botany/Zoology mappings
   console.log('--> 1. Testing Canonical NEET Content Hierarchy');

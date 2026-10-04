@@ -37,6 +37,11 @@ jobs:
       - name: Generate Prisma Client
         run: pnpm exec prisma generate
 
+      - name: Initialize SQLite Test Database Schema
+        run: pnpm exec prisma db push --skip-generate
+        env:
+          DATABASE_URL: "file:./dev.db"
+
       - name: TypeScript Typecheck
         run: pnpm exec tsc --noEmit
 
