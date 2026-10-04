@@ -1,0 +1,55 @@
+name: CI / Production Quality Gate
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Verify Types, Lint, Tests & Production Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.24.0
+
+      - name: Setup Node.js 22 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate Prisma Client
+        run: pnpm exec prisma generate
+
+      - name: TypeScript Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: ESLint Quality Check
+        run: pnpm run lint
+
+      - name: Run Phase 2 Acceptance Test Suite
+        run: pnpm exec tsx tests/phase2_acceptance.test.ts
+        env:
+          DATABASE_URL: "file:./dev.db"
+
+      - name: Next.js Production Build
+        run: pnpm run build
+        env:
+          DATABASE_URL: "file:./dev.db"
+          NODE_ENV: "production"
