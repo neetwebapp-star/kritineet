@@ -1,0 +1,3906 @@
+{
+  "auditRunId": "audit_exam_scorer_1791121483",
+  "timestamp": "2026-10-04T19:14:43Z",
+  "globalMetrics": {
+    "canonicalSourceMCQs": 13750,
+    "canonicalSourceScorer": 5655,
+    "canonicalSourceDrills": 8095,
+    "applicationTotalMCQs": 13750,
+    "authenticTotalMCQs": 2101,
+    "syntheticTotalMCQs": 11649,
+    "globalAuthenticityRate": 15.28,
+    "examScorerMetrics": {
+      "sourceScorerCount": 5655,
+      "appScorerCount": 5655,
+      "authenticScorerCount": 50,
+      "syntheticScorerCount": 5605,
+      "authenticityRate": 0.88
+    },
+    "drillMetrics": {
+      "sourceDrillCount": 8095,
+      "appDrillCount": 8095,
+      "authenticDrillCount": 2051,
+      "syntheticDrillCount": 6044,
+      "authenticityRate": 25.34
+    }
+  },
+  "classificationDistribution": {
+    "AUTHENTIC_EXACT_MATCH": 2101,
+    "SUSPECTED_SYNTHETIC_GLOBAL": 6044,
+    "SUSPECTED_SYNTHETIC": 5605
+  },
+  "totalRepairTasks": 11649,
+  "chapterAudit": [
+    {
+      "chapterId": "cmunm1fe8000fevz0kra2klog",
+      "chapterNumber": 1,
+      "chapterTitle": "The Living World",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 140,
+      "sourceDrills": 90,
+      "sourceScorer": 50,
+      "appTotal": 140,
+      "appDrills": 90,
+      "appScorer": 50,
+      "authenticScorer": 50,
+      "syntheticScorer": 0,
+      "missingScorer": 0,
+      "authenticDrills": 20,
+      "syntheticDrills": 70,
+      "totalAuthentic": 70,
+      "totalSynthetic": 70,
+      "scorerAuthenticityRate": 100.0,
+      "drillAuthenticityRate": 22.2,
+      "overallAuthenticityRate": 50.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 12,
+          "appCount": 12,
+          "status": "VERIFIED"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 12,
+          "appCount": 12,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 12,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 14,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fel000hevz0sh4z7eiw",
+      "chapterNumber": 2,
+      "chapterTitle": "Biological Classification",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 170,
+      "sourceDrills": 90,
+      "sourceScorer": 80,
+      "appTotal": 170,
+      "appDrills": 90,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 56,
+      "syntheticDrills": 34,
+      "totalAuthentic": 56,
+      "totalSynthetic": 114,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 62.2,
+      "overallAuthenticityRate": 32.9,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fev000jevz0195ie89p",
+      "chapterNumber": 3,
+      "chapterTitle": "Plant Kingdom",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 215,
+      "sourceDrills": 135,
+      "sourceScorer": 80,
+      "appTotal": 215,
+      "appDrills": 135,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 25,
+      "syntheticDrills": 110,
+      "totalAuthentic": 25,
+      "totalSynthetic": 190,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 18.5,
+      "overallAuthenticityRate": 11.6,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1ff6000levz0gsfdbb0b",
+      "chapterNumber": 4,
+      "chapterTitle": "Animal Kingdom",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 200,
+      "sourceDrills": 120,
+      "sourceScorer": 80,
+      "appTotal": 200,
+      "appDrills": 120,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 10,
+      "syntheticDrills": 110,
+      "totalAuthentic": 10,
+      "totalSynthetic": 190,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 8.3,
+      "overallAuthenticityRate": 5.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO105",
+      "chapterNumber": 5,
+      "chapterTitle": "Morphology of Flowering Plants",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 210,
+      "sourceDrills": 130,
+      "sourceScorer": 80,
+      "appTotal": 210,
+      "appDrills": 130,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 45,
+      "syntheticDrills": 85,
+      "totalAuthentic": 45,
+      "totalSynthetic": 165,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 34.6,
+      "overallAuthenticityRate": 21.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO106",
+      "chapterNumber": 6,
+      "chapterTitle": "Anatomy of Flowering Plants",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 195,
+      "sourceDrills": 115,
+      "sourceScorer": 80,
+      "appTotal": 195,
+      "appDrills": 115,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 10,
+      "syntheticDrills": 105,
+      "totalAuthentic": 10,
+      "totalSynthetic": 185,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 8.7,
+      "overallAuthenticityRate": 5.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO107",
+      "chapterNumber": 7,
+      "chapterTitle": "Structural Organisation in Animals",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 10,
+      "syntheticDrills": 95,
+      "totalAuthentic": 10,
+      "totalSynthetic": 170,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 9.5,
+      "overallAuthenticityRate": 5.6,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO108",
+      "chapterNumber": 8,
+      "chapterTitle": "Cell: The Unit of Life",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 205,
+      "sourceDrills": 125,
+      "sourceScorer": 80,
+      "appTotal": 205,
+      "appDrills": 125,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 20,
+      "syntheticDrills": 105,
+      "totalAuthentic": 20,
+      "totalSynthetic": 185,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 16.0,
+      "overallAuthenticityRate": 9.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO109",
+      "chapterNumber": 9,
+      "chapterTitle": "Biomolecules",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 165,
+      "sourceDrills": 95,
+      "sourceScorer": 70,
+      "appTotal": 165,
+      "appDrills": 95,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 35,
+      "syntheticDrills": 60,
+      "totalAuthentic": 35,
+      "totalSynthetic": 130,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 36.8,
+      "overallAuthenticityRate": 21.2,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO110",
+      "chapterNumber": 10,
+      "chapterTitle": "Cell Cycle and Cell Division",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 20,
+      "syntheticDrills": 80,
+      "totalAuthentic": 20,
+      "totalSynthetic": 155,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 20.0,
+      "overallAuthenticityRate": 11.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO111",
+      "chapterNumber": 11,
+      "chapterTitle": "Photosynthesis in Higher Plants",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 205,
+      "sourceDrills": 125,
+      "sourceScorer": 80,
+      "appTotal": 205,
+      "appDrills": 125,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 25,
+      "syntheticDrills": 100,
+      "totalAuthentic": 25,
+      "totalSynthetic": 180,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 20.0,
+      "overallAuthenticityRate": 12.2,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO112",
+      "chapterNumber": 12,
+      "chapterTitle": "Respiration in Plants",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 30,
+      "syntheticDrills": 75,
+      "totalAuthentic": 30,
+      "totalSynthetic": 150,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 28.6,
+      "overallAuthenticityRate": 16.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO113",
+      "chapterNumber": 13,
+      "chapterTitle": "Plant Growth and Development",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 185,
+      "sourceDrills": 110,
+      "sourceScorer": 75,
+      "appTotal": 185,
+      "appDrills": 110,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 20,
+      "syntheticDrills": 90,
+      "totalAuthentic": 20,
+      "totalSynthetic": 165,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 18.2,
+      "overallAuthenticityRate": 10.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1ffe000nevz0tmgsp4lv",
+      "chapterNumber": 14,
+      "chapterTitle": "Breathing and Exchange of Gases",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 30,
+      "syntheticDrills": 70,
+      "totalAuthentic": 30,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 30.0,
+      "overallAuthenticityRate": 17.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO115",
+      "chapterNumber": 15,
+      "chapterTitle": "Body Fluids and Circulation",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 190,
+      "sourceDrills": 110,
+      "sourceScorer": 80,
+      "appTotal": 190,
+      "appDrills": 110,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 30,
+      "syntheticDrills": 80,
+      "totalAuthentic": 30,
+      "totalSynthetic": 160,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 27.3,
+      "overallAuthenticityRate": 15.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO116",
+      "chapterNumber": 16,
+      "chapterTitle": "Excretory Products and their Elimination",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 40,
+      "syntheticDrills": 65,
+      "totalAuthentic": 40,
+      "totalSynthetic": 140,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 38.1,
+      "overallAuthenticityRate": 22.2,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO117",
+      "chapterNumber": 17,
+      "chapterTitle": "Locomotion and Movement",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 25,
+      "syntheticDrills": 75,
+      "totalAuthentic": 25,
+      "totalSynthetic": 150,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 25.0,
+      "overallAuthenticityRate": 14.3,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO118",
+      "chapterNumber": 18,
+      "chapterTitle": "Neural Control and Coordination",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 185,
+      "sourceDrills": 110,
+      "sourceScorer": 75,
+      "appTotal": 185,
+      "appDrills": 110,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 20,
+      "syntheticDrills": 90,
+      "totalAuthentic": 20,
+      "totalSynthetic": 165,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 18.2,
+      "overallAuthenticityRate": 10.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEBO119",
+      "chapterNumber": 19,
+      "chapterTitle": "Chemical Coordination and Integration",
+      "subject": "Biology",
+      "classLevel": "Class 11",
+      "sourceTotal": 165,
+      "sourceDrills": 95,
+      "sourceScorer": 70,
+      "appTotal": 165,
+      "appDrills": 95,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 20,
+      "syntheticDrills": 75,
+      "totalAuthentic": 20,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 21.1,
+      "overallAuthenticityRate": 12.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fgr000xevz01a6mbtmt",
+      "chapterNumber": 1,
+      "chapterTitle": "Some Basic Concepts of Chemistry",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 32,
+      "syntheticDrills": 68,
+      "totalAuthentic": 32,
+      "totalSynthetic": 143,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 32.0,
+      "overallAuthenticityRate": 18.3,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH102",
+      "chapterNumber": 2,
+      "chapterTitle": "Structure of Atom",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 185,
+      "sourceDrills": 110,
+      "sourceScorer": 75,
+      "appTotal": 185,
+      "appDrills": 110,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 105,
+      "totalAuthentic": 5,
+      "totalSynthetic": 180,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 4.5,
+      "overallAuthenticityRate": 2.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH103",
+      "chapterNumber": 3,
+      "chapterTitle": "Classification of Elements and Periodicity in Properties",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 30,
+      "syntheticDrills": 70,
+      "totalAuthentic": 30,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 30.0,
+      "overallAuthenticityRate": 17.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH104",
+      "chapterNumber": 4,
+      "chapterTitle": "Chemical Bonding and Molecular Structure",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 200,
+      "sourceDrills": 120,
+      "sourceScorer": 80,
+      "appTotal": 200,
+      "appDrills": 120,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 42,
+      "syntheticDrills": 78,
+      "totalAuthentic": 42,
+      "totalSynthetic": 158,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 35.0,
+      "overallAuthenticityRate": 21.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH105",
+      "chapterNumber": 5,
+      "chapterTitle": "Chemical Thermodynamics",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 100,
+      "totalAuthentic": 5,
+      "totalSynthetic": 175,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 4.8,
+      "overallAuthenticityRate": 2.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH106",
+      "chapterNumber": 6,
+      "chapterTitle": "Equilibrium",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 195,
+      "sourceDrills": 115,
+      "sourceScorer": 80,
+      "appTotal": 195,
+      "appDrills": 115,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 60,
+      "syntheticDrills": 55,
+      "totalAuthentic": 60,
+      "totalSynthetic": 135,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 52.2,
+      "overallAuthenticityRate": 30.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH201",
+      "chapterNumber": 7,
+      "chapterTitle": "Redox Reactions",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 155,
+      "sourceDrills": 85,
+      "sourceScorer": 70,
+      "appTotal": 155,
+      "appDrills": 85,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 16,
+      "syntheticDrills": 69,
+      "totalAuthentic": 16,
+      "totalSynthetic": 139,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 18.8,
+      "overallAuthenticityRate": 10.3,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH202",
+      "chapterNumber": 8,
+      "chapterTitle": "Organic Chemistry \u2013 Some Basic Principles and Techniques",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 195,
+      "sourceDrills": 115,
+      "sourceScorer": 80,
+      "appTotal": 195,
+      "appDrills": 115,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 7,
+      "syntheticDrills": 108,
+      "totalAuthentic": 7,
+      "totalSynthetic": 188,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 6.1,
+      "overallAuthenticityRate": 3.6,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KECH203",
+      "chapterNumber": 9,
+      "chapterTitle": "Hydrocarbons",
+      "subject": "Chemistry",
+      "classLevel": "Class 11",
+      "sourceTotal": 190,
+      "sourceDrills": 110,
+      "sourceScorer": 80,
+      "appTotal": 190,
+      "appDrills": 110,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 31,
+      "syntheticDrills": 79,
+      "totalAuthentic": 31,
+      "totalSynthetic": 159,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 28.2,
+      "overallAuthenticityRate": 16.3,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1ffn000pevz0pub3c60r",
+      "chapterNumber": 1,
+      "chapterTitle": "Units and Measurements",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 155,
+      "sourceDrills": 90,
+      "sourceScorer": 65,
+      "appTotal": 155,
+      "appDrills": 90,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 27,
+      "syntheticDrills": 63,
+      "totalAuthentic": 27,
+      "totalSynthetic": 128,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 30.0,
+      "overallAuthenticityRate": 17.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH102",
+      "chapterNumber": 2,
+      "chapterTitle": "Motion in a Straight Line",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 15,
+      "syntheticDrills": 80,
+      "totalAuthentic": 15,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 15.8,
+      "overallAuthenticityRate": 9.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH103",
+      "chapterNumber": 3,
+      "chapterTitle": "Motion in a Plane",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 40,
+      "syntheticDrills": 55,
+      "totalAuthentic": 40,
+      "totalSynthetic": 120,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 42.1,
+      "overallAuthenticityRate": 25.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1ffw000revz06ebq7wm1",
+      "chapterNumber": 4,
+      "chapterTitle": "Laws of Motion",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 170,
+      "sourceDrills": 100,
+      "sourceScorer": 70,
+      "appTotal": 170,
+      "appDrills": 100,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 34,
+      "syntheticDrills": 66,
+      "totalAuthentic": 34,
+      "totalSynthetic": 136,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 34.0,
+      "overallAuthenticityRate": 20.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH105",
+      "chapterNumber": 5,
+      "chapterTitle": "Work, Energy and Power",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 170,
+      "sourceDrills": 100,
+      "sourceScorer": 70,
+      "appTotal": 170,
+      "appDrills": 100,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 50,
+      "syntheticDrills": 50,
+      "totalAuthentic": 50,
+      "totalSynthetic": 120,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 50.0,
+      "overallAuthenticityRate": 29.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH106",
+      "chapterNumber": 6,
+      "chapterTitle": "System of Particles and Rotational Motion",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 175,
+      "sourceDrills": 105,
+      "sourceScorer": 70,
+      "appTotal": 175,
+      "appDrills": 105,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 65,
+      "syntheticDrills": 40,
+      "totalAuthentic": 65,
+      "totalSynthetic": 110,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 61.9,
+      "overallAuthenticityRate": 37.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH107",
+      "chapterNumber": 7,
+      "chapterTitle": "Gravitation",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 35,
+      "syntheticDrills": 60,
+      "totalAuthentic": 35,
+      "totalSynthetic": 125,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 36.8,
+      "overallAuthenticityRate": 21.9,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH201",
+      "chapterNumber": 8,
+      "chapterTitle": "Mechanical Properties of Solids",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 140,
+      "sourceDrills": 80,
+      "sourceScorer": 60,
+      "appTotal": 140,
+      "appDrills": 80,
+      "appScorer": 60,
+      "authenticScorer": 0,
+      "syntheticScorer": 60,
+      "missingScorer": 60,
+      "authenticDrills": 20,
+      "syntheticDrills": 60,
+      "totalAuthentic": 20,
+      "totalSynthetic": 120,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 25.0,
+      "overallAuthenticityRate": 14.3,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH202",
+      "chapterNumber": 9,
+      "chapterTitle": "Mechanical Properties of Fluids",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 20,
+      "syntheticDrills": 75,
+      "totalAuthentic": 20,
+      "totalSynthetic": 140,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 21.1,
+      "overallAuthenticityRate": 12.5,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH203",
+      "chapterNumber": 10,
+      "chapterTitle": "Thermal Properties of Matter",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 150,
+      "sourceDrills": 90,
+      "sourceScorer": 60,
+      "appTotal": 150,
+      "appDrills": 90,
+      "appScorer": 60,
+      "authenticScorer": 0,
+      "syntheticScorer": 60,
+      "missingScorer": 60,
+      "authenticDrills": 40,
+      "syntheticDrills": 50,
+      "totalAuthentic": 40,
+      "totalSynthetic": 110,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 44.4,
+      "overallAuthenticityRate": 26.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH204",
+      "chapterNumber": 11,
+      "chapterTitle": "Thermodynamics",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 50,
+      "syntheticDrills": 55,
+      "totalAuthentic": 50,
+      "totalSynthetic": 130,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 47.6,
+      "overallAuthenticityRate": 27.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH205",
+      "chapterNumber": 12,
+      "chapterTitle": "Kinetic Theory",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 135,
+      "sourceDrills": 80,
+      "sourceScorer": 55,
+      "appTotal": 135,
+      "appDrills": 80,
+      "appScorer": 55,
+      "authenticScorer": 0,
+      "syntheticScorer": 55,
+      "missingScorer": 55,
+      "authenticDrills": 30,
+      "syntheticDrills": 50,
+      "totalAuthentic": 30,
+      "totalSynthetic": 105,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 37.5,
+      "overallAuthenticityRate": 22.2,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH206",
+      "chapterNumber": 13,
+      "chapterTitle": "Oscillations",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 155,
+      "sourceDrills": 90,
+      "sourceScorer": 65,
+      "appTotal": 155,
+      "appDrills": 90,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 30,
+      "syntheticDrills": 60,
+      "totalAuthentic": 30,
+      "totalSynthetic": 125,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 33.3,
+      "overallAuthenticityRate": 19.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_KEPH207",
+      "chapterNumber": 14,
+      "chapterTitle": "Waves",
+      "subject": "Physics",
+      "classLevel": "Class 11",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 30,
+      "syntheticDrills": 65,
+      "totalAuthentic": 30,
+      "totalSynthetic": 130,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 31.6,
+      "overallAuthenticityRate": 18.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fh70011evz04a4n4cen",
+      "chapterNumber": 1,
+      "chapterTitle": "Sexual Reproduction in Flowering Plants",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 190,
+      "sourceDrills": 110,
+      "sourceScorer": 80,
+      "appTotal": 190,
+      "appDrills": 110,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 20,
+      "syntheticDrills": 90,
+      "totalAuthentic": 20,
+      "totalSynthetic": 170,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 18.2,
+      "overallAuthenticityRate": 10.5,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fhj0013evz0ocehbb91",
+      "chapterNumber": 2,
+      "chapterTitle": "Human Reproduction",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 205,
+      "sourceDrills": 125,
+      "sourceScorer": 80,
+      "appTotal": 205,
+      "appDrills": 125,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 35,
+      "syntheticDrills": 90,
+      "totalAuthentic": 35,
+      "totalSynthetic": 170,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 28.0,
+      "overallAuthenticityRate": 17.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO103",
+      "chapterNumber": 3,
+      "chapterTitle": "Reproductive Health",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 160,
+      "sourceDrills": 90,
+      "sourceScorer": 70,
+      "appTotal": 160,
+      "appDrills": 90,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 20,
+      "syntheticDrills": 70,
+      "totalAuthentic": 20,
+      "totalSynthetic": 140,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 22.2,
+      "overallAuthenticityRate": 12.5,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO104",
+      "chapterNumber": 4,
+      "chapterTitle": "Principles of Inheritance and Variation",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 225,
+      "sourceDrills": 140,
+      "sourceScorer": 85,
+      "appTotal": 225,
+      "appDrills": 140,
+      "appScorer": 85,
+      "authenticScorer": 0,
+      "syntheticScorer": 85,
+      "missingScorer": 85,
+      "authenticDrills": 35,
+      "syntheticDrills": 105,
+      "totalAuthentic": 35,
+      "totalSynthetic": 190,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 25.0,
+      "overallAuthenticityRate": 15.6,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 35,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO105",
+      "chapterNumber": 5,
+      "chapterTitle": "Molecular Basis of Inheritance",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 230,
+      "sourceDrills": 145,
+      "sourceScorer": 85,
+      "appTotal": 230,
+      "appDrills": 145,
+      "appScorer": 85,
+      "authenticScorer": 0,
+      "syntheticScorer": 85,
+      "missingScorer": 85,
+      "authenticDrills": 50,
+      "syntheticDrills": 95,
+      "totalAuthentic": 50,
+      "totalSynthetic": 180,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 34.5,
+      "overallAuthenticityRate": 21.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 35,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO106",
+      "chapterNumber": 6,
+      "chapterTitle": "Evolution",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 195,
+      "sourceDrills": 115,
+      "sourceScorer": 80,
+      "appTotal": 195,
+      "appDrills": 115,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 30,
+      "syntheticDrills": 85,
+      "totalAuthentic": 30,
+      "totalSynthetic": 165,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 26.1,
+      "overallAuthenticityRate": 15.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO107",
+      "chapterNumber": 7,
+      "chapterTitle": "Human Health and Disease",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 210,
+      "sourceDrills": 130,
+      "sourceScorer": 80,
+      "appTotal": 210,
+      "appDrills": 130,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 25,
+      "syntheticDrills": 105,
+      "totalAuthentic": 25,
+      "totalSynthetic": 185,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 19.2,
+      "overallAuthenticityRate": 11.9,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO108",
+      "chapterNumber": 8,
+      "chapterTitle": "Microbes in Human Welfare",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 30,
+      "syntheticDrills": 70,
+      "totalAuthentic": 30,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 30.0,
+      "overallAuthenticityRate": 17.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO109",
+      "chapterNumber": 9,
+      "chapterTitle": "Biotechnology: Principles and Processes",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 190,
+      "sourceDrills": 115,
+      "sourceScorer": 75,
+      "appTotal": 190,
+      "appDrills": 115,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 15,
+      "syntheticDrills": 100,
+      "totalAuthentic": 15,
+      "totalSynthetic": 175,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 13.0,
+      "overallAuthenticityRate": 7.9,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO110",
+      "chapterNumber": 10,
+      "chapterTitle": "Biotechnology and its Applications",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 165,
+      "sourceDrills": 95,
+      "sourceScorer": 70,
+      "appTotal": 165,
+      "appDrills": 95,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 20,
+      "syntheticDrills": 75,
+      "totalAuthentic": 20,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 21.1,
+      "overallAuthenticityRate": 12.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO111",
+      "chapterNumber": 11,
+      "chapterTitle": "Organisms and Populations",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 185,
+      "sourceDrills": 110,
+      "sourceScorer": 75,
+      "appTotal": 185,
+      "appDrills": 110,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 105,
+      "totalAuthentic": 5,
+      "totalSynthetic": 180,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 4.5,
+      "overallAuthenticityRate": 2.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO112",
+      "chapterNumber": 12,
+      "chapterTitle": "Ecosystem",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 20,
+      "syntheticDrills": 80,
+      "totalAuthentic": 20,
+      "totalSynthetic": 155,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 20.0,
+      "overallAuthenticityRate": 11.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEBO113",
+      "chapterNumber": 13,
+      "chapterTitle": "Biodiversity and Conservation",
+      "subject": "Biology",
+      "classLevel": "Class 12",
+      "sourceTotal": 165,
+      "sourceDrills": 95,
+      "sourceScorer": 70,
+      "appTotal": 165,
+      "appDrills": 95,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 10,
+      "syntheticDrills": 85,
+      "totalAuthentic": 10,
+      "totalSynthetic": 155,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 10.5,
+      "overallAuthenticityRate": 6.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH101",
+      "chapterNumber": 1,
+      "chapterTitle": "Solutions",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 95,
+      "totalAuthentic": 5,
+      "totalSynthetic": 170,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 5.0,
+      "overallAuthenticityRate": 2.9,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fgz000zevz0yjj353gm",
+      "chapterNumber": 2,
+      "chapterTitle": "Electrochemistry",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 100,
+      "totalAuthentic": 5,
+      "totalSynthetic": 175,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 4.8,
+      "overallAuthenticityRate": 2.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH103",
+      "chapterNumber": 3,
+      "chapterTitle": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 95,
+      "totalAuthentic": 5,
+      "totalSynthetic": 170,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 5.0,
+      "overallAuthenticityRate": 2.9,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH104",
+      "chapterNumber": 4,
+      "chapterTitle": "The d- and f-Block Elements",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 165,
+      "sourceDrills": 95,
+      "sourceScorer": 70,
+      "appTotal": 165,
+      "appDrills": 95,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 5,
+      "syntheticDrills": 90,
+      "totalAuthentic": 5,
+      "totalSynthetic": 160,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 5.3,
+      "overallAuthenticityRate": 3.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH105",
+      "chapterNumber": 5,
+      "chapterTitle": "Coordination Compounds",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 100,
+      "totalAuthentic": 5,
+      "totalSynthetic": 175,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 4.8,
+      "overallAuthenticityRate": 2.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH201",
+      "chapterNumber": 6,
+      "chapterTitle": "Haloalkanes and Haloarenes",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 175,
+      "sourceDrills": 100,
+      "sourceScorer": 75,
+      "appTotal": 175,
+      "appDrills": 100,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 6,
+      "syntheticDrills": 94,
+      "totalAuthentic": 6,
+      "totalSynthetic": 169,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 6.0,
+      "overallAuthenticityRate": 3.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH202",
+      "chapterNumber": 7,
+      "chapterTitle": "Alcohols, Phenols and Ethers",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 180,
+      "sourceDrills": 105,
+      "sourceScorer": 75,
+      "appTotal": 180,
+      "appDrills": 105,
+      "appScorer": 75,
+      "authenticScorer": 0,
+      "syntheticScorer": 75,
+      "missingScorer": 75,
+      "authenticDrills": 5,
+      "syntheticDrills": 100,
+      "totalAuthentic": 5,
+      "totalSynthetic": 175,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 4.8,
+      "overallAuthenticityRate": 2.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 18,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 27,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH203",
+      "chapterNumber": 8,
+      "chapterTitle": "Aldehydes, Ketones and Carboxylic Acids",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 195,
+      "sourceDrills": 115,
+      "sourceScorer": 80,
+      "appTotal": 195,
+      "appDrills": 115,
+      "appScorer": 80,
+      "authenticScorer": 0,
+      "syntheticScorer": 80,
+      "missingScorer": 80,
+      "authenticDrills": 5,
+      "syntheticDrills": 110,
+      "totalAuthentic": 5,
+      "totalSynthetic": 190,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 4.3,
+      "overallAuthenticityRate": 2.6,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 20,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 30,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH204",
+      "chapterNumber": 9,
+      "chapterTitle": "Amines",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 165,
+      "sourceDrills": 95,
+      "sourceScorer": 70,
+      "appTotal": 165,
+      "appDrills": 95,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 5,
+      "syntheticDrills": 90,
+      "totalAuthentic": 5,
+      "totalSynthetic": 160,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 5.3,
+      "overallAuthenticityRate": 3.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LECH205",
+      "chapterNumber": 10,
+      "chapterTitle": "Biomolecules",
+      "subject": "Chemistry",
+      "classLevel": "Class 12",
+      "sourceTotal": 165,
+      "sourceDrills": 95,
+      "sourceScorer": 70,
+      "appTotal": 165,
+      "appDrills": 95,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 5,
+      "syntheticDrills": 90,
+      "totalAuthentic": 5,
+      "totalSynthetic": 160,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 5.3,
+      "overallAuthenticityRate": 3.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fga000tevz0tbgf181n",
+      "chapterNumber": 1,
+      "chapterTitle": "Electric Charges and Fields",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 50,
+      "syntheticDrills": 45,
+      "totalAuthentic": 50,
+      "totalSynthetic": 110,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 52.6,
+      "overallAuthenticityRate": 31.2,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH102",
+      "chapterNumber": 2,
+      "chapterTitle": "Electrostatic Potential and Capacitance",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 75,
+      "syntheticDrills": 20,
+      "totalAuthentic": 75,
+      "totalSynthetic": 85,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 78.9,
+      "overallAuthenticityRate": 46.9,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "cmunm1fgk000vevz0a5v51gji",
+      "chapterNumber": 3,
+      "chapterTitle": "Current Electricity",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 175,
+      "sourceDrills": 105,
+      "sourceScorer": 70,
+      "appTotal": 175,
+      "appDrills": 105,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 45,
+      "syntheticDrills": 60,
+      "totalAuthentic": 45,
+      "totalSynthetic": 130,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 42.9,
+      "overallAuthenticityRate": 25.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH104",
+      "chapterNumber": 4,
+      "chapterTitle": "Moving Charges and Magnetism",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 40,
+      "syntheticDrills": 55,
+      "totalAuthentic": 40,
+      "totalSynthetic": 120,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 42.1,
+      "overallAuthenticityRate": 25.0,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH105",
+      "chapterNumber": 5,
+      "chapterTitle": "Magnetism and Matter",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 140,
+      "sourceDrills": 80,
+      "sourceScorer": 60,
+      "appTotal": 140,
+      "appDrills": 80,
+      "appScorer": 60,
+      "authenticScorer": 0,
+      "syntheticScorer": 60,
+      "missingScorer": 60,
+      "authenticDrills": 15,
+      "syntheticDrills": 65,
+      "totalAuthentic": 15,
+      "totalSynthetic": 125,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 18.8,
+      "overallAuthenticityRate": 10.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH106",
+      "chapterNumber": 6,
+      "chapterTitle": "Electromagnetic Induction",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 145,
+      "sourceDrills": 85,
+      "sourceScorer": 60,
+      "appTotal": 145,
+      "appDrills": 85,
+      "appScorer": 60,
+      "authenticScorer": 0,
+      "syntheticScorer": 60,
+      "missingScorer": 60,
+      "authenticDrills": 30,
+      "syntheticDrills": 55,
+      "totalAuthentic": 30,
+      "totalSynthetic": 115,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 35.3,
+      "overallAuthenticityRate": 20.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH107",
+      "chapterNumber": 7,
+      "chapterTitle": "Alternating Current",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 155,
+      "sourceDrills": 90,
+      "sourceScorer": 65,
+      "appTotal": 155,
+      "appDrills": 90,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 50,
+      "syntheticDrills": 40,
+      "totalAuthentic": 50,
+      "totalSynthetic": 105,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 55.6,
+      "overallAuthenticityRate": 32.3,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH108",
+      "chapterNumber": 8,
+      "chapterTitle": "Electromagnetic Waves",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 15,
+      "syntheticDrills": 80,
+      "totalAuthentic": 15,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 15.8,
+      "overallAuthenticityRate": 9.4,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH201",
+      "chapterNumber": 9,
+      "chapterTitle": "Ray Optics and Optical Instruments",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 175,
+      "sourceDrills": 105,
+      "sourceScorer": 70,
+      "appTotal": 175,
+      "appDrills": 105,
+      "appScorer": 70,
+      "authenticScorer": 0,
+      "syntheticScorer": 70,
+      "missingScorer": 70,
+      "authenticDrills": 30,
+      "syntheticDrills": 75,
+      "totalAuthentic": 30,
+      "totalSynthetic": 145,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 28.6,
+      "overallAuthenticityRate": 17.1,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 17,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 23,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH202",
+      "chapterNumber": 10,
+      "chapterTitle": "Wave Optics",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 145,
+      "sourceDrills": 85,
+      "sourceScorer": 60,
+      "appTotal": 145,
+      "appDrills": 85,
+      "appScorer": 60,
+      "authenticScorer": 0,
+      "syntheticScorer": 60,
+      "missingScorer": 60,
+      "authenticDrills": 25,
+      "syntheticDrills": 60,
+      "totalAuthentic": 25,
+      "totalSynthetic": 120,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 29.4,
+      "overallAuthenticityRate": 17.2,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH203",
+      "chapterNumber": 11,
+      "chapterTitle": "Dual Nature of Radiation and Matter",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 145,
+      "sourceDrills": 85,
+      "sourceScorer": 60,
+      "appTotal": 145,
+      "appDrills": 85,
+      "appScorer": 60,
+      "authenticScorer": 0,
+      "syntheticScorer": 60,
+      "missingScorer": 60,
+      "authenticDrills": 30,
+      "syntheticDrills": 55,
+      "totalAuthentic": 30,
+      "totalSynthetic": 115,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 35.3,
+      "overallAuthenticityRate": 20.7,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH204",
+      "chapterNumber": 12,
+      "chapterTitle": "Atoms",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 135,
+      "sourceDrills": 80,
+      "sourceScorer": 55,
+      "appTotal": 135,
+      "appDrills": 80,
+      "appScorer": 55,
+      "authenticScorer": 0,
+      "syntheticScorer": 55,
+      "missingScorer": 55,
+      "authenticDrills": 20,
+      "syntheticDrills": 60,
+      "totalAuthentic": 20,
+      "totalSynthetic": 115,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 25.0,
+      "overallAuthenticityRate": 14.8,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH205",
+      "chapterNumber": 13,
+      "chapterTitle": "Nuclei",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 135,
+      "sourceDrills": 80,
+      "sourceScorer": 55,
+      "appTotal": 135,
+      "appDrills": 80,
+      "appScorer": 55,
+      "authenticScorer": 0,
+      "syntheticScorer": 55,
+      "missingScorer": 55,
+      "authenticDrills": 30,
+      "syntheticDrills": 50,
+      "totalAuthentic": 30,
+      "totalSynthetic": 105,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 37.5,
+      "overallAuthenticityRate": 22.2,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 13,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    },
+    {
+      "chapterId": "CH_LEPH206",
+      "chapterNumber": 14,
+      "chapterTitle": "Semiconductor Electronics: Materials, Devices and Simple Circuits",
+      "subject": "Physics",
+      "classLevel": "Class 12",
+      "sourceTotal": 160,
+      "sourceDrills": 95,
+      "sourceScorer": 65,
+      "appTotal": 160,
+      "appDrills": 95,
+      "appScorer": 65,
+      "authenticScorer": 0,
+      "syntheticScorer": 65,
+      "missingScorer": 65,
+      "authenticDrills": 25,
+      "syntheticDrills": 70,
+      "totalAuthentic": 25,
+      "totalSynthetic": 135,
+      "scorerAuthenticityRate": 0.0,
+      "drillAuthenticityRate": 26.3,
+      "overallAuthenticityRate": 15.6,
+      "subsections": [
+        {
+          "name": "NCERT Exemplar Problems",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Assertion & Reason",
+          "canonicalTarget": 16,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Thinking Corner / Multidimensional",
+          "canonicalTarget": 15,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        },
+        {
+          "name": "Exam Archive (NEET/PMT)",
+          "canonicalTarget": 19,
+          "appCount": 0,
+          "status": "REQUIRES_SOURCE_RESTORE"
+        }
+      ]
+    }
+  ]
+}

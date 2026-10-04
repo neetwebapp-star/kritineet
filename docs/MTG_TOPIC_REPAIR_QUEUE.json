@@ -1,0 +1,835 @@
+{
+  "auditRunId": "topic_audit_post_e3c91421",
+  "generatedAt": "2026-10-04T19:15:00Z",
+  "totalRepairs": 92,
+  "repairQueue": [
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fel000hevz0sh4z7eiw",
+      "chapterTitle": "Biological Classification",
+      "topicId": "TOPIC_cmunm1fel000hevz0sh4z7eiw_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fev000jevz0195ie89p",
+      "chapterTitle": "Plant Kingdom",
+      "topicId": "TOPIC_cmunm1fev000jevz0195ie89p_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 71,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1ff6000levz0gsfdbb0b",
+      "chapterTitle": "Animal Kingdom",
+      "topicId": "TOPIC_cmunm1ff6000levz0gsfdbb0b_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 74,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO105",
+      "chapterTitle": "Morphology of Flowering Plants",
+      "topicId": "TOPIC_CH_KEBO105_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 67,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO106",
+      "chapterTitle": "Anatomy of Flowering Plants",
+      "topicId": "TOPIC_CH_KEBO106_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 74,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO107",
+      "chapterTitle": "Structural Organisation in Animals",
+      "topicId": "TOPIC_CH_KEBO107_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 69,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO108",
+      "chapterTitle": "Cell: The Unit of Life",
+      "topicId": "TOPIC_CH_KEBO108_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 72,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO109",
+      "chapterTitle": "Biomolecules",
+      "topicId": "TOPIC_CH_KEBO109_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 59,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO110",
+      "chapterTitle": "Cell Cycle and Cell Division",
+      "topicId": "TOPIC_CH_KEBO110_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 67,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO111",
+      "chapterTitle": "Photosynthesis in Higher Plants",
+      "topicId": "TOPIC_CH_KEBO111_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 71,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO112",
+      "chapterTitle": "Respiration in Plants",
+      "topicId": "TOPIC_CH_KEBO112_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO113",
+      "chapterTitle": "Plant Growth and Development",
+      "topicId": "TOPIC_CH_KEBO113_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 67,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1ffe000nevz0tmgsp4lv",
+      "chapterTitle": "Breathing and Exchange of Gases",
+      "topicId": "TOPIC_cmunm1ffe000nevz0tmgsp4lv_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO115",
+      "chapterTitle": "Body Fluids and Circulation",
+      "topicId": "TOPIC_CH_KEBO115_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO116",
+      "chapterTitle": "Excretory Products and their Elimination",
+      "topicId": "TOPIC_CH_KEBO116_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 63,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO117",
+      "chapterTitle": "Locomotion and Movement",
+      "topicId": "TOPIC_CH_KEBO117_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 66,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO118",
+      "chapterTitle": "Neural Control and Coordination",
+      "topicId": "TOPIC_CH_KEBO118_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 67,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEBO119",
+      "chapterTitle": "Chemical Coordination and Integration",
+      "topicId": "TOPIC_CH_KEBO119_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 62,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fgr000xevz01a6mbtmt",
+      "chapterTitle": "Some Basic Concepts of Chemistry",
+      "topicId": "TOPIC_cmunm1fgr000xevz01a6mbtmt_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH102",
+      "chapterTitle": "Structure of Atom",
+      "topicId": "TOPIC_CH_KECH102_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH103",
+      "chapterTitle": "Classification of Elements and Periodicity in Properties",
+      "topicId": "TOPIC_CH_KECH103_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH104",
+      "chapterTitle": "Chemical Bonding and Molecular Structure",
+      "topicId": "TOPIC_CH_KECH104_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 68,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH105",
+      "chapterTitle": "Chemical Thermodynamics",
+      "topicId": "TOPIC_CH_KECH105_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH106",
+      "chapterTitle": "Equilibrium",
+      "topicId": "TOPIC_CH_KECH106_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 64,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH201",
+      "chapterTitle": "Redox Reactions",
+      "topicId": "TOPIC_CH_KECH201_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 63,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH202",
+      "chapterTitle": "Organic Chemistry \u2013 Some Basic Principles and Techniques",
+      "topicId": "TOPIC_CH_KECH202_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 75,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KECH203",
+      "chapterTitle": "Hydrocarbons",
+      "topicId": "TOPIC_CH_KECH203_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1ffn000pevz0pub3c60r",
+      "chapterTitle": "Units and Measurements",
+      "topicId": "TOPIC_cmunm1ffn000pevz0pub3c60r_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 55,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH102",
+      "chapterTitle": "Motion in a Straight Line",
+      "topicId": "TOPIC_CH_KEPH102_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 57,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH103",
+      "chapterTitle": "Motion in a Plane",
+      "topicId": "TOPIC_CH_KEPH103_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 52,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1ffw000revz06ebq7wm1",
+      "chapterTitle": "Laws of Motion",
+      "topicId": "TOPIC_cmunm1ffw000revz06ebq7wm1_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 59,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH105",
+      "chapterTitle": "Work, Energy and Power",
+      "topicId": "TOPIC_CH_KEPH105_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 55,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_KEPH106",
+      "chapterTitle": "System of Particles and Rotational Motion",
+      "topicId": "TOPIC_KEPH106_34_6",
+      "corruptNumber": "34.6",
+      "corruptTitle": "N F",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_KEPH106",
+      "chapterTitle": "System of Particles and Rotational Motion",
+      "topicId": "TOPIC_KEPH106_199_0",
+      "corruptNumber": "199.0",
+      "corruptTitle": "F N",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH106",
+      "chapterTitle": "System of Particles and Rotational Motion",
+      "topicId": "TOPIC_CH_KEPH106_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 52,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH107",
+      "chapterTitle": "Gravitation",
+      "topicId": "TOPIC_CH_KEPH107_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 54,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH201",
+      "chapterTitle": "Mechanical Properties of Solids",
+      "topicId": "TOPIC_CH_KEPH201_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 51,
+      "reason": "Topic holds 60 MCQs but requires 60"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH202",
+      "chapterTitle": "Mechanical Properties of Fluids",
+      "topicId": "TOPIC_CH_KEPH202_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 56,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_KEPH203",
+      "chapterTitle": "Thermal Properties of Matter",
+      "topicId": "TOPIC_KEPH203_10_5",
+      "corruptNumber": "10.5",
+      "corruptTitle": "Thermal Expansion",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH203",
+      "chapterTitle": "Thermal Properties of Matter",
+      "topicId": "TOPIC_CH_KEPH203_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 47,
+      "reason": "Topic holds 60 MCQs but requires 60"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH204",
+      "chapterTitle": "Thermodynamics",
+      "topicId": "TOPIC_CH_KEPH204_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 60,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_KEPH205",
+      "chapterTitle": "Kinetic Theory",
+      "topicId": "TOPIC_KEPH205_12_7",
+      "corruptNumber": "12.7",
+      "corruptTitle": "Mean Free Path",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH205",
+      "chapterTitle": "Kinetic Theory",
+      "topicId": "TOPIC_CH_KEPH205_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 44,
+      "reason": "Topic holds 55 MCQs but requires 55"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH206",
+      "chapterTitle": "Oscillations",
+      "topicId": "TOPIC_CH_KEPH206_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 54,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_KEPH207",
+      "chapterTitle": "Waves",
+      "topicId": "TOPIC_CH_KEPH207_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 54,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fh70011evz04a4n4cen",
+      "chapterTitle": "Sexual Reproduction in Flowering Plants",
+      "topicId": "TOPIC_cmunm1fh70011evz04a4n4cen_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 72,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fhj0013evz0ocehbb91",
+      "chapterTitle": "Human Reproduction",
+      "topicId": "TOPIC_cmunm1fhj0013evz0ocehbb91_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 69,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO103",
+      "chapterTitle": "Reproductive Health",
+      "topicId": "TOPIC_CH_LEBO103_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 62,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO104",
+      "chapterTitle": "Principles of Inheritance and Variation",
+      "topicId": "TOPIC_CH_LEBO104_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 74,
+      "reason": "Topic holds 85 MCQs but requires 85"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO105",
+      "chapterTitle": "Molecular Basis of Inheritance",
+      "topicId": "TOPIC_CH_LEBO105_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 71,
+      "reason": "Topic holds 85 MCQs but requires 85"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO106",
+      "chapterTitle": "Evolution",
+      "topicId": "TOPIC_CH_LEBO106_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO107",
+      "chapterTitle": "Human Health and Disease",
+      "topicId": "TOPIC_CH_LEBO107_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 71,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO108",
+      "chapterTitle": "Microbes in Human Welfare",
+      "topicId": "TOPIC_CH_LEBO108_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO109",
+      "chapterTitle": "Biotechnology: Principles and Processes",
+      "topicId": "TOPIC_CH_LEBO109_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 68,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO110",
+      "chapterTitle": "Biotechnology and its Applications",
+      "topicId": "TOPIC_CH_LEBO110_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 62,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO111",
+      "chapterTitle": "Organisms and Populations",
+      "topicId": "TOPIC_CH_LEBO111_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO112",
+      "chapterTitle": "Ecosystem",
+      "topicId": "TOPIC_CH_LEBO112_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 67,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEBO113",
+      "chapterTitle": "Biodiversity and Conservation",
+      "topicId": "TOPIC_CH_LEBO113_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 64,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH101",
+      "chapterTitle": "Solutions",
+      "topicId": "TOPIC_CH_LECH101_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fgz000zevz0yjj353gm",
+      "chapterTitle": "Electrochemistry",
+      "topicId": "TOPIC_cmunm1fgz000zevz0yjj353gm_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH103",
+      "chapterTitle": "Chemical Kinetics",
+      "topicId": "TOPIC_CH_LECH103_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LECH104",
+      "chapterTitle": "The d- and f-Block Elements",
+      "topicId": "TOPIC_CH_LECH104_4_2",
+      "corruptNumber": "4.2",
+      "corruptTitle": "General Properties of Transition Elements (Atomic Radii, Oxidation States, Magnetism)",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH104",
+      "chapterTitle": "The d- and f-Block Elements",
+      "topicId": "TOPIC_CH_LECH104_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH105",
+      "chapterTitle": "Coordination Compounds",
+      "topicId": "TOPIC_CH_LECH105_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH201",
+      "chapterTitle": "Haloalkanes and Haloarenes",
+      "topicId": "TOPIC_CH_LECH201_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH202",
+      "chapterTitle": "Alcohols, Phenols and Ethers",
+      "topicId": "TOPIC_CH_LECH202_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 70,
+      "reason": "Topic holds 75 MCQs but requires 75"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH203",
+      "chapterTitle": "Aldehydes, Ketones and Carboxylic Acids",
+      "topicId": "TOPIC_CH_LECH203_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 75,
+      "reason": "Topic holds 80 MCQs but requires 80"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH204",
+      "chapterTitle": "Amines",
+      "topicId": "TOPIC_CH_LECH204_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LECH205",
+      "chapterTitle": "Biomolecules",
+      "topicId": "TOPIC_CH_LECH205_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 65,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fga000tevz0tbgf181n",
+      "chapterTitle": "Electric Charges and Fields",
+      "topicId": "TOPIC_cmunm1fga000tevz0tbgf181n_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 50,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH102",
+      "chapterTitle": "Electrostatic Potential and Capacitance",
+      "topicId": "TOPIC_CH_LEPH102_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 46,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "cmunm1fgk000vevz0a5v51gji",
+      "chapterTitle": "Current Electricity",
+      "topicId": "TOPIC_cmunm1fgk000vevz0a5v51gji_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 56,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH104",
+      "chapterTitle": "Moving Charges and Magnetism",
+      "topicId": "TOPIC_LEPH104_4_2",
+      "corruptNumber": "4.2",
+      "corruptTitle": "Biot-Savart Law & Magnetic Field of a Circular Current Loop",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH104",
+      "chapterTitle": "Moving Charges and Magnetism",
+      "topicId": "TOPIC_LEPH104_4_9",
+      "corruptNumber": "4.9",
+      "corruptTitle": "Torque on Current Loop, Magnetic Dipole",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH104",
+      "chapterTitle": "Moving Charges and Magnetism",
+      "topicId": "TOPIC_CH_LEPH104_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 52,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH105",
+      "chapterTitle": "Magnetism and Matter",
+      "topicId": "TOPIC_LEPH105_5_2",
+      "corruptNumber": "5.2",
+      "corruptTitle": "Magnetism and Gauss's Law & Earth's Magnetism",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH105",
+      "chapterTitle": "Magnetism and Matter",
+      "topicId": "TOPIC_LEPH105_5_4",
+      "corruptNumber": "5.3",
+      "corruptTitle": "Magnetisation and Magnetic Intensity",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH105",
+      "chapterTitle": "Magnetism and Matter",
+      "topicId": "TOPIC_LEPH105_5_5",
+      "corruptNumber": "5.4",
+      "corruptTitle": "Magnetic Properties of Materials & Permanent Magnets",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH105",
+      "chapterTitle": "Magnetism and Matter",
+      "topicId": "TOPIC_CH_LEPH105_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 52,
+      "reason": "Topic holds 60 MCQs but requires 60"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH106",
+      "chapterTitle": "Electromagnetic Induction",
+      "topicId": "TOPIC_LEPH106_0_5",
+      "corruptNumber": "6.1",
+      "corruptTitle": "Magnetic Flux & Faraday's Experiments and Law of Induction",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH106",
+      "chapterTitle": "Electromagnetic Induction",
+      "topicId": "TOPIC_CH_LEPH106_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 49,
+      "reason": "Topic holds 60 MCQs but requires 60"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH107",
+      "chapterTitle": "Alternating Current",
+      "topicId": "TOPIC_LEPH107_7_85",
+      "corruptNumber": "7.85",
+      "corruptTitle": "L V I X",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH107",
+      "chapterTitle": "Alternating Current",
+      "topicId": "TOPIC_LEPH107_160_3",
+      "corruptNumber": "160.3",
+      "corruptTitle": "V C V I X",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "RENAME_OR_CLEAN_CORRUPT_TOPIC",
+      "chapterId": "CH_LEPH107",
+      "chapterTitle": "Alternating Current",
+      "topicId": "TOPIC_LEPH107_291_5",
+      "corruptNumber": "291.5",
+      "corruptTitle": "V I Z",
+      "reason": "Anomalous OCR artifact or stutter title detected in SQLite database"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH107",
+      "chapterTitle": "Alternating Current",
+      "topicId": "TOPIC_CH_LEPH107_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 50,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH108",
+      "chapterTitle": "Electromagnetic Waves",
+      "topicId": "TOPIC_CH_LEPH108_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 57,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH201",
+      "chapterTitle": "Ray Optics and Optical Instruments",
+      "topicId": "TOPIC_CH_LEPH201_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 59,
+      "reason": "Topic holds 70 MCQs but requires 70"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH202",
+      "chapterTitle": "Wave Optics",
+      "topicId": "TOPIC_CH_LEPH202_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 50,
+      "reason": "Topic holds 60 MCQs but requires 60"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH203",
+      "chapterTitle": "Dual Nature of Radiation and Matter",
+      "topicId": "TOPIC_CH_LEPH203_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 49,
+      "reason": "Topic holds 60 MCQs but requires 60"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH204",
+      "chapterTitle": "Atoms",
+      "topicId": "TOPIC_CH_LEPH204_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 46,
+      "reason": "Topic holds 55 MCQs but requires 55"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH205",
+      "chapterTitle": "Nuclei",
+      "topicId": "TOPIC_CH_LEPH205_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 44,
+      "reason": "Topic holds 55 MCQs but requires 55"
+    },
+    {
+      "action": "IMPORT_MISSING",
+      "chapterId": "CH_LEPH206",
+      "chapterTitle": "Semiconductor Electronics: Materials, Devices and Simple Circuits",
+      "topicId": "TOPIC_CH_LEPH206_EXAM_SCORER",
+      "canonicalTopic": "EXAM_SCORER Exam Scorer (Exemplar, AR, Statement, Case, Archive)",
+      "count": 55,
+      "reason": "Topic holds 65 MCQs but requires 65"
+    }
+  ]
+}

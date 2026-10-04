@@ -1,0 +1,427 @@
+class,subject,book,chapter,topic,subtopicCount,figureCount,tableCount,paragraphCount,canonicalPreserved,presentationLayerAdded,status
+Class 11,Biology (Class 11),kebo101,Ch 1: The Living World,1.1 Diversity in the Living World,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo101,Ch 1: The Living World,1.2 Taxonomic Categories,7,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo102,Ch 2: Biological Classification,2.1 Kingdom Monera,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo102,Ch 2: Biological Classification,2.2 Kingdom Protista,5,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo102,Ch 2: Biological Classification,2.3 Kingdom Fungi,4,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo102,Ch 2: Biological Classification,2.4 Kingdom Plantae,0,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo102,Ch 2: Biological Classification,2.5 Kingdom Animalia,0,4,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo102,Ch 2: Biological Classification,"2.6 Viruses, Viroids, Prions and Lichens",0,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo103,Ch 3: Plant Kingdom,3.1 Algae,3,5,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo103,Ch 3: Plant Kingdom,3.2 Bryophytes,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo103,Ch 3: Plant Kingdom,3.3 Pteridophytes,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo103,Ch 3: Plant Kingdom,3.4 Gymnosperms,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo103,Ch 3: Plant Kingdom,3.5 Angiosperms,0,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo104,Ch 4: Animal Kingdom,4.1 Basis of Classification,6,19,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo104,Ch 4: Animal Kingdom,4.2 Classification of Animals,0,15,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.1 The Root,1,17,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.2 The Stem,0,6,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.3 The Leaf,3,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.4 The Inflorescence,0,4,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.5 The Flower,1,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.6 The Fruit,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.7 The Seed,2,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.8 Semi-technical Description of a Typical Flowering Plant,0,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo105,Ch 5: Morphology of Flowering Plants,5.9 Solanaceae,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo106,Ch 6: Anatomy of Flowering Plants,6.1 The Tissue System,3,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo106,Ch 6: Anatomy of Flowering Plants,6.2 Anatomy of Dicotyledonous and Monocotyledonous Plants,6,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo107,Ch 7: Structural Organisation in Animals,7.1 Organ and Organ System,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo107,Ch 7: Structural Organisation in Animals,7.2 Frogs,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo108,Ch 8: Cell: The Unit of Life,8.2 Cell Theory,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo108,Ch 8: Cell: The Unit of Life,8.3 An Overview of Cell,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo108,Ch 8: Cell: The Unit of Life,8.4 Prokaryotic Cells,2,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo108,Ch 8: Cell: The Unit of Life,8.5 Eukaryotic Cells,11,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo109,Ch 9: Biomolecules,9.2 Primary and Secondary Metabolites,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo109,Ch 9: Biomolecules,9.3 Biomacromolecules,0,2,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo109,Ch 9: Biomolecules,9.4 Proteins,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo109,Ch 9: Biomolecules,9.5 Polysaccharides,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo109,Ch 9: Biomolecules,9.6 Nucleic Acids,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo109,Ch 9: Biomolecules,9.7 Structure of Proteins,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo109,Ch 9: Biomolecules,9.8 Enzymes,6,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo110,Ch 10: Cell Cycle and Cell Division,10.1 Cell Cycle,1,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo110,Ch 10: Cell Cycle and Cell Division,10.2 M Phase,5,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo110,Ch 10: Cell Cycle and Cell Division,10.4 Meiosis,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo110,Ch 10: Cell Cycle and Cell Division,10.5 Significance of Meiosis,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo111,Ch 11: Photosynthesis in Higher Plants,11.2 Early Experiments,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo111,Ch 11: Photosynthesis in Higher Plants,11.4 How Many Types of Pigments Are,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo111,Ch 11: Photosynthesis in Higher Plants,11.6 The Electron Transport,3,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo111,Ch 11: Photosynthesis in Higher Plants,11.9 Photorespiration,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo111,Ch 11: Photosynthesis in Higher Plants,11.10 Factors Affecting Photosynthesis,4,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo112,Ch 12: Respiration in Plants,12.2 Glycolysis,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo112,Ch 12: Respiration in Plants,12.3 Fermentation,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo112,Ch 12: Respiration in Plants,12.4 Aerobic Respiration,2,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo112,Ch 12: Respiration in Plants,12.5 The Respiratory Balance Sheet,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo112,Ch 12: Respiration in Plants,12.6 Amphibolic Pathway,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo112,Ch 12: Respiration in Plants,12.7 Respiratory Quotient,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo113,Ch 13: Plant Growth and Development,13.1 Growth,5,5,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo113,Ch 13: Plant Growth and Development,"13.2 Differentiation, Dedifferentiation and Redifferentiation",0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo113,Ch 13: Plant Growth and Development,13.3 Development,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo113,Ch 13: Plant Growth and Development,13.4 Plant Growth Regulators,3,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo114,Ch 14: Breathing and Exchange of Gases,14.1 Respiratory Organs,1,1,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo114,Ch 14: Breathing and Exchange of Gases,14.2 Mechanism of Breathing,1,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo114,Ch 14: Breathing and Exchange of Gases,14.3 Exchange of Gases,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo114,Ch 14: Breathing and Exchange of Gases,14.4 Transport of Gases,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo114,Ch 14: Breathing and Exchange of Gases,14.5 Regulation of Respiration,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo114,Ch 14: Breathing and Exchange of Gases,14.6 Disorders of Respiratory System,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo115,Ch 15: Body Fluids and Circulation,15.1 Blood,4,1,1,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo115,Ch 15: Body Fluids and Circulation,15.2 Lymph (tissue Fluid),0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo115,Ch 15: Body Fluids and Circulation,15.3 Circulatory Pathways,3,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo115,Ch 15: Body Fluids and Circulation,15.4 Double Circulation,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo115,Ch 15: Body Fluids and Circulation,15.5 Regulation of Cardiac Activity,0,0,0,4,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo115,Ch 15: Body Fluids and Circulation,15.6 Disorders of Circulatory System,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.1 Human Excretory System,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.2 Urine Formation,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.3 Function of the Tubules,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.4 Mechanism of Concentration of the Filtrate,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.5 Regulation of Kidney Function,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.6 Micturition,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.7 Role of Other Organs in Excretion,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo116,Ch 16: Excretory Products and their Elimination,16.8 Disorders of the Excretory System,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo117,Ch 17: Locomotion and Movement,17.1 Types of Movement,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo117,Ch 17: Locomotion and Movement,17.2 Muscle,2,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo117,Ch 17: Locomotion and Movement,17.3 Skeletal System,0,3,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo117,Ch 17: Locomotion and Movement,17.4 Joints,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo117,Ch 17: Locomotion and Movement,17.5 Disorders of Muscular and Skeletal System,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo118,Ch 18: Neural Control and Coordination,18.1 Neural System,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo118,Ch 18: Neural Control and Coordination,18.2 Human Neural System,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo118,Ch 18: Neural Control and Coordination,18.3 Neuron As Structural and Functional Unit of Neural System,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo118,Ch 18: Neural Control and Coordination,18.4 Central Neural System,3,2,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo119,Ch 19: Chemical Coordination and Integration,19.1 Endocrine Glands and Hormones,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo119,Ch 19: Chemical Coordination and Integration,19.2 Human Endocrine System,10,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo119,Ch 19: Chemical Coordination and Integration,"19.3 Hormones of Heart, Kidney and Gastrointestinal Tract",0,1,0,5,TRUE,TRUE,PASS
+Class 11,Biology (Class 11),kebo119,Ch 19: Chemical Coordination and Integration,19.4 Mechanism of Hormone Action,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech101,Ch 1: Some Basic Concepts of Chemistry,1.1 Importance of Chemistry,0,3,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech101,Ch 1: Some Basic Concepts of Chemistry,1.012 Section 1.012,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech101,Ch 1: Some Basic Concepts of Chemistry,12.11 Section 12.11,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech101,Ch 1: Some Basic Concepts of Chemistry,18.0 Section 18.0,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech101,Ch 1: Some Basic Concepts of Chemistry,24.23 Section 24.23,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech101,Ch 1: Some Basic Concepts of Chemistry,75.77 Section 75.77,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech102,Ch 2: Structure of Atom,2.1 Introduction and Core Principles of Structure of Atom,4,10,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech103,Ch 3: Classification of Elements and Periodicity in Properties,3.2 Genesis of Periodic Classification,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech103,Ch 3: Classification of Elements and Periodicity in Properties,3.3 Modern Periodic Law and the Present Form of the Periodic,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech103,Ch 3: Classification of Elements and Periodicity in Properties,3.4 Nomenclature of Elements,0,1,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech103,Ch 3: Classification of Elements and Periodicity in Properties,3.5 Electronic Configurations of Elements and the Periodic,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech103,Ch 3: Classification of Elements and Periodicity in Properties,3.6 Electronic Configurations,5,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech103,Ch 3: Classification of Elements and Periodicity in Properties,3.7 Periodic Trends in Properties of Elements,3,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.2 Ionic or Electrovalent Bond,1,4,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.3 Bond Parameters,6,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.4 The Valence Shell Electron Pair Repulsion (vsepr) Theory,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.5 Valence Bond Theory,5,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.6 Hybridisation,2,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.7 Molecular Orbital Theory,5,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.8 Bonding in Some Homonuclear Diatomic Molecules,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech104,Ch 4: Chemical Bonding and Molecular Structure,4.9 Hydrogen Bonding,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech105,Ch 5: Chemical Thermodynamics,5.1 Introduction and Core Principles of Chemical Thermodynamics,4,3,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.1 E Q U I L I B R I U M I N P H Y S I C a L Processes,4,3,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.2 Equilibrium in Chemical,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.3 Law of Chemical Equilibrium and Equilibrium Constant,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.4 Homogeneous Equilibria,1,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.5 Heterogeneous Equilibria,0,1,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.6 Applications of Equilibrium Constants,3,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.8 Factors Affecting Equilibria,5,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.9 Ionic Equilibrium in Solution,0,1,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,"6.10 Acids, Bases and Salts",2,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.11 Ionization of Acids and Bases,9,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.12 Buffer Solutions,1,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech106,Ch 6: Equilibrium,6.13 Solubility Equilibria of Sparingly Soluble Salts,2,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech201,Ch 7: Redox Reactions,7.2 Redox Reactions in Terms of Electron Transfer Reactions,1,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech201,Ch 7: Redox Reactions,7.3 Oxidation Number,4,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech201,Ch 7: Redox Reactions,7.4 Redox Reactions and Electrode Processes,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech202,Ch 8: Organic Chemistry – Some Basic Principles and Techniques,8.1 Introduction and Core Principles of Organic Chemistry – Some Basic Principles and Techniques,0,9,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech203,Ch 9: Hydrocarbons,9.1 Classification,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech203,Ch 9: Hydrocarbons,9.2 Alkanes,4,1,2,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech203,Ch 9: Hydrocarbons,9.3 Alkenes,5,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech203,Ch 9: Hydrocarbons,9.4 Alkynes,4,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech203,Ch 9: Hydrocarbons,9.5 Aromatic Hydrocarbon,6,1,0,5,TRUE,TRUE,PASS
+Class 11,Chemistry (Class 11),kech203,Ch 9: Hydrocarbons,9.6 Carcinogenicity and Toxicity,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph101,Ch 1: Units and Measurements,1.1 Introduction,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph101,Ch 1: Units and Measurements,1.2 The International System of Units,0,0,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph101,Ch 1: Units and Measurements,1.3 Significant Figures,3,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph101,Ch 1: Units and Measurements,1.4 Dimensions of Physical Quantities,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph101,Ch 1: Units and Measurements,1.5 Dimensional Formulae and Dimensional Equations,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph101,Ch 1: Units and Measurements,1.6 Dimensional Analysis and Its Applications,2,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph102,Ch 2: Motion in a Straight Line,2.1 Introduction,0,8,2,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph102,Ch 2: Motion in a Straight Line,2.2 Instantaneous Velocity and Speed,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph102,Ch 2: Motion in a Straight Line,2.3 Acceleration,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph102,Ch 2: Motion in a Straight Line,2.4 Kinematic Equations for Uniformly Accelerated Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.1 Introduction,0,12,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.2 Scalars and Vectors,2,2,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.3 Multiplication of Vectors By Real Numbers,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.4 Addition and Subtraction of,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.5 Resolution of Vectors,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.7 Motion in a Plane,1,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.8 Motion in a Plane with Constant Acceleration,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.9 Projectile Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph103,Ch 3: Motion in a Plane,3.10 Uniform Circular Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph104,Ch 4: Laws of Motion,4.1 Introduction,0,8,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph104,Ch 4: Laws of Motion,4.3 The Law of Inertia,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph104,Ch 4: Laws of Motion,4.7 Conservation of Momentum,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph104,Ch 4: Laws of Motion,4.8 Equilibrium of a Particle,0,2,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph104,Ch 4: Laws of Motion,4.9 Common Forces in Mechanics,1,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph104,Ch 4: Laws of Motion,4.10 Circular Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph104,Ch 4: Laws of Motion,4.11 Solving Problems in Mechanics,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.1 Introduction,1,7,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.2 Notions of Work and Kinetic Energy: the Work-energy Theorem,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.3 Work,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.4 Kinetic Energy,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.5 Work Done By a Variable Force,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.6 The Work-energy Theorem for a Variable Force,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.7 The Concept of Potential Energy,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.8 The Conservation of Mechanical Energy,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.9 The Potential Energy of a Spring,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.10 Power,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph105,"Ch 5: Work, Energy and Power",5.11 Collisions,3,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.1 Introduction,0,14,3,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.2 Centre of Mass,0,11,2,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.3 Motion of Centre of Mass,0,4,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.4 Linear Momentum of a System of Particles,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.5 Vector Product of Two Vectors,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.6 Angular Velocity and Its Relation with Linear Velocity,1,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.7 Torque and Angular Momentum,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.8 Equilibrium of a Rigid Body,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.9 Moment of Inertia,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.10 Kinematics of Rotational Motion About a Fixed Axis,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.11 Dynamics of Rotational Motion About a Fixed Axis,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,6.12 Angular Momentum in Case of Rotation About a Fixed Axis,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,34.6 N F,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph106,Ch 6: System of Particles and Rotational Motion,199.0 F N,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph107,Ch 7: Gravitation,5.41 Section 5.41,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph107,Ch 7: Gravitation,7.4 The Gravitational Constant,0,0,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph107,Ch 7: Gravitation,7.5 Acceleration Due to Gravity of the Earth,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph107,Ch 7: Gravitation,7.6 Acceleration Due to Gravity Below,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph107,Ch 7: Gravitation,7.8 Escape Speed,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph107,Ch 7: Gravitation,7.9 Earth Satellites,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph107,Ch 7: Gravitation,7.10 Energy of an Orbiting Satellite,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph201,Ch 8: Mechanical Properties of Solids,8.1 Introduction,0,3,2,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph201,Ch 8: Mechanical Properties of Solids,8.2 Stress and Strain,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph201,Ch 8: Mechanical Properties of Solids,8.4 Stress-strain Curve,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph201,Ch 8: Mechanical Properties of Solids,8.5 Elastic Moduli,3,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph201,Ch 8: Mechanical Properties of Solids,8.6 Applications of Elastic Behaviour of Materials,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph202,Ch 9: Mechanical Properties of Fluids,9.1 Introduction,0,12,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph202,Ch 9: Mechanical Properties of Fluids,9.2 Pressure,3,3,2,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph202,Ch 9: Mechanical Properties of Fluids,9.3 Streamline Flow,0,1,2,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph202,Ch 9: Mechanical Properties of Fluids,9.5 Viscosity,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph202,Ch 9: Mechanical Properties of Fluids,9.6 Surface Tension,5,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.1 Introduction,0,12,2,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.2 Temperature and Heat,0,2,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.3 Measurement of Temperature,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.4 Ideal-gas Equation and Absolute Temperature,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.5 Thermal Expansion,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.6 Specific Heat Capacity,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.7 Calorimetry,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.8 Change of State,1,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph203,Ch 10: Thermal Properties of Matter,10.9 Heat Transfer,4,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.1 Introduction,0,3,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.2 Thermal Equilibrium,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.3 Zeroth Law of Thermodynamics,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,"11.4 Heat, Internal Energy and Work",0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.5 First Law of Thermodynamics,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.6 Specific Heat Capacity,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.7 Thermodynamic State Variables and Equation of State,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.8 Thermodynamic Processes,6,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.9 Second Law of Thermodynamics,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.10 Reversible and Irreversible Processes,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph204,Ch 11: Thermodynamics,11.11 Carnot Engine,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph205,Ch 12: Kinetic Theory,12.1 Introduction,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph205,Ch 12: Kinetic Theory,12.2 Molecular Nature of Matter,0,1,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph205,Ch 12: Kinetic Theory,12.3 Behaviour of Gases,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph205,Ch 12: Kinetic Theory,12.4 Kinetic Theory of an Ideal Gas,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph205,Ch 12: Kinetic Theory,12.5 Law of Equipartition of Energy,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph205,Ch 12: Kinetic Theory,12.6 Specific Heat Capacity,4,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph205,Ch 12: Kinetic Theory,12.7 Mean Free Path,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph206,Ch 13: Oscillations,13.1 Introduction,0,11,1,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph206,Ch 13: Oscillations,13.2 Periodic and Oscillatory Motions,2,3,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph206,Ch 13: Oscillations,13.3 Simple Harmonic Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph206,Ch 13: Oscillations,13.4 Simple Harmonic Motion and Uniform Circular Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph206,Ch 13: Oscillations,13.5 Velocity and Acceleration in Simple Harmonic Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph206,Ch 13: Oscillations,13.6 Force Law for Simple Harmonic Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph206,Ch 13: Oscillations,13.7 Energy in Simple Harmonic Motion,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph207,Ch 14: Waves,14.1 Introduction,0,8,2,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph207,Ch 14: Waves,14.2 Transverse and Longitudinal Waves,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph207,Ch 14: Waves,14.3 Displacement Relation in a Progressive Wave,3,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph207,Ch 14: Waves,14.4 The Speed of a Travelling Wave,2,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph207,Ch 14: Waves,14.5 The Principle of Superposition of Waves,0,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph207,Ch 14: Waves,14.6 Reflection of Waves,1,1,0,5,TRUE,TRUE,PASS
+Class 11,Physics (Class 11),keph207,Ch 14: Waves,14.7 Beats,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo101,Ch 1: Sexual Reproduction in Flowering Plants,1.2 Pre-fertilisation: Structures and Events,3,4,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo101,Ch 1: Sexual Reproduction in Flowering Plants,1.3 Double Fertilisation,0,5,0,4,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo101,Ch 1: Sexual Reproduction in Flowering Plants,1.4 Post-fertilisation : Structures and Events,3,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo101,Ch 1: Sexual Reproduction in Flowering Plants,1.5 Apomixis and Polyembryony,0,4,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo102,Ch 2: Human Reproduction,2.1 The Male Reproductive System,0,16,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo102,Ch 2: Human Reproduction,2.2 The Female Reproductive System,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo102,Ch 2: Human Reproduction,2.3 Gametogenesis,0,5,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo102,Ch 2: Human Reproduction,2.4 Menstrual Cycle,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo102,Ch 2: Human Reproduction,2.5 Fertilisation and Implantation,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo102,Ch 2: Human Reproduction,2.6 Pregnancy and Embryonic Development,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo102,Ch 2: Human Reproduction,2.7 Parturition and Lactation,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo103,Ch 3: Reproductive Health,3.2 Population Stabilisation and Birth Control,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo103,Ch 3: Reproductive Health,3.3 Medical Termination of Pregnancy (mtp),0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo103,Ch 3: Reproductive Health,3.4 Sexually Transmitted Infections (stis),0,4,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo103,Ch 3: Reproductive Health,3.5 Infertility,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo104,Ch 4: Principles of Inheritance and Variation,4.2 Inheritance of One Gene,2,2,1,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo104,Ch 4: Principles of Inheritance and Variation,4.3 Inheritance of Two Genes,3,2,2,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo104,Ch 4: Principles of Inheritance and Variation,4.4 Polygenic Inheritance,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo104,Ch 4: Principles of Inheritance and Variation,4.5 Pleiotropy,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo104,Ch 4: Principles of Inheritance and Variation,4.6 Sex Determination,2,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo104,Ch 4: Principles of Inheritance and Variation,4.7 Mutation,0,4,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo104,Ch 4: Principles of Inheritance and Variation,4.8 Genetic Disorders,3,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.1 The Dna,2,15,1,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.2 The Search for Genetic Material,2,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.3 Rna World,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.4 Replication,2,6,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.5 Transcription,3,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.6 Genetic Code,1,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.7 Translation,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.8 Regulation of Gene Expression,1,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.9 Human Genome Project,2,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo105,Ch 5: Molecular Basis of Inheritance,5.10 Dna Fingerprinting,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo106,Ch 6: Evolution,6.1 Origin of Life,0,5,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo106,Ch 6: Evolution,6.5 Biological Evolution,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo106,Ch 6: Evolution,6.6 Mechanism of Evolution,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo106,Ch 6: Evolution,6.7 Hardy-weinberg Principle,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo106,Ch 6: Evolution,6.8 A Brief Account of Evolution,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo106,Ch 6: Evolution,6.9 Origin and Evolution of Man,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo107,Ch 7: Human Health and Disease,7.1 Common Diseases in Humans,0,5,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo107,Ch 7: Human Health and Disease,7.2 Immunity,7,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo107,Ch 7: Human Health and Disease,7.3 Aids,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo107,Ch 7: Human Health and Disease,7.4 Cancer,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo107,Ch 7: Human Health and Disease,7.5 Drugs and Alcohol Abuse,2,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo108,Ch 8: Microbes in Human Welfare,8.1 Microbes in Household Products,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo108,Ch 8: Microbes in Human Welfare,8.2 Microbes in Industrial Products,3,1,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo108,Ch 8: Microbes in Human Welfare,8.3 Microbes in Sewage Treatment,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo108,Ch 8: Microbes in Human Welfare,8.4 Microbes in Production of Biogas,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo108,Ch 8: Microbes in Human Welfare,8.5 Microbes As Biocontrol Agents,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo108,Ch 8: Microbes in Human Welfare,8.6 Microbes As Biofertilisers,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo109,Ch 9: Biotechnology: Principles and Processes,9.1 Principles of Biotechnology,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo109,Ch 9: Biotechnology: Principles and Processes,9.2 Tools of Recombinant Dna Technology,3,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo109,Ch 9: Biotechnology: Principles and Processes,9.3 Processes of Recombinant Dna Technology,6,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo110,Ch 10: Biotechnology and its Applications,10.1 Biotechnological Applications in Agriculture,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo110,Ch 10: Biotechnology and its Applications,10.2 Biotechnological Applications in Medicine,3,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo110,Ch 10: Biotechnology and its Applications,10.3 Transgenic Animals,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo110,Ch 10: Biotechnology and its Applications,10.4 Ethical Issues,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo111,Ch 11: Organisms and Populations,11.1 Populations,4,3,1,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo112,Ch 12: Ecosystem,12.2 Productivity,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo112,Ch 12: Ecosystem,12.3 Decomposition,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo112,Ch 12: Ecosystem,12.4 Energy Flow,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo112,Ch 12: Ecosystem,12.5 Ecological Pyramids,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo113,Ch 13: Biodiversity and Conservation,13.1 Biodiversity,4,2,0,5,TRUE,TRUE,PASS
+Class 12,Biology (Class 12),lebo113,Ch 13: Biodiversity and Conservation,13.2 Biodiversity Conservation,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech101,Ch 1: Solutions,1.1 Introduction and Core Principles of Solutions,0,3,1,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech102,Ch 2: Electrochemistry,2.1 Introduction and Core Principles of Electrochemistry,0,5,2,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech103,Ch 3: Chemical Kinetics,2.303 E T R,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech104,Ch 4: The d- and f-Block Elements,4.1 Introduction and Core Principles of the D- and F-block Elements,0,1,3,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech105,Ch 5: Coordination Compounds,5.1 Introduction and Core Principles of Coordination Compounds,0,6,1,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech201,Ch 6: Haloalkanes and Haloarenes,6.1 Introduction and Core Principles of Haloalkanes and Haloarenes,3,1,1,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech202,"Ch 7: Alcohols, Phenols and Ethers",7.10 C H Oh,0,0,0,2,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech203,"Ch 8: Aldehydes, Ketones and Carboxylic Acids","8.1 Introduction and Core Principles of Aldehydes, Ketones and Carboxylic Acids",2,1,1,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech204,Ch 9: Amines,9.1 Introduction and Core Principles of Amines,0,1,1,5,TRUE,TRUE,PASS
+Class 12,Chemistry (Class 12),lech205,Ch 10: Biomolecules,10.1 Introduction and Core Principles of Biomolecules,5,1,1,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.1 Introduction,0,12,0,3,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.2 Electric Charge,0,12,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.3 Conductors and Insulators,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.4 Basic Properties of Electric Charge,3,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.6 Forces Between Multiple Charges,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.7 Electric Field,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.8 Electric Field Lines,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.9 Electric Flux,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.10 Electric Dipole,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.11 Dipole in a Uniform External Field,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph101,Ch 1: Electric Charges and Fields,1.12 Continuous Charge Distribution,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.1 Introduction Ntroduction,0,11,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.2 Electrostatic Potential,0,11,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.3 Potential Due to a Point Charge,0,3,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.4 Potential Due to an Electric Dipole,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.5 Potential Due to a System of Charges,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.6 Equipotential Surfaces,1,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.7 Potential Energy of a System of Charges,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.8 Potential Energy in an External Field,3,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.9 Electrostatics of Conductors,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.10 Dielectrics and Polarisation,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.11 Capacitors and Capacitance,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.12 The Parallel Plate Capacitor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.13 Effect of Dielectric on Capacitance,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.14 Combination of Capacitors,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph102,Ch 2: Electrostatic Potential and Capacitance,2.15 Energy Stored in a Capacitor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.1 Introduction,0,11,0,3,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.2 Electric Current,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.3 Electric Currents in Conductors,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.5 Drift of Electrons and the Origin of Resistivity,1,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.7 Resistivity of Various Materials,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.8 Temperature Dependence of Resistivity,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,"3.9 Electrical Energy, Power",0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,"3.10 Cells, Emf, Internal Resistance",0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.11 Cells Ells Ells in in in S S Series Eries Eries and and,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph103,Ch 3: Current Electricity,3.13 Wheatstone Bridge,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,4.1 Introduction,0,12,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,4.2 Magnetic Force,3,5,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,4.3 Motion in a Magnetic Field,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,"4.4 Magnetic Field Due to a Current Element, Biot-savart Law",0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,4.5 Magnetic Field on the Axis of a Circular Current Loop,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,4.7 The Solenoid,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,"4.8 Force Between Two Parallel Currents, the Ampere",0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,"4.9 Torque on Current Loop, Magnetic Dipole",2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph104,Ch 4: Moving Charges and Magnetism,4.10 The Moving Coil Galvanometer,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph105,Ch 5: Magnetism and Matter,5.1 Introduction,0,1,1,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph105,Ch 5: Magnetism and Matter,5.2 The He He B B Bar Ar Ar M M Magnet Agnet,4,1,1,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph105,Ch 5: Magnetism and Matter,5.4 Magnetisation and Magnetic Intensity,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph105,Ch 5: Magnetism and Matter,5.5 Magnetic Properties of Materials,3,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph106,Ch 6: Electromagnetic Induction,0.5 I R,0,0,0,4,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph106,Ch 6: Electromagnetic Induction,6.1 Introduction,0,9,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph106,Ch 6: Electromagnetic Induction,6.2 The Experiments of Faraday and Henry,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph106,Ch 6: Electromagnetic Induction,6.3 Magnetic Flux,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph106,Ch 6: Electromagnetic Induction,6.6 Motional Electromotive Force,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph106,Ch 6: Electromagnetic Induction,6.7 Inductance,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph106,Ch 6: Electromagnetic Induction,6.8 Ac Generator,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.1 Introduction,0,10,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.2 Ac Voltage Applied to a Resistor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.3 Representation of Ac Current and Voltage,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.4 Ac Voltage Applied to an Inductor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.5 Ac Voltage Applied to a Capacitor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.6 Ac Voltage Applied to a Series Lcr Circuit,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.7 Power in Ac Circuit: the Power Factor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.8 Transformers,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,7.85 L V I X,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,160.3 V C V I X,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph107,Ch 7: Alternating Current,291.5 V I Z,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph108,Ch 8: Electromagnetic Waves,8.1 Introduction,0,2,1,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph108,Ch 8: Electromagnetic Waves,8.2 Displacement Current,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph108,Ch 8: Electromagnetic Waves,8.3 Electromagnetic Waves,2,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph108,Ch 8: Electromagnetic Waves,8.4 Electromagnetic Spectrum,7,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph201,Ch 9: Ray Optics and Optical Instruments,9.1 Introduction,0,12,2,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph201,Ch 9: Ray Optics and Optical Instruments,9.2 Reflection of Light By Spherical Mirrors,3,11,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph201,Ch 9: Ray Optics and Optical Instruments,9.3 Refraction,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph201,Ch 9: Ray Optics and Optical Instruments,9.4 Total Internal Reflection,1,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph201,Ch 9: Ray Optics and Optical Instruments,9.5 Refraction at Spherical Surfaces and By Lenses,4,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph201,Ch 9: Ray Optics and Optical Instruments,9.6 Refraction Through a Prism,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph201,Ch 9: Ray Optics and Optical Instruments,9.7 Optical Instruments,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph202,Ch 10: Wave Optics,10.1 Introduction,0,11,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph202,Ch 10: Wave Optics,10.2 Huygens Principle,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph202,Ch 10: Wave Optics,10.3 Refraction and Reflection of,3,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph202,Ch 10: Wave Optics,10.4 Coherent and Incoherent Addition of Waves,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph202,Ch 10: Wave Optics,10.6 Diffraction,2,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph202,Ch 10: Wave Optics,10.7 Polarisation,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph203,Ch 11: Dual Nature of Radiation and Matter,11.1 Introduction,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph203,Ch 11: Dual Nature of Radiation and Matter,11.2 Electron Emission,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph203,Ch 11: Dual Nature of Radiation and Matter,11.3 Photoelectric Effect,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph203,Ch 11: Dual Nature of Radiation and Matter,11.4 Experimental Study of Photoelectric Effect,3,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph203,Ch 11: Dual Nature of Radiation and Matter,11.5 Photoelectric Effect and Wave Theory of Light,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph203,Ch 11: Dual Nature of Radiation and Matter,11.7 Particle Nature of Light: the Photon,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph203,Ch 11: Dual Nature of Radiation and Matter,11.8 Wave Nature of Matter,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph204,Ch 12: Atoms,12.1 Introduction,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph204,Ch 12: Atoms,12.2 Alpha Lpha Lpha-par Ar Article Ticle Ticle S S Sca Ca,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph204,Ch 12: Atoms,12.3 Atomic Spectra,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph204,Ch 12: Atoms,12.4 Bohr Model of the Hydrogen Atom,1,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph204,Ch 12: Atoms,12.5 The Line Spectra of the Hydrogen Atom,0,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph205,Ch 13: Nuclei,13.1 Introduction,0,1,0,3,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph205,Ch 13: Nuclei,13.2 Atomic Masses and Composition of Nucleus,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph205,Ch 13: Nuclei,13.3 Size of the Nucleus,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph205,Ch 13: Nuclei,13.4 Mass-energy and Nuclear Binding Energy,1,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph205,Ch 13: Nuclei,13.5 Nuclear Force,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph205,Ch 13: Nuclei,13.6 Radioactivity,0,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph205,Ch 13: Nuclei,13.7 Nuclear Energy,2,0,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph206,"Ch 14: Semiconductor Electronics: Materials, Devices and Simple Circuits",14.1 Introduction,0,11,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph206,"Ch 14: Semiconductor Electronics: Materials, Devices and Simple Circuits","14.2 Classification of Metals, Conductors and Semiconductors",0,2,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph206,"Ch 14: Semiconductor Electronics: Materials, Devices and Simple Circuits",14.3 Intrinsic Semiconductor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph206,"Ch 14: Semiconductor Electronics: Materials, Devices and Simple Circuits",14.4 Extrinsic Semiconductor,0,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph206,"Ch 14: Semiconductor Electronics: Materials, Devices and Simple Circuits",14.6 Semiconductor Diode,2,1,0,5,TRUE,TRUE,PASS
+Class 12,Physics (Class 12),leph206,"Ch 14: Semiconductor Electronics: Materials, Devices and Simple Circuits",14.7 Application of Junction Diode As a Rectifier,0,1,0,5,TRUE,TRUE,PASS
