@@ -1,0 +1,3300 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String          @id @default(cuid())
+  email        String          @unique
+  name         String
+  role         String          @default("STUDENT") // STUDENT | ADMIN
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  profile      StudentProfile?
+  attempts     ExamAttempt[]
+  mistakes     StudentMistake[]
+  bookmarks        StudentBookmark[]
+  revisions        RevisionSchedule[]
+  progress         StudyProgress[]
+  auditLogs        AuditLog[]
+  conceptMasteries StudentConceptMastery[]
+  attemptEvents    AttemptEvent[]
+  exposures        QuestionExposure[]
+  dailyPlans       DailyLearningPlan[]
+  snapshots        PerformanceSnapshot[]
+  tutorConversations TutorConversation[]
+  aiFeedback         AIFeedback[]
+  aiUsageLogs        AIUsageLog[]
+  aiRateLimit        AIRateLimit?
+
+  // Phase 7: Command Center Relations
+  parentRelationshipsAsParent  ParentStudentRelationship[] @relation("ParentRelationship")
+  parentRelationshipsAsStudent ParentStudentRelationship[] @relation("StudentParentRelationship")
+  mentorAssignmentsAsMentor    MentorStudentAssignment[]   @relation("MentorAssignments")
+  mentorAssignmentsAsStudent   MentorStudentAssignment[]   @relation("StudentMentorAssignments")
+  assignmentsCreated           Assignment[]                @relation("AssignmentCreator")
+  assignmentsAssigned          AssignmentProgress[]        @relation("StudentAssignments")
+  mentorNotesAuthored          MentorNote[]                @relation("NoteAuthor")
+  mentorNotesReceived          MentorNote[]                @relation("StudentNotes")
+  notifications                Notification[]              @relation("UserNotifications")
+  goals                        Goal[]                      @relation("UserGoals")
+  activities                   LearningActivity[]          @relation("UserActivities")
+  alerts                       Alert[]                     @relation("UserAlerts")
+  invitationsCreated           Invitation[]                @relation("InvitationCreator")
+
+  // Phase 8: Multi-Tenant & SaaS Relations
+  tenantId                     String?
+  tenant                       Tenant?                     @relation("TenantUsers", fields: [tenantId], references: [id])
+  diagnostics                  StudentDiagnostic[]
+
+  // Phase 9: Exam Intelligence & Preparation OS
+  planningConfig               StudentPlanningConfig?
+  preparationPlans             PreparationPlan[]
+  examUpdateNotifications      ExamUpdateNotification[]
+
+  // Phase 16: NTA Notifications & Official Intelligence Center
+  officialNotificationReads    OfficialNotificationReadState[]
+  notificationSubscription     NotificationSubscription?
+
+  // Phase 10: Advanced Assessment, Question Intelligence & Psychometrics 2.0
+  assessmentBaseline           StudentAssessmentBaseline?
+  questionReviewsAuthored      QuestionReview[]
+
+  // Phase 11: NEET Personal AI Study Operating System
+  preparationProfile           StudentPreparationProfile?
+  dailyStudyPlans              DailyStudyPlan[]
+  dailyStudyTasks              DailyStudyTask[]
+  studySessions                StudySession[]
+  studyEvents                  StudyEvent[]
+  preparationBacklogItems      PreparationBacklog[]
+  planVersions                 PlanVersion[]
+  recoveryPlans                RecoveryPlan[]
+  weeklyPreparationReviews     WeeklyPreparationReview[]
+  monthlyPreparationReviews    MonthlyPreparationReview[]
+  studyStreakRecord            StudyStreak?
+
+  // Phase 12: Final-Mile Exam Readiness & Full Exam Simulation OS
+  finalMileConfig              FinalMileConfiguration?
+  finalRevisionPlans           FinalRevisionPlan[]
+  examSimulationAttempts       ExamSimulationAttempt[]
+  examSimulationResults        ExamSimulationResult[]
+  simulationReviewItems        SimulationReviewQueue[]
+  finalMileActionPlans         FinalMileActionPlan[]
+  finalDaysMode                FinalDaysMode?
+  examDayChecklistItems        ExamDayChecklist[]
+  examReadinessSnapshots       ExamReadinessSnapshot[]
+  simulationComparisons        SimulationComparison[]
+
+  // Phase 14: Content Review & Scientific Validation
+  contentReviewsAssigned       ContentReview[]
+
+  // Phase 15: Student Learning Intelligence & Personalization
+  learningProfile              StudentLearningProfile?
+  learningSnapshots            StudentLearningSnapshot[]
+  learningBaselines            StudentBaseline[]
+  learningTrends               LearningTrend[]
+  learningInterventions        LearningIntervention[]
+  learningInsights             LearningInsight[]
+
+  // Phase 16: Complete NCERT Learning System
+  topicProgresses              TopicProgress[]
+}
+
+model StudentProfile {
+  id                   String   @id @default(cuid())
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  targetExamYear       Int      @default(2027)
+  dailyTargetQuestions Int      @default(50)
+  dailyTargetMinutes   Int      @default(180)
+  currentStreak        Int      @default(0)
+  totalAttempted       Int      @default(0)
+  totalCorrect         Int      @default(0)
+  accuracyRate         Float    @default(0.0)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+model ClassLevel {
+  id        String    @id @default(cuid())
+  name      String    // "Class 11", "Class 12"
+  code      String    @unique // "CLASS_11", "CLASS_12"
+  order     Int       @default(1)
+  subjects  Subject[]
+  questions Question[]
+}
+
+model Subject {
+  id           String      @id @default(cuid())
+  name         String      // "Physics", "Chemistry", "Biology"
+  code         String      // "PHYSICS", "CHEMISTRY", "BIOLOGY"
+  classLevelId String
+  classLevel   ClassLevel  @relation(fields: [classLevelId], references: [id], onDelete: Cascade)
+  units        Unit[]
+  chapters     Chapter[]
+  questions    Question[]
+
+  @@unique([code, classLevelId])
+}
+
+model Unit {
+  id          String    @id @default(cuid())
+  title       String
+  unitNumber  Int
+  subjectId   String
+  subject     Subject   @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  chapters    Chapter[]
+}
+
+model Chapter {
+  id              String      @id @default(cuid())
+  chapterNumber   Int
+  title           String
+  slug            String      @unique
+  subjectId       String
+  subject         Subject     @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  unitId          String?
+  unit            Unit?       @relation(fields: [unitId], references: [id])
+  biologyCategory String?     // "BOTANY" | "ZOOLOGY" | null
+  ncertBookCode   String?     // e.g. "kebo101", "keph101"
+  topics          Topic[]
+  concepts        Concept[]
+  questions       Question[]
+  sections        ContentSection[]
+  figures         ContentFigure[]
+  tables          ContentTable[]
+  studyProgress   StudyProgress[]
+  mistakes        StudentMistake[]
+}
+
+model Topic {
+  id                    String          @id @default(cuid())
+  topicNumber           String?         // "2.1", "2.2", etc.
+  title                 String
+  orderIndex            Int             @default(1)
+  slug                  String?         @unique
+  chapterId             String
+  chapter               Chapter         @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  pageStart             Int?
+  pageEnd               Int?
+  contentHtml           String?
+  contentMarkdown       String?
+  sourceProvenance      String?         // JSON metadata
+  hinglishExplanation  String?
+  englishExplanation   String?
+  hindiExplanation     String?
+  audioScriptHinglish   String?
+  audioScriptEnglish    String?
+  audioScriptHindi      String?
+  audioUrl              String?
+  subtopics             Subtopic[]
+  concepts              Concept[]
+  questions             Question[]
+  topicProgresses       TopicProgress[]
+}
+
+model Subtopic {
+  id             String     @id @default(cuid())
+  subtopicNumber String?    // "2.1.1", "2.1.2", etc.
+  title          String
+  orderIndex     Int        @default(1)
+  topicId        String
+  topic          Topic      @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  contentHtml    String?
+  concepts       Concept[]
+  questions      Question[]
+}
+
+model TopicProgress {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  topicId         String
+  topic           Topic     @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  status          String    @default("NOT_STARTED") // NOT_STARTED | IN_PROGRESS | COMPLETED
+  contentRead     Boolean   @default(false)
+  explanationUsed Boolean   @default(false)
+  audioListened   Boolean   @default(false)
+  dppCompleted         Boolean   @default(false)
+  dppScore             Float?
+  mtgPracticeCompleted Boolean   @default(false)
+  mtgPracticeScore     Float?
+  completedAt          DateTime?
+  lastAccessedAt  DateTime  @default(now())
+
+  @@unique([userId, topicId])
+}
+
+model Concept {
+  id                       String             @id // Stable ID e.g. "CONCEPT_NEWTON_2ND_LAW"
+  name                     String
+  description              String?
+  formula                  String?
+  definition               String?
+  laws                     String?
+  importantStatements      String?
+  scientificNames          String?
+  chemicalReactions        String?
+  mathematicalRelationships String?
+  exceptions               String?
+  ncertReference           String?            // JSON: { chapter, pageStart, pageEnd, sectionNumber }
+  chapterId                String
+  chapter                  Chapter            @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  topicId                  String?
+  topic                    Topic?             @relation(fields: [topicId], references: [id])
+  subtopicId               String?
+  subtopic                 Subtopic?          @relation(fields: [subtopicId], references: [id])
+  primaryQuestions         Question[]         @relation("PrimaryConcept")
+  mistakes                 StudentMistake[]
+  revisions                RevisionSchedule[]
+  masteries                StudentConceptMastery[]
+}
+
+model ContentAsset {
+  id               String           @id @default(cuid())
+  title            String
+  filename         String
+  originalPath     String?
+  storageKey       String?
+  assetType        String           // "NCERT_BOOK" | "FINGERTIPS" | "PYQ_PAPER"
+  fileSize         Int
+  mimeType         String           @default("application/pdf")
+  checksum         String?
+  processingStatus String           @default("PENDING") // PENDING | PROCESSING | EXTRACTED | FAILED
+  totalPages       Int              @default(0)
+  pagesProcessed   Int              @default(0)
+  metadata         String?          // JSON metadata
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  versions         ContentVersion[]
+  questions        Question[]
+  pageLogs         PageProcessingLog[]
+  figures          ContentFigure[]
+  tables           ContentTable[]
+}
+
+model ContentSection {
+  id            String   @id @default(cuid())
+  chapterId     String
+  chapter       Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  sectionNumber String?
+  title         String
+  pageStart     Int
+  pageEnd       Int?
+  contentHtml   String?
+  createdAt     DateTime @default(now())
+}
+
+model ContentFigure {
+  id             String       @id @default(cuid())
+  contentAssetId String
+  contentAsset   ContentAsset @relation(fields: [contentAssetId], references: [id], onDelete: Cascade)
+  chapterId      String?
+  chapter        Chapter?     @relation(fields: [chapterId], references: [id])
+  figureNumber   String?      // e.g. "Figure 2.6"
+  caption        String
+  imagePath      String       // relative URL e.g. "/extracted_figures/fig_kebo102_p11_1.png"
+  labels         String?      // JSON array of callouts e.g. ["RNA", "Capsid"]
+  pageNumber     Int
+  createdAt      DateTime     @default(now())
+}
+
+model ContentTable {
+  id             String       @id @default(cuid())
+  contentAssetId String
+  contentAsset   ContentAsset @relation(fields: [contentAssetId], references: [id], onDelete: Cascade)
+  chapterId      String?
+  chapter        Chapter?     @relation(fields: [chapterId], references: [id])
+  tableNumber    String?      // e.g. "Table 2.1"
+  title          String
+  headersJson    String       // JSON array of column headers
+  rowsJson       String       // JSON 2D array of row cells
+  pageNumber     Int
+  createdAt      DateTime     @default(now())
+}
+
+model PageProcessingLog {
+  id                 String       @id @default(cuid())
+  contentAssetId     String
+  contentAsset       ContentAsset @relation(fields: [contentAssetId], references: [id], onDelete: Cascade)
+  pageNumber         Int
+  status             String       @default("PENDING") // PENDING | IN_PROGRESS | DONE | FAILED
+  retryCount         Int          @default(0)
+  conceptsExtracted  Int          @default(0)
+  questionsExtracted Int          @default(0)
+  errorMessage       String?
+  updatedAt          DateTime     @default(now())
+
+  @@unique([contentAssetId, pageNumber])
+}
+
+model ContentVersion {
+  id              String        @id @default(cuid())
+  contentAssetId  String?
+  contentAsset    ContentAsset? @relation(fields: [contentAssetId], references: [id], onDelete: Cascade)
+  contentId       String?       // Generic content object identifier (Question, Concept, Section, etc.)
+  contentType     String?       // NCERT | PYQ | FINGERTIPS | QUESTION | CONCEPT | TOPIC | CHAPTER | FIGURE | TABLE | EXPLANATION | SOLUTION | REVISION_NOTE | AI_GENERATED_CONTENT | AI_GENERATED_QUESTION
+  versionNumber   Int           @default(1)
+  contentSnapshot String?       // Serialized text or JSON content
+  sourceSnapshot  String?       // Provenance metadata snapshot
+  contentHash     String?       // SHA-256 hash
+  changeType      String?       // CREATED | MODIFIED | REVISED | RETIRED | RESTORED
+  changeReason    String?
+  changedBy       String?
+  changeLog       String?
+  createdAt       DateTime      @default(now())
+
+  @@index([contentId])
+  @@index([contentType])
+  @@index([contentHash])
+}
+
+model Question {
+  id                     String            @id // Stable unique ID e.g. "Q_AIIMS_2006_PHY_001"
+  questionText           String
+  questionType           String            @default("SINGLE_CORRECT") // SINGLE_CORRECT | ASSERTION_REASON | STATEMENT_BASED | MATCH_THE_FOLLOWING | NUMERICAL | DIAGRAM_BASED | PASSAGE_BASED
+  difficulty             String            @default("MEDIUM")         // EASY | MEDIUM | HARD
+  subjectId              String
+  subject                Subject           @relation(fields: [subjectId], references: [id])
+  classLevelId           String
+  classLevel             ClassLevel        @relation(fields: [classLevelId], references: [id])
+  chapterId              String
+  chapter                Chapter           @relation(fields: [chapterId], references: [id])
+  topicId                String?
+  topic                  Topic?            @relation(fields: [topicId], references: [id])
+  subtopicId             String?
+  subtopic               Subtopic?         @relation(fields: [subtopicId], references: [id])
+  primaryConceptId       String?
+  primaryConcept         Concept?          @relation("PrimaryConcept", fields: [primaryConceptId], references: [id])
+  secondaryConceptIds    String?           // JSON array string: ["CONCEPT_A", "CONCEPT_B"]
+  sourceType             String            @default("PYQ")            // PYQ | FINGERTIPS | NCERT_EXEMPLAR | AI_GENERATED
+  examName               String?           // "NEET-UG", "AIIMS", "AIPMT"
+  examYear               Int?              // Strictly verified year
+  examShift              String?           // "Shift 1", etc.
+  originalQuestionNumber String?
+  sourceDocumentId       String?
+  sourceDocument         ContentAsset?     @relation(fields: [sourceDocumentId], references: [id])
+  sourcePage             Int?
+  extractionMethod       String            @default("EMBEDDED_TEXT")  // EMBEDDED_TEXT | OCR | HYBRID
+  ocrConfidence          Float             @default(1.0)
+  qualityScore           Float             @default(1.0)              // Internal quality score 0.0 - 1.0
+  qualityFlags           String?           // JSON array string
+  verificationStatus     String            @default("NEEDS_REVIEW")   // DRAFT | PROCESSING | NEEDS_REVIEW | VERIFIED | REJECTED | DUPLICATE_CANDIDATE
+  publicationStatus      String            @default("UNPUBLISHED")    // UNPUBLISHED | PUBLISHED | ARCHIVED
+  mappingStatus          String            @default("AUTO_MAPPED")    // AUTO_MAPPED | REVIEW_REQUIRED | MANUALLY_MAPPED
+  lastVerifiedAt         DateTime?
+  verifiedBy             String?
+  correctOption          String            // "A", "B", "C", "D"
+  explanation            String?
+  whyThisQuestion        String?           // JSON: { conceptTested, ncertRef, pyqFrequency, patternNotes }
+  fingerprint            String?           // SHA256 deduplication fingerprint
+  createdAt              DateTime          @default(now())
+  updatedAt              DateTime          @updatedAt
+
+  bookName               String?           // For Fingertips: e.g. "MTG Objective NCERT at your Fingertips - Biology"
+  bookEdition            String?           // e.g. "2026", "Latest Rationalised"
+  yearConfidence         Float             @default(1.0)
+  yearSource             String            @default("EXPLICIT_HEADER") // EXPLICIT_HEADER | EXPLICIT_METADATA | SOURCE_FILENAME | INFERRED | UNKNOWN
+  difficultySource       String            @default("SOURCE")         // SOURCE | DERIVED | MANUAL
+  difficultyConfidence   Float             @default(1.0)
+  answerValidationStatus String            @default("VERIFIED")       // VERIFIED | CONFLICT | NEEDS_REVIEW
+  linkConfidence         String            @default("HIGH")           // HIGH | MEDIUM | LOW
+  linkMethod             String            @default("EXACT_TERM")     // EXACT_TERM | KEYWORD | SEMANTIC | AI | MANUAL
+  duplicateOfId          String?
+  sameQuestionAsId       String?           // Cross-source reference (e.g. Fingertips question based on PYQ)
+
+  syllabusStatus         String            @default("CURRENT") // CURRENT | OUTSIDE_CURRENT_SYLLABUS | UNMAPPED | REVIEW_REQUIRED
+
+  // Phase 10: Assessment Intelligence & Psychometrics
+  assessmentStatus       String            @default("ACTIVE") // ACTIVE | MONITORED | REVIEW_REQUIRED | TEMPORARILY_SUPPRESSED | RETIRED
+
+  options                QuestionOption[]
+  figures                QuestionFigure[]
+  testQuestions          TestQuestion[]
+  studentResponses       StudentResponse[]
+  mistakes               StudentMistake[]
+  bookmarks              StudentBookmark[]
+  revisions              RevisionSchedule[]
+  attemptEvents          AttemptEvent[]
+  exposures              QuestionExposure[]
+
+  // Phase 10 Relations
+  assessmentProfile      QuestionAssessmentProfile?
+  performanceSnapshots   QuestionPerformanceSnapshot[]
+  optionPerformances     QuestionOptionPerformance[]
+  anomalies              QuestionAnomaly[]
+  versions               QuestionVersion[]
+  reviews                QuestionReview[]
+  aiValidations          AIQuestionValidation[]
+  formQuestions          TestFormQuestion[]
+
+  // Phase 12 Relations
+  simulationSnapshots    SimulationQuestionSnapshot[]
+  simulationReviews      SimulationReviewQueue[]
+
+  @@index([fingerprint])
+  @@index([verificationStatus, publicationStatus])
+  @@index([subjectId, chapterId])
+  @@index([examYear, examName])
+  @@index([sourceType])
+  @@index([syllabusStatus])
+  @@index([assessmentStatus])
+}
+
+model QuestionFigure {
+  id               String       @id @default(cuid())
+  questionId       String
+  question         Question     @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  assetPath        String       // relative URL e.g. "/extracted_figures/q_fig_xxx.png"
+  caption          String?
+  sourcePage       Int?
+  boundingBox      String?      // JSON [x0, y0, x1, y1]
+  extractionMethod String       @default("VECTOR_IMAGE") // VECTOR_IMAGE | RASTER_CROP
+  createdAt        DateTime     @default(now())
+
+  @@index([questionId])
+}
+
+model QuestionIdentity {
+  id                  String    @id @default(cuid())
+  normalizedHash      String    @unique
+  semanticHash        String?
+  canonicalQuestionId String?
+  questionIds         String    // JSON array string of question IDs sharing this identity
+  sourceCount         Int       @default(1)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([normalizedHash])
+}
+
+model QuestionOption {
+  id         String   @id @default(cuid())
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  label      String   // "A", "B", "C", "D"
+  text       String
+  orderIndex Int      @default(1)
+
+  @@unique([questionId, label])
+}
+
+model ExamPattern {
+  id                   String          @id @default(cuid())
+  examName             String          @default("NEET UG")
+  examYear             Int             @default(2027)
+  durationMinutes      Int             @default(180)
+  totalQuestions       Int             @default(180)
+  totalMarks           Float           @default(720.0)
+  positiveMarks        Float           @default(4.0)
+  negativeMarks        Float           @default(1.0)
+  subjectConfiguration String          // JSON: { BIOLOGY: 90, PHYSICS: 45, CHEMISTRY: 45 }
+  sectionConfiguration String?         // JSON: { SectionA: { count: 35, compulsory: true }, SectionB: { count: 15, maxToAttempt: 10 } }
+  instructions         String?         // Full exam instructions markdown
+  active               Boolean         @default(true)
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+  tests                Test[]
+  blueprints           TestBlueprint[]
+
+  @@index([active])
+}
+
+model TestBlueprint {
+  id                     String        @id @default(cuid())
+  title                  String
+  examPatternId          String?
+  examPattern            ExamPattern?  @relation(fields: [examPatternId], references: [id])
+  targetCount            Int           @default(180)
+  subjectDistribution    String        // JSON: { BIOLOGY: 90, PHYSICS: 45, CHEMISTRY: 45 }
+  domainDistribution     String?       // JSON: { BOTANY: 45, ZOOLOGY: 45, MECHANICS: 15, ... }
+  difficultyDistribution String?       // JSON: { EASY: 0.35, MEDIUM: 0.50, HARD: 0.15 }
+  sourceDistribution     String?       // JSON: { PYQ: 0.40, NCERT: 0.40, FINGERTIPS: 0.20 }
+  rulesJson              String?       // JSON: { allowDuplicates: false, requireVerified: true, minQualityScore: 0.70 }
+  createdAt              DateTime      @default(now())
+  updatedAt              DateTime      @updatedAt
+  tests                  Test[]
+}
+
+model Test {
+  id               String          @id @default(cuid())
+  title            String
+  description      String?
+  testType         String          @default("CUSTOM") // FULL_MOCK | GRAND_MOCK | SUBJECT_TEST | CHAPTER_TEST | TOPIC_TEST | PYQ_TEST | WEAKNESS_TEST | REVISION_TEST | CUSTOM_TEST | PRACTICE
+  durationMinutes  Int             @default(60)
+  totalMarks       Int             @default(180)
+  totalQuestions   Int             @default(45)
+  positiveMarks    Float           @default(4.0)
+  negativeMarks    Float           @default(1.0)
+  isConfigurable   Boolean         @default(true)
+  isPublished      Boolean         @default(true)
+  templateType     String          @default("NEET_FULL")
+  configJson       String?         // Configurable duration, marking, subject distribution
+  version          Int             @default(1)
+  examPatternId    String?
+  examPattern      ExamPattern?    @relation(fields: [examPatternId], references: [id])
+  blueprintId      String?
+  blueprint        TestBlueprint?  @relation(fields: [blueprintId], references: [id])
+  blueprintJson    String?         // Immutable snapshot of blueprint used for this test
+  mode             String          @default("EXAM") // PRACTICE | TEST | EXAM | REVIEW
+  publishedAt      DateTime?
+  createdBy        String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  testQuestions    TestQuestion[]
+  attempts         ExamAttempt[]
+
+  // Phase 8: Multi-Tenant Custom Tests
+  tenantId         String?
+  tenant           Tenant?         @relation("TenantTests", fields: [tenantId], references: [id])
+  isCustom         Boolean         @default(false)
+  simulations      ExamSimulation[]
+
+  @@index([testType])
+  @@index([isPublished])
+  @@index([version])
+  @@index([tenantId])
+}
+
+model TestQuestion {
+  id            String   @id @default(cuid())
+  testId        String
+  test          Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+  questionId    String
+  question      Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  sectionName   String   @default("Section A")
+  questionOrder Int      @default(1)
+  marks         Float?
+  negativeMarks Float?
+  subject       String?
+
+  @@unique([testId, questionId])
+  @@unique([testId, questionOrder])
+  @@index([testId])
+  @@index([questionId])
+}
+
+model ExamAttempt {
+  id                  String            @id @default(cuid())
+  testId              String
+  test                Test              @relation(fields: [testId], references: [id])
+  userId              String
+  user                User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startedAt           DateTime          @default(now())
+  submittedAt         DateTime?
+  expiresAt           DateTime?         // Server authoritative expiry: startedAt + allowedDuration
+  durationSeconds     Int               @default(0)
+  totalScore          Float             @default(0.0)
+  accuracy            Float             @default(0.0)
+  status              String            @default("CREATED") // CREATED | IN_PROGRESS | PAUSED | EXPIRED | SUBMITTED | EVALUATED | CANCELLED
+  activeQuestionIndex Int               @default(0)
+  remainingSeconds    Int               @default(0)
+  isSubmitted         Boolean           @default(false)
+  submissionToken     String?           @unique // Idempotency token
+  version             Int               @default(1) // Version of test attempted
+  mode                String            @default("EXAM") // PRACTICE | TEST | EXAM | REVIEW
+  section             String?           // Active section name
+  lastHeartbeatAt     DateTime?
+  markedForReviewJson String?           // JSON array of question IDs
+  answersJson         String?           // JSON map of { questionId: selectedOption }
+  templateType        String            @default("NEET_FULL")
+  analyticsJson       String?           // Comprehensive post-test analysis
+  timeAnalysisJson    String?           // Detailed question and section timing analytics
+  actionPlanJson      String?           // Post-mock action plan
+  metadataJson        String?           // Client/Browser/Network metadata
+  snapshotData        String?           // Immutable snapshot of question and answers at attempt time
+  responses           StudentResponse[]
+
+  // Phase 12: Simulation link
+  simulationAttempt   ExamSimulationAttempt?
+
+  @@index([userId])
+  @@index([testId])
+  @@index([status])
+  @@index([submissionToken])
+}
+
+model StudentResponse {
+  id                 String      @id @default(cuid())
+  examAttemptId      String
+  examAttempt        ExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
+  questionId         String
+  question           Question    @relation(fields: [questionId], references: [id])
+  selectedOption     String?     // "A", "B", "C", "D" or null
+  isCorrect          Boolean     @default(false)
+  isMarkedForReview  Boolean     @default(false)
+  timeSpentSeconds   Int         @default(0)
+  marksAwarded       Float       @default(0.0)
+
+  // Phase 10: Immutable Question Version Snapshot
+  questionVersionId      String?
+  correctOptionAtAttempt String?
+  responseTimeMs         Int?
+  conceptSnapshot        String?
+  difficultySnapshot     String?
+
+  // Phase 12: Answer Change & Confidence Tracking
+  originalAnswer         String?
+  finalAnswer            String?
+  isAnswerChanged        Boolean     @default(false)
+  confidenceLevel        String?     // HIGH_CONFIDENCE | MEDIUM_CONFIDENCE | LOW_CONFIDENCE
+
+  @@unique([examAttemptId, questionId])
+}
+
+model StudentMistake {
+  id             String    @id @default(cuid())
+  userId         String
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId     String
+  question       Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  conceptId      String?
+  concept        Concept?  @relation(fields: [conceptId], references: [id])
+  chapterId      String
+  chapter        Chapter   @relation(fields: [chapterId], references: [id])
+  selectedOption String?
+  correctOption  String
+  mistakeCount   Int       @default(1)
+  lastMistakeAt  DateTime  @default(now())
+  isResolved     Boolean   @default(false)
+  mistakeType    String    @default("UNKNOWN") // CONCEPTUAL | CALCULATION | MEMORY | MISREAD | SILLY | TIME_PRESSURE | OPTION_CONFUSION | FORMULA | DIAGRAM_INTERPRETATION | GUESS | UNKNOWN
+  confidence     Float     @default(0.5)
+  evidence       String?   // JSON reasoning for mistake detection
+  notes          String?
+  isLearned      Boolean   @default(false)
+  learnedAt      DateTime?
+
+  @@unique([userId, questionId])
+}
+
+model StudentBookmark {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  note       String?
+  createdAt  DateTime @default(now())
+
+  @@unique([userId, questionId])
+}
+
+model StudyProgress {
+  id                 String    @id @default(cuid())
+  userId             String
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapterId          String
+  chapter            Chapter   @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  conceptsCompleted  Int       @default(0)
+  questionsAttempted Int       @default(0)
+  accuracy           Float     @default(0.0)
+  lastStudiedAt      DateTime  @default(now())
+
+  @@unique([userId, chapterId])
+}
+
+model RevisionSchedule {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conceptId       String?
+  concept         Concept?  @relation(fields: [conceptId], references: [id])
+  questionId      String?
+  question        Question? @relation(fields: [questionId], references: [id])
+  category        String    @default("DUE_TODAY") // DUE_TODAY | DUE_SOON | WEAK | MASTERED
+  repetitionLevel Int       @default(0)
+  intervalDays    Int       @default(1)
+  easeFactor      Float     @default(2.5)
+  lastReviewedAt  DateTime?
+  nextRevisionAt  DateTime  @default(now())
+  createdAt       DateTime  @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id])
+  action     String   // e.g. "APPROVE_QUESTION", "EDIT_QUESTION", "PUBLISH_CONTENT"
+  entityType String   // "Question", "Chapter", "ContentAsset"
+  entityId   String
+  oldValues  String?  // JSON snapshot
+  newValues  String?  // JSON snapshot
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+}
+
+model StudentConceptMastery {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conceptId            String
+  concept              Concept   @relation(fields: [conceptId], references: [id], onDelete: Cascade)
+  masteryScore         Float     @default(0.0) // 0.0 to 100.0
+  confidenceScore      Float     @default(0.0) // 0.0 to 1.0
+  accuracy             Float     @default(0.0) // 0.0 to 100.0
+  attempts             Int       @default(0)
+  correctAttempts      Int       @default(0)
+  incorrectAttempts    Int       @default(0)
+  lastAttemptAt        DateTime?
+  lastCorrectAt        DateTime?
+  lastIncorrectAt      DateTime?
+  averageTime          Float     @default(0.0) // in seconds
+  expectedTime         Float     @default(60.0) // in seconds
+  consecutiveCorrect   Int       @default(0)
+  consecutiveIncorrect Int       @default(0)
+  revisionCount        Int       @default(0)
+  nextReviewAt         DateTime?
+  status               String    @default("UNSEEN") // UNSEEN | LEARNING | WEAK | REVIEW_DUE | MASTERED
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  @@unique([userId, conceptId])
+  @@index([userId])
+  @@index([conceptId])
+  @@index([nextReviewAt])
+  @@index([status])
+}
+
+model AttemptEvent {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId       String
+  question         Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selectedOption   String?
+  correctOption    String
+  isCorrect        Boolean
+  timeSpentSeconds Int       @default(0)
+  startedAt        DateTime  @default(now())
+  answeredAt       DateTime  @default(now())
+  sourceType       String    // PYQ | FINGERTIPS | NCERT | NCERT_EXERCISE
+  examYear         Int?
+  chapterId        String?
+  topicId          String?
+  conceptId        String?
+  difficulty       String    @default("MEDIUM")
+  mistakeType      String?   // CONCEPTUAL | CALCULATION | MEMORY | MISREAD | SILLY | TIME_PRESSURE | OPTION_CONFUSION | FORMULA | DIAGRAM_INTERPRETATION | GUESS | UNKNOWN
+  confidence       Float     @default(1.0)
+  evidenceJson     String?   // JSON reasoning for mistake detection
+  sessionId        String?
+  sourceContext    String?   // PRACTICE | CBT | REMEDIATION | RETRY_MISTAKE
+
+  @@index([userId])
+  @@index([questionId])
+  @@index([conceptId])
+  @@index([chapterId])
+  @@index([answeredAt])
+}
+
+model QuestionExposure {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId       String
+  question         Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  state            String    @default("SEEN") // UNSEEN | SEEN | ANSWERED_CORRECT | ANSWERED_WRONG | MASTERED | REVIEW_DUE | OVEREXPOSED | PRACTICED | NEW
+  timesAttempted   Int       @default(1)
+  correctCount     Int       @default(0)
+  incorrectCount   Int       @default(0)
+  firstSeenAt      DateTime  @default(now())
+  lastAttemptedAt  DateTime  @default(now())
+  lastMode         String?   // PRACTICE | CBT | MOCK | REMEDIATION | TUTOR
+  nextReviewAt     DateTime?
+
+  @@unique([userId, questionId])
+  @@index([userId])
+  @@index([questionId])
+  @@index([state])
+}
+
+model DailyLearningPlan {
+  id           String    @id @default(cuid())
+  userId       String
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planDate     String    // YYYY-MM-DD
+  missionsJson String    // JSON formatted tasks
+  status       String    @default("ACTIVE") // ACTIVE | COMPLETED
+  generatedAt  DateTime  @default(now())
+
+  @@unique([userId, planDate])
+  @@index([userId])
+}
+
+model PerformanceSnapshot {
+  id                      String    @id @default(cuid())
+  userId                  String
+  user                    User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  periodType              String    // DAILY | WEEKLY | POST_MOCK
+  snapshotDate            DateTime  @default(now())
+  overallMastery          Float     @default(0.0)
+  practiceAccuracy        Float     @default(0.0)
+  totalQuestionsSolved    Int       @default(0)
+  pyqCoverageRate         Float     @default(0.0)
+  revisionCompletion      Float     @default(0.0)
+  mockTestAverageScore    Float     @default(0.0)
+  mockTestAverageAccuracy Float     @default(0.0)
+  weakConceptsCount       Int       @default(0)
+  timeEfficiencySeconds   Float     @default(0.0)
+  consistencyStreakDays   Int       @default(0)
+  metricsJson             String?   // JSON breakdown of 8 readiness dimensions
+
+  @@index([userId])
+  @@index([snapshotDate])
+  @@index([periodType])
+}
+
+model TutorConversation {
+  id           String         @id @default(cuid())
+  userId       String
+  user         User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title        String         @default("New Tutoring Session")
+  activeMode   String         @default("ASK_DOUBT") // ASK_DOUBT | EXPLAIN_CONCEPT | SOLVE_QUESTION | TEACH_ME | REVISION | MISTAKE_ANALYSIS | PYQ_COACH | EXAM_STRATEGY | QUIZ_ME | WEAKNESS_COACH
+  subject      String?        // BIO | PHY | CHE
+  chapterId    String?
+  conceptId    String?
+  questionId   String?
+  metadataJson String?        // Context metadata
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  messages     TutorMessage[]
+
+  @@index([userId])
+  @@index([activeMode])
+  @@index([createdAt])
+}
+
+model TutorMessage {
+  id              String            @id @default(cuid())
+  conversationId  String
+  conversation    TutorConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role            String            // USER | ASSISTANT | SYSTEM
+  content         String
+  mode            String            // Active tutor mode
+  responseType    String            @default("EXPLANATION") // EXPLANATION | SOLUTION | REVISION | QUIZ | FEEDBACK | REMEDIATION | STRATEGY | GENERAL
+  groundingStatus String            @default("GROUNDED") // GROUNDED | PARTIALLY_GROUNDED | NOT_GROUNDED
+  sourcesJson     String?           // Array of verified source references
+  actionsJson     String?           // Array of interactive learning actions
+  questionId      String?           // Referenced question if any
+  conceptId       String?           // Referenced concept if any
+  tokensUsed      Int               @default(0)
+  latencyMs       Int               @default(0)
+  provider        String            @default("SYSTEM_ENGINE")
+  modelName       String            @default("grounded-v1")
+  createdAt       DateTime          @default(now())
+  feedback        AIFeedback[]
+
+  @@index([conversationId])
+  @@index([role])
+  @@index([responseType])
+  @@index([createdAt])
+}
+
+model AIFeedback {
+  id        String       @id @default(cuid())
+  messageId String
+  message   TutorMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  isHelpful Boolean
+  rating    Int?         // 1-5
+  reason    String?      // INCORRECT | POOR_EXPLANATION | WRONG_SOURCE | UNCLEAR | OTHER
+  comments  String?
+  createdAt DateTime     @default(now())
+
+  @@index([messageId])
+  @@index([userId])
+  @@index([isHelpful])
+}
+
+model AIUsageLog {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  provider         String   // LOCAL | GOOGLE | OPENAI | ANTHROPIC
+  model            String
+  endpoint         String   // chat | explain | solve | quiz | etc.
+  mode             String
+  promptTokens     Int      @default(0)
+  completionTokens Int      @default(0)
+  totalTokens      Int      @default(0)
+  estimatedCost    Float    @default(0.0)
+  latencyMs        Int      @default(0)
+  status           String   @default("SUCCESS") // SUCCESS | ERROR | FALLBACK | RATE_LIMITED
+  groundingStatus  String   @default("GROUNDED")
+  errorMessage     String?
+  createdAt        DateTime @default(now())
+
+  @@index([userId])
+  @@index([provider])
+  @@index([endpoint])
+  @@index([createdAt])
+}
+
+model AIRateLimit {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dailyMessageCap Int      @default(100)
+  dailyImageCap   Int      @default(20)
+  messagesUsed    Int      @default(0)
+  imagesUsed      Int      @default(0)
+  lastResetDate   String   // YYYY-MM-DD
+  updatedAt       DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// ==============================================================================
+// PHASE 7: PARENT + MENTOR + ADMIN COMMAND CENTER MODELS
+// ==============================================================================
+
+model ParentStudentRelationship {
+  id               String    @id @default(cuid())
+  parentId         String
+  parent           User      @relation("ParentRelationship", fields: [parentId], references: [id], onDelete: Cascade)
+  studentId        String
+  student          User      @relation("StudentParentRelationship", fields: [studentId], references: [id], onDelete: Cascade)
+  status           String    @default("PENDING") // PENDING | ACTIVE | REVOKED | REJECTED
+  relationshipType String    @default("PARENT")  // FATHER | MOTHER | GUARDIAN | PARENT
+  requestedAt      DateTime  @default(now())
+  approvedAt       DateTime?
+  approvedBy       String?   // userId of student or admin who approved
+  revokedAt        DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@unique([parentId, studentId])
+  @@index([parentId])
+  @@index([studentId])
+  @@index([status])
+}
+
+model MentorStudentAssignment {
+  id         String    @id @default(cuid())
+  mentorId   String
+  mentor     User      @relation("MentorAssignments", fields: [mentorId], references: [id], onDelete: Cascade)
+  studentId  String
+  student    User      @relation("StudentMentorAssignments", fields: [studentId], references: [id], onDelete: Cascade)
+  assignedBy String    // userId of admin or authorized mentor
+  assignedAt DateTime  @default(now())
+  status     String    @default("ACTIVE") // ACTIVE | PAUSED | REVOKED
+  revokedAt  DateTime?
+  notes      String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@unique([mentorId, studentId])
+  @@index([mentorId])
+  @@index([studentId])
+  @@index([status])
+}
+
+model Assignment {
+  id           String               @id @default(cuid())
+  creatorId    String
+  creator      User                 @relation("AssignmentCreator", fields: [creatorId], references: [id])
+  title        String
+  description  String?
+  type         String               // NCERT_READING | PRACTICE | PYQ | FINGERTIPS | REVISION | TEST | MOCK | AI_TUTOR_SESSION | CUSTOM
+  subject      String?              // BIOLOGY | PHYSICS | CHEMISTRY
+  chapterId    String?
+  conceptId    String?
+  testId       String?
+  targetCount  Int                  @default(0) // e.g. 20 questions
+  dueDate      DateTime?
+  configJson   String?              // Task specific constraints
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+  progressList AssignmentProgress[]
+
+  // Phase 8: Multi-Tenant Assignment Scoping
+  tenantId     String?
+  tenant       Tenant?              @relation("TenantAssignments", fields: [tenantId], references: [id])
+
+  @@index([creatorId])
+  @@index([type])
+  @@index([dueDate])
+  @@index([tenantId])
+}
+
+model AssignmentProgress {
+  id              String     @id @default(cuid())
+  assignmentId    String
+  assignment      Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  studentId       String
+  student         User       @relation("StudentAssignments", fields: [studentId], references: [id], onDelete: Cascade)
+  status          String     @default("NOT_STARTED") // NOT_STARTED | IN_PROGRESS | COMPLETED | OVERDUE
+  currentProgress Int        @default(0) // actual questions solved or concepts read
+  targetProgress  Int        @default(100)
+  score           Float?
+  startedAt       DateTime?
+  completedAt     DateTime?
+  lastActivityAt  DateTime?
+  evidenceJson    String?    // Verified activity proof (attemptIds, sessionIds)
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  @@unique([assignmentId, studentId])
+  @@index([assignmentId])
+  @@index([studentId])
+  @@index([status])
+}
+
+model MentorNote {
+  id         String   @id @default(cuid())
+  authorId   String
+  author     User     @relation("NoteAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  studentId  String
+  student    User     @relation("StudentNotes", fields: [studentId], references: [id], onDelete: Cascade)
+  title      String?
+  content    String
+  visibility String   @default("MENTOR_ONLY") // MENTOR_ONLY | ADMIN_ONLY | STUDENT_VISIBLE | PARENT_VISIBLE
+  category   String   @default("GENERAL")     // GENERAL | STRENGTH | WEAKNESS | ACTION_PLAN | BEHAVIORAL
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([authorId])
+  @@index([studentId])
+  @@index([visibility])
+}
+
+model Notification {
+  id              String    @id @default(cuid())
+  recipientId     String
+  recipient       User      @relation("UserNotifications", fields: [recipientId], references: [id], onDelete: Cascade)
+  type            String    // ASSIGNMENT | REVISION | TEST | FEEDBACK | SYSTEM | REMINDER
+  title           String
+  message         String
+  relatedEntity   String?   // e.g. "Assignment:cmu...", "Test:..."
+  isParentVisible Boolean   @default(false)
+  readAt          DateTime?
+  createdAt       DateTime  @default(now())
+
+  @@index([recipientId])
+  @@index([type])
+  @@index([readAt])
+}
+
+model Goal {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation("UserGoals", fields: [userId], references: [id], onDelete: Cascade)
+  title      String
+  metricType String   // QUESTIONS_COUNT | ACCURACY_RATE | TESTS_COMPLETED | REVISION_RATE | STUDY_MINUTES
+  target     Float
+  current    Float    @default(0.0)
+  period     String   // DAILY | WEEKLY | MONTHLY
+  status     String   @default("ACTIVE") // ACTIVE | COMPLETED | MISSED | PAUSED
+  startDate  DateTime @default(now())
+  endDate    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+model LearningActivity {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation("UserActivities", fields: [userId], references: [id], onDelete: Cascade)
+  activityType    String   // PRACTICE | CBT | REVISION | AI_TUTOR | ASSIGNMENT | NCERT_READING
+  durationSeconds Int      @default(0)
+  relatedEntity   String?  // questionId, testId, conceptId, assignmentId
+  metadataJson    String?
+  createdAt       DateTime @default(now())
+
+  @@index([userId])
+  @@index([activityType])
+  @@index([createdAt])
+}
+
+model Alert {
+  id                    String    @id @default(cuid())
+  studentId             String
+  student               User      @relation("UserAlerts", fields: [studentId], references: [id], onDelete: Cascade)
+  type                  String    // REVISION_OVERDUE | ASSIGNMENT_OVERDUE | NO_RECENT_ACTIVITY | REPEATED_MISTAKE | LOW_ACCURACY | TEST_PERFORMANCE_DROP
+  severity              String    @default("MEDIUM") // LOW | MEDIUM | HIGH | CRITICAL
+  title                 String
+  description           String
+  evidenceJson          String?   // Quantitative data & factual metrics
+  suggestedIntervention String?   // Actionable pedagogical recommendation
+  isResolved            Boolean   @default(false)
+  resolvedAt            DateTime?
+  resolvedBy            String?
+  createdAt             DateTime  @default(now())
+
+  @@index([studentId])
+  @@index([type])
+  @@index([isResolved])
+}
+
+model Invitation {
+  id         String    @id @default(cuid())
+  inviterId  String
+  inviter    User      @relation("InvitationCreator", fields: [inviterId], references: [id])
+  email      String
+  role       String    // PARENT | MENTOR
+  studentId  String?   // Linked student target
+  token      String    @unique
+  expiresAt  DateTime
+  isUsed     Boolean   @default(false)
+  usedAt     DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([email])
+  @@index([token])
+  @@index([isUsed])
+}
+
+// ============================================================================
+// PHASE 8: PRODUCTION SAAS, MULTI-TENANCY, BILLING & OPERATIONS MODELS
+// ============================================================================
+
+model Tenant {
+  id            String             @id @default(cuid())
+  name          String
+  slug          String             @unique
+  type          String             @default("INDIVIDUAL") // INDIVIDUAL | COACHING | SCHOOL | ORGANIZATION
+  status        String             @default("ACTIVE")     // ACTIVE | SUSPENDED | PENDING
+  planId        String?
+  plan          Plan?              @relation(fields: [planId], references: [id])
+  users         User[]             @relation("TenantUsers")
+  subscriptions Subscription[]
+  customTests   Test[]             @relation("TenantTests")
+  assignments   Assignment[]       @relation("TenantAssignments")
+  usageCounters UsageCounter[]
+  featureFlags  FeatureFlag[]
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  @@index([slug])
+  @@index([type])
+  @@index([status])
+}
+
+model Plan {
+  id              String               @id @default(cuid())
+  name            String               @unique // FREE | STUDENT | PRO | INSTITUTE
+  description     String?
+  price           Float                @default(0.0)
+  currency        String               @default("INR")
+  billingInterval String               @default("MONTHLY") // MONTHLY | YEARLY | LIFETIME
+  status          String               @default("ACTIVE")  // ACTIVE | ARCHIVED
+  featuresJson    String?
+  limitsJson      String?
+  tenants         Tenant[]
+  subscriptions   Subscription[]
+  entitlements    FeatureEntitlement[]
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+
+  @@index([status])
+}
+
+model Subscription {
+  id                     String    @id @default(cuid())
+  tenantId               String
+  tenant                 Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  planId                 String
+  plan                   Plan      @relation(fields: [planId], references: [id])
+  status                 String    @default("TRIAL") // TRIAL | ACTIVE | PAST_DUE | PAUSED | CANCELLED | EXPIRED
+  startedAt              DateTime  @default(now())
+  expiresAt              DateTime?
+  cancelledAt            DateTime?
+  trialEndsAt            DateTime?
+  provider               String    @default("SANDBOX") // STRIPE | RAZORPAY | SANDBOX
+  providerSubscriptionId String?
+  providerCustomerId     String?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  @@index([tenantId])
+  @@index([planId])
+  @@index([status])
+}
+
+model FeatureEntitlement {
+  id         String   @id @default(cuid())
+  planId     String
+  plan       Plan     @relation(fields: [planId], references: [id], onDelete: Cascade)
+  feature    String   // PRACTICE | PYQ | FINGERTIPS | CBT | FULL_MOCK | AI_TUTOR | AI_IMAGE_SOLVER | ADVANCED_ANALYTICS | PARENT_DASHBOARD | MENTOR_DASHBOARD | EXPORT | CUSTOM_TESTS
+  isEnabled  Boolean  @default(true)
+  limitValue Int?     // null = unlimited, otherwise max numeric limit
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([planId, feature])
+  @@index([planId])
+  @@index([feature])
+}
+
+model UsageCounter {
+  id        String    @id @default(cuid())
+  tenantId  String
+  tenant    Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  userId    String?
+  feature   String    // AI_MESSAGES | AI_IMAGE_QUESTIONS | MOCK_TESTS | QUESTIONS_DAILY | EXPORTS_MONTHLY
+  period    String    // DAILY | MONTHLY | TOTAL
+  periodKey String    // e.g. "2026-09-30" or "2026-09"
+  count     Int       @default(0)
+  resetAt   DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@unique([tenantId, feature, periodKey])
+  @@index([tenantId])
+  @@index([feature])
+}
+
+model Coupon {
+  id                 String   @id @default(cuid())
+  code               String   @unique
+  discountType       String   // PERCENTAGE | FLAT
+  discountValue      Float
+  maxRedemptions     Int      @default(100)
+  currentRedemptions Int      @default(0)
+  validFrom          DateTime @default(now())
+  validUntil         DateTime
+  applicablePlans    String?  // comma separated plan names or JSON
+  status             String   @default("ACTIVE") // ACTIVE | EXPIRED | DISABLED
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([code])
+  @@index([status])
+}
+
+model FeatureFlag {
+  id          String   @id @default(cuid())
+  name        String   // AI_TUTOR_V2 | NEW_CBT | ADVANCED_ANALYTICS | VOICE_TUTOR
+  description String?
+  isEnabled   Boolean  @default(false)
+  scope       String   @default("GLOBAL") // GLOBAL | TENANT | USER
+  targetId    String?  // tenantId or userId if scoped
+  tenantId    String?
+  tenant      Tenant?  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([name])
+  @@index([scope])
+}
+
+model BackgroundJob {
+  id             String    @id @default(cuid())
+  queue          String    @default("default")
+  type           String    // INGESTION | REPORT_GEN | NOTIFICATION | AI_PROCESS | EXPORT | CLEANUP
+  payloadJson    String
+  status         String    @default("PENDING") // PENDING | PROCESSING | COMPLETED | FAILED | DEAD_LETTER
+  attempts       Int       @default(0)
+  maxAttempts    Int       @default(3)
+  errorDetails   String?
+  idempotencyKey String?   @unique
+  processedAt    DateTime?
+  startedAt      DateTime?
+  completedAt    DateTime?
+  failedAt       DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([queue, status])
+  @@index([status])
+}
+
+model AbuseEvent {
+  id        String   @id @default(cuid())
+  type      String   // BRUTE_FORCE | RAPID_REQUESTS | AI_SPAM | CBT_SUBMIT_SPAM | UPLOAD_ABUSE | SCRAPING | ENUMERATION | IDOR_ATTEMPT
+  userId    String?
+  tenantId  String?
+  ip        String?
+  metadata  String?  // JSON stringified metadata
+  createdAt DateTime @default(now())
+
+  @@index([type, createdAt])
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model SystemHealthSnapshot {
+  id              String   @id @default(cuid())
+  status          String   // HEALTHY | DEGRADED | UNAVAILABLE | UNKNOWN
+  processAlive    Boolean  @default(true)
+  databaseReady   Boolean  @default(true)
+  queueReady      Boolean  @default(true)
+  workerReady     Boolean  @default(true)
+  storageReady    Boolean  @default(true)
+  detailsJson     String?
+  timestamp       DateTime @default(now())
+
+  @@index([timestamp])
+  @@index([status])
+}
+
+model PaymentWebhookEvent {
+  id          String   @id @default(cuid())
+  provider    String   // STRIPE | RAZORPAY | SANDBOX
+  eventId     String   @unique
+  eventType   String
+  payloadJson String
+  status      String   @default("PROCESSED") // PROCESSED | FAILED | DUPLICATE
+  processedAt DateTime @default(now())
+
+  @@index([provider, eventId])
+  @@index([status])
+}
+
+model StudentDiagnostic {
+  id                      String   @id @default(cuid())
+  userId                  String
+  user                    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subjectAccuraciesJson   String   // JSON: { BIO: 65, PHY: 42, CHE: 55 }
+  chapterCoverageRate     Float    @default(0.0)
+  conceptExposureCount    Int      @default(0)
+  avgResponseTimeSeconds  Float    @default(0.0)
+  baselineLevel           String   @default("BEGINNER") // BEGINNER | INTERMEDIATE | ADVANCED
+  learningPreferencesJson String?
+  completedAt             DateTime @default(now())
+
+  @@index([userId])
+}
+
+// ============================================================================
+// PHASE 9: EXAM INTELLIGENCE & PREPARATION OPERATING SYSTEM MODELS
+// ============================================================================
+
+model Exam {
+  id             String        @id @default(cuid())
+  code           String        @unique // e.g. "NEET_UG"
+  name           String        // "National Eligibility cum Entrance Test (Undergraduate)"
+  shortName      String        @default("NEET UG")
+  conductingBody String        @default("NTA") // National Testing Agency
+  description    String?
+  editions       ExamEdition[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([code])
+}
+
+model ExamEdition {
+  id               String               @id @default(cuid())
+  examId           String
+  exam             Exam                 @relation(fields: [examId], references: [id], onDelete: Cascade)
+  editionYear      Int                  // 2027
+  title            String               // "NEET UG 2027"
+  officialExamDate DateTime?            // null when NOT_YET_PUBLISHED
+  status           String               @default("NOT_YET_PUBLISHED") // NOT_YET_PUBLISHED | ANNOUNCED | CONFIRMED | COMPLETED | ARCHIVED
+  isActive         Boolean              @default(true)
+  syllabusVersion  Int                  @default(1)
+  patternVersion   Int                  @default(1)
+  updates          ExamUpdate[]
+  rules            ExamRule[]
+  syllabi          ExamSyllabus[]
+  patternVersions  ExamPatternVersion[]
+  preparationPlans PreparationPlan[]
+  checklistItems   ExamDayChecklist[]
+  officialNotifications OfficialNotification[]
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+
+  @@unique([examId, editionYear])
+  @@index([isActive])
+  @@index([status])
+}
+
+model ExamOfficialSource {
+  id                  String    @id @default(cuid())
+  sourceName          String    // e.g. "NTA Official Portal", "NMC Guidelines"
+  sourceUrl           String
+  sourceTier          String    @default("OFFICIAL_SOURCE") // OFFICIAL_SOURCE | VERIFIED_PLATFORM_DATA | SECONDARY_REFERENCE | UNVERIFIED
+  authorityType       String    @default("GOVERNMENT_BODY") // GOVERNMENT_BODY | STATUTORY_COUNCIL | TESTING_AGENCY
+  contentHash         String?
+  lastCheckedAt       DateTime  @default(now())
+  lastSuccessfulCheck DateTime?
+  status              String    @default("ACTIVE") // ACTIVE | PAUSED | ARCHIVED
+  notes               String?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([status])
+  @@index([sourceTier])
+}
+
+model ExamUpdate {
+  id                   String                   @id @default(cuid())
+  editionId            String
+  edition              ExamEdition              @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  title                String
+  publicationDate      DateTime                 @default(now())
+  effectiveDate        DateTime?
+  sourceName           String
+  sourceUrl            String
+  sourceHierarchy      String                   @default("OFFICIAL_SOURCE") // OFFICIAL_SOURCE | VERIFIED_PLATFORM_DATA | SECONDARY_REFERENCE | UNVERIFIED
+  updateType           String                   // SYLLABUS_CHANGE | DATE_ANNOUNCEMENT | PATTERN_CHANGE | ELIGIBILITY_CHANGE | REGISTRATION | GENERAL_NOTIFICATION
+  impactLevel          String                   @default("MEDIUM") // HIGH | MEDIUM | LOW | INFORMATIONAL
+  impactSummary        String?
+  previousValue        String?                  // JSON or text
+  newValue             String?                  // JSON or text
+  verificationStatus   String                   @default("UNVERIFIED") // UNVERIFIED | VERIFIED | SUPERSEDED | ARCHIVED
+  verifiedAt           DateTime?
+  verifiedBy           String?
+  affectedEntitiesJson String?                  // JSON: { chapters: [...], questions: [...], tests: [...] }
+  notifications        ExamUpdateNotification[]
+  createdAt            DateTime                 @default(now())
+  updatedAt            DateTime                 @updatedAt
+
+  @@index([editionId])
+  @@index([verificationStatus])
+  @@index([updateType])
+}
+
+model ExamRule {
+  id                 String      @id @default(cuid())
+  editionId          String
+  edition            ExamEdition @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  ruleKey            String      // e.g. "MARKING_SCHEME", "ELIGIBILITY_AGE", "QUESTION_COUNT"
+  ruleCategory       String      // ELIGIBILITY | EXAMINATION | SCORING | ADMISSION
+  ruleTitle          String
+  ruleValue          String      // e.g. "+4 for correct, -1 for incorrect, 0 for unattempted"
+  sourceName         String
+  sourceUrl          String
+  verificationStatus String      @default("VERIFIED") // UNVERIFIED | VERIFIED | SUPERSEDED | ARCHIVED
+  publishedAt        DateTime    @default(now())
+  verifiedAt         DateTime?
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+
+  @@index([editionId])
+  @@index([ruleKey])
+}
+
+model ExamSyllabus {
+  id                String             @id @default(cuid())
+  editionId         String
+  edition           ExamEdition        @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  version           Int                @default(1)
+  title             String             // "NEET UG 2027 Syllabus v1"
+  source            String             // "NMC Curriculum Guidelines"
+  effectiveDate     DateTime           @default(now())
+  publishedDate     DateTime           @default(now())
+  status            String             @default("ACTIVE") // ACTIVE | SUPERSEDED | DRAFT | ARCHIVED
+  syllabusDataJson  String             // JSON tree with included chapters/topics/concepts
+  summaryOfChanges  String?
+  diffsFrom         ExamSyllabusDiff[] @relation("FromSyllabus")
+  diffsTo           ExamSyllabusDiff[] @relation("ToSyllabus")
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+
+  @@unique([editionId, version])
+  @@index([status])
+}
+
+model ExamSyllabusDiff {
+  id                     String       @id @default(cuid())
+  fromSyllabusId         String
+  fromSyllabus           ExamSyllabus @relation("FromSyllabus", fields: [fromSyllabusId], references: [id], onDelete: Cascade)
+  toSyllabusId           String
+  toSyllabus             ExamSyllabus @relation("ToSyllabus", fields: [toSyllabusId], references: [id], onDelete: Cascade)
+  diffSummary            String
+  diffDetailsJson        String       // JSON: { added: [...], removed: [...], modified: [...], renamed: [...], unchanged: [...] }
+  affectedQuestionsCount Int          @default(0)
+  affectedConceptsCount  Int          @default(0)
+  createdAt              DateTime     @default(now())
+
+  @@index([fromSyllabusId])
+  @@index([toSyllabusId])
+}
+
+model ExamPatternVersion {
+  id                  String      @id @default(cuid())
+  editionId           String
+  edition             ExamEdition @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  versionNumber       Int         @default(1)
+  durationMinutes     Int         @default(200)
+  totalQuestions      Int         @default(200)
+  totalMarks          Float       @default(720.0)
+  positiveMarks       Float       @default(4.0)
+  negativeMarks       Float       @default(1.0)
+  subjectConfigJson   String      // JSON: { BIOLOGY: 100, PHYSICS: 50, CHEMISTRY: 50 }
+  sectionConfigJson   String?     // JSON: { SectionA: { count: 35, compulsory: true }, SectionB: { count: 15, maxToAttempt: 10 } }
+  instructions        String?
+  status              String      @default("ACTIVE") // ACTIVE | SUPERSEDED | DRAFT
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+  simulationBlueprints ExamSimulationBlueprint[]
+  examSimulations      ExamSimulation[]
+
+  @@unique([editionId, versionNumber])
+  @@index([status])
+}
+
+model StudentPlanningConfig {
+  id                    String    @id @default(cuid())
+  userId                String    @unique
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  targetExamEditionId   String?
+  studentPlanningDate   DateTime? // Student's personal target date (distinct from official date)
+  weekdayDailyHours     Float     @default(3.0)
+  weekendDailyHours     Float     @default(6.0)
+  preferredWindowsJson  String?   // JSON: ["MORNING", "EVENING"]
+  targetIntensity       String    @default("BALANCED") // RELAXED | BALANCED | INTENSIVE | CRASH
+  restDaysJson          String?   // JSON: ["SUNDAY_EVENING"]
+  currentStage          String    @default("FOUNDATION") // FOUNDATION | SYLLABUS_COMPLETION | FIRST_REVISION | PYQ_PHASE | MOCK_PHASE | FINAL_REVISION | EXAM_READY
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+}
+
+model PreparationPlan {
+  id                    String               @id @default(cuid())
+  userId                String
+  user                  User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  editionId             String?
+  edition               ExamEdition?         @relation(fields: [editionId], references: [id])
+  version               Int                  @default(1) // Plan v1, Plan v2, ...
+  status                String               @default("ACTIVE") // ACTIVE | SUPERSEDED | ARCHIVED
+  targetExamDate        DateTime?
+  currentStage          String               @default("FOUNDATION")
+  weeklyCapacityHours   Float                @default(27.0)
+  plannedWorkloadHours  Float                @default(25.0)
+  isOverloaded          Boolean              @default(false)
+  roadmapJson           String               // JSON: monthly targets, milestones, stage breakdown
+  calendarJson          String               // JSON: day-by-day scheduled blocks
+  overrides             MentorPlanOverride[]
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([version])
+}
+
+model MentorPlanOverride {
+  id                     String          @id @default(cuid())
+  planId                 String
+  plan                   PreparationPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  mentorId               String
+  studentId              String
+  reason                 String
+  affectedDatesJson      String          // JSON array of dates
+  adjustmentDetailsJson  String          // JSON of adjustments
+  createdAt              DateTime        @default(now())
+
+  @@index([planId])
+  @@index([mentorId])
+  @@index([studentId])
+}
+
+model ExamUpdateNotification {
+  id            String      @id @default(cuid())
+  updateId      String
+  update        ExamUpdate  @relation(fields: [updateId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title         String
+  message       String
+  impactSummary String?
+  isRead        Boolean     @default(false)
+  readAt        DateTime?
+  createdAt     DateTime    @default(now())
+
+  @@index([userId, isRead])
+}
+
+// ============================================================================
+// PHASE 10: ADVANCED ASSESSMENT, QUESTION INTELLIGENCE & PSYCHOMETRICS 2.0
+// ============================================================================
+
+model QuestionAssessmentProfile {
+  id                         String    @id @default(cuid())
+  questionId                 String    @unique
+  question                   Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  attemptCount               Int       @default(0)
+  uniqueStudentCount         Int       @default(0)
+  correctCount               Int       @default(0)
+  incorrectCount             Int       @default(0)
+  skippedCount               Int       @default(0)
+  accuracyRate               Float     @default(0.0) // 0.0 - 100.0
+  skipRate                   Float     @default(0.0) // 0.0 - 100.0
+  authoredDifficulty         String    @default("MEDIUM") // EASY | MEDIUM | HARD
+  estimatedDifficulty        String    @default("MEDIUM")
+  observedDifficulty         String    @default("MEDIUM")
+  difficultyConfidence       String    @default("INSUFFICIENT") // INSUFFICIENT | LOW | MEDIUM | HIGH
+  discriminationIndex        Float     @default(0.0) // -1.0 to 1.0
+  discriminationConfidence   String    @default("INSUFFICIENT") // INSUFFICIENT | LOW | MEDIUM | HIGH
+  averageResponseTime        Float     @default(0.0) // in seconds
+  medianResponseTime         Float     @default(0.0) // in seconds
+  timeP25                    Float     @default(0.0)
+  timeP50                    Float     @default(0.0)
+  timeP75                    Float     @default(0.0)
+  timeP90                    Float     @default(0.0)
+  optionDistribution         String?   // JSON map: { "A": 12, "B": 85, "C": 5, "D": 2 }
+  distractorEffectiveness    String?   // JSON map: { "A": "WEAK", "B": "KEY", "C": "SUSPICIOUS", "D": "STRONG" }
+  conceptPerformance         String?   // JSON map
+  ambiguityScore             Float     @default(0.0) // 0.0 to 1.0
+  qualityScore               Float     @default(1.0) // 0.0 to 1.0
+  assessmentStatus           String    @default("ACTIVE") // ACTIVE | MONITORED | REVIEW_REQUIRED | TEMPORARILY_SUPPRESSED | RETIRED
+  lastCalculatedAt           DateTime  @default(now())
+  calculationVersion         String    @default("v1.0")
+  createdAt                  DateTime  @default(now())
+  updatedAt                  DateTime  @updatedAt
+
+  @@index([assessmentStatus])
+  @@index([observedDifficulty])
+  @@index([qualityScore])
+  @@index([difficultyConfidence])
+  @@index([discriminationConfidence])
+}
+
+model QuestionPerformanceSnapshot {
+  id                 String    @id @default(cuid())
+  questionId         String
+  question           Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  periodKey          String    // e.g. "2026-W39" or "2026-09"
+  attemptCount       Int       @default(0)
+  correctCount       Int       @default(0)
+  accuracyRate       Float     @default(0.0)
+  medianTime         Float     @default(0.0)
+  discrimination     Float     @default(0.0)
+  calculationVersion String    @default("v1.0")
+  createdAt          DateTime  @default(now())
+
+  @@index([questionId])
+  @@index([periodKey])
+}
+
+model QuestionOptionPerformance {
+  id                              String    @id @default(cuid())
+  questionId                      String
+  question                        Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  optionLabel                     String    // "A", "B", "C", "D"
+  selectionCount                  Int       @default(0)
+  selectionRate                   Float     @default(0.0) // 0.0 - 100.0
+  selectedByCorrectResponders     Int       @default(0)
+  selectedByIncorrectResponders   Int       @default(0)
+  distractorCategory              String    @default("NORMAL") // STRONG | WEAK | SUSPICIOUS | AMBIGUOUS | KEY | NORMAL
+  calculationVersion              String    @default("v1.0")
+  updatedAt                       DateTime  @updatedAt
+
+  @@unique([questionId, optionLabel])
+  @@index([questionId])
+}
+
+model QuestionAnomaly {
+  id           String    @id @default(cuid())
+  questionId   String
+  question     Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  anomalyType  String    // AMBIGUOUS_OPTIONS | MULTIPLE_PLAUSIBLE_ANSWERS | LOW_DISCRIMINATION | BROKEN_QUESTION | BROKEN_IMAGE | MISSING_IMAGE | ANSWER_KEY_CONCERN | UNEXPECTED_RESPONSE_PATTERN | EXTREME_TIME_PATTERN | SOURCE_MISMATCH | CONCEPT_MISMATCH
+  severity     String    @default("MEDIUM") // LOW | MEDIUM | HIGH | CRITICAL
+  evidence     String    // JSON string of detected signals and response patterns
+  sampleSize   Int       @default(0)
+  detectedAt   DateTime  @default(now())
+  status       String    @default("FLAGGED") // NO_CONCERN | FLAGGED | UNDER_REVIEW | CONFIRMED | CORRECTED | REJECTED | RESOLVED
+  reviewer     String?
+  resolution   String?
+  resolvedAt   DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([questionId])
+  @@index([status])
+  @@index([anomalyType])
+  @@index([severity])
+}
+
+model QuestionVersion {
+  id              String    @id @default(cuid())
+  questionId      String
+  question        Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  versionNumber   Int       @default(1)
+  stem            String
+  optionsJson     String    // JSON string array: [{ label: "A", text: "..." }, ...]
+  correctAnswer   String    // "A", "B", "C", "D"
+  explanation     String?
+  sourceReference String?
+  changeReason    String?
+  changedBy       String?
+  createdAt       DateTime  @default(now())
+
+  @@unique([questionId, versionNumber])
+  @@index([questionId])
+}
+
+model QuestionReview {
+  id             String    @id @default(cuid())
+  questionId     String
+  question       Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  reviewerId     String
+  reviewer       User      @relation(fields: [reviewerId], references: [id])
+  reviewType     String    // ANSWER_KEY_DISPUTE | ANOMALY_INVESTIGATION | ROUTINE_QUALITY | RETIREMENT | CONTENT_ACCURACY
+  previousStatus String
+  newStatus      String
+  findings       String
+  decision       String    // APPROVED | REJECTED | CORRECTED | SUPPRESSED | RESTORED
+  actionTaken    String?
+  auditNotes     String?
+  createdAt      DateTime  @default(now())
+
+  @@index([questionId])
+  @@index([reviewerId])
+  @@index([reviewType])
+}
+
+model AssessmentBlueprint {
+  id                      String                    @id @default(cuid())
+  title                   String
+  description             String?
+  examType                String                    @default("NEET_UG")
+  targetQuestionCount     Int                       @default(180)
+  targetDurationMinutes   Int                       @default(200)
+  rulesJson               String                    // JSON of blueprint parameters
+  status                  String                    @default("ACTIVE") // ACTIVE | DRAFT | ARCHIVED
+  createdAt               DateTime                  @default(now())
+  updatedAt               DateTime                  @updatedAt
+  blueprintRules          AssessmentBlueprintRule[]
+  qualityReports          AssessmentQualityReport[]
+  testForms               TestForm[]
+
+  @@index([status])
+}
+
+model AssessmentBlueprintRule {
+  id                      String              @id @default(cuid())
+  blueprintId             String
+  blueprint               AssessmentBlueprint @relation(fields: [blueprintId], references: [id], onDelete: Cascade)
+  subjectCode             String              // PHYSICS | CHEMISTRY | BIOLOGY
+  chapterSlug             String?
+  conceptId               String?
+  difficulty              String?             // EASY | MEDIUM | HARD
+  sourceType              String?             // PYQ | NCERT | FINGERTIPS
+  questionType            String?             // SINGLE_CORRECT | ASSERTION_REASON | etc.
+  weightagePercent        Float               @default(0.0)
+  minQuestions            Int                 @default(1)
+  maxQuestions            Int                 @default(100)
+  timePerQuestionSeconds  Int                 @default(60)
+  createdAt               DateTime            @default(now())
+
+  @@index([blueprintId])
+}
+
+model AssessmentQualityReport {
+  id                             String                    @id @default(cuid())
+  testId                         String?
+  blueprintId                    String?
+  blueprint                      AssessmentBlueprint?      @relation(fields: [blueprintId], references: [id])
+  status                         String                    @default("PASS") // PASS | WARNING | REVIEW_REQUIRED
+  overallQualityScore            Float                     @default(1.0)
+  contentCoverageStatus          String                    @default("PASS")
+  difficultyDistributionStatus   String                    @default("PASS")
+  conceptCoverageStatus          String                    @default("PASS")
+  sourceDistributionStatus       String                    @default("PASS")
+  questionTypeStatus             String                    @default("PASS")
+  timeFeasibilityStatus          String                    @default("PASS")
+  discriminationAvg              Float                     @default(0.0)
+  ambiguityFlagsCount            Int                       @default(0)
+  varianceJson                   String?                   // JSON string
+  findingsJson                   String?                   // JSON string
+  createdAt                      DateTime                  @default(now())
+  metrics                        AssessmentQualityMetric[]
+
+  @@index([testId])
+  @@index([blueprintId])
+  @@index([status])
+}
+
+model AssessmentQualityMetric {
+  id             String                  @id @default(cuid())
+  reportId       String
+  report         AssessmentQualityReport @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  dimension      String                  // CONTENT_COVERAGE | DIFFICULTY | DISCRIMINATION | DISTRACTOR | TIME | AMBIGUITY
+  requestedValue String
+  actualValue    String
+  variance       Float                   @default(0.0)
+  status         String                  @default("PASS") // PASS | WARNING | FAIL
+  details        String?
+  createdAt      DateTime                @default(now())
+
+  @@index([reportId])
+}
+
+model StudentAssessmentBaseline {
+  id                         String                      @id @default(cuid())
+  userId                     String                      @unique
+  user                       User                        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accuracy                   Float                       @default(0.0)
+  medianResponseTime         Float                       @default(0.0)
+  subjectAccuracyJson        String?                     // JSON: { PHYSICS: 54, CHEMISTRY: 62, BIOLOGY: 74 }
+  chapterAccuracyJson        String?                     // JSON
+  questionTypeAccuracyJson   String?                     // JSON
+  difficultyBandAccuracyJson String?                     // JSON: { EASY: 82, MEDIUM: 58, HARD: 34 }
+  carelessErrorRate          Float                       @default(0.0)
+  conceptRetentionRate       Float                       @default(0.0)
+  mockPerformanceAvg         Float                       @default(0.0)
+  sampleSize                 Int                         @default(0)
+  calculationVersion         String                      @default("v1.0")
+  updatedAt                  DateTime                    @updatedAt
+  snapshots                  StudentAssessmentSnapshot[]
+
+  @@index([userId])
+}
+
+model StudentAssessmentSnapshot {
+  id            String                    @id @default(cuid())
+  baselineId    String
+  baseline      StudentAssessmentBaseline @relation(fields: [baselineId], references: [id], onDelete: Cascade)
+  periodKey     String                    // e.g. "2026-W39"
+  accuracy      Float                     @default(0.0)
+  medianTime    Float                     @default(0.0)
+  deltaAccuracy Float                     @default(0.0)
+  detailsJson   String?
+  createdAt     DateTime                  @default(now())
+
+  @@index([baselineId])
+  @@index([periodKey])
+}
+
+model TestForm {
+  id                       String               @id @default(cuid())
+  blueprintId              String?
+  blueprint                AssessmentBlueprint? @relation(fields: [blueprintId], references: [id])
+  title                    String               // e.g. "NEET 2027 Full Mock Form A"
+  formCode                 String               // "FORM_A", "FORM_B"
+  targetDurationMinutes    Int                  @default(200)
+  totalQuestions           Int                  @default(200)
+  equivalenceStatus        String               @default("NOT_ESTABLISHED") // NOT_ESTABLISHED | POSSIBLE | SUPPORTED_BY_DATA
+  equivalenceMetricsJson   String?
+  status                   String               @default("ACTIVE") // ACTIVE | DRAFT | ARCHIVED
+  createdAt                DateTime             @default(now())
+  updatedAt                DateTime             @updatedAt
+  formQuestions            TestFormQuestion[]
+
+  @@index([blueprintId])
+  @@index([formCode])
+}
+
+model TestFormQuestion {
+  id                 String    @id @default(cuid())
+  formId             String
+  form               TestForm  @relation(fields: [formId], references: [id], onDelete: Cascade)
+  questionId         String
+  question           Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  questionVersionId  String?
+  position           Int
+  sectionName        String    @default("Section A")
+  difficultySnapshot String    @default("MEDIUM")
+  conceptSnapshot    String?
+  createdAt          DateTime  @default(now())
+
+  @@unique([formId, position])
+  @@index([formId])
+  @@index([questionId])
+}
+
+model AIQuestionValidation {
+  id                     String    @id @default(cuid())
+  questionId             String
+  question               Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  generatorModel         String    @default("grounded-v1")
+  promptVersion          String    @default("v1.0")
+  factualValidity        Boolean   @default(true)
+  answerValidity         Boolean   @default(true)
+  optionValidity         Boolean   @default(true)
+  ncertAlignment         Boolean   @default(true)
+  conceptAlignment       Boolean   @default(true)
+  ambiguityScore         Float     @default(0.0)
+  duplicateDetected      Boolean   @default(false)
+  difficultySanity       Boolean   @default(true)
+  explanationValidity    Boolean   @default(true)
+  validationStatus       String    @default("PASSED") // PASSED | FAILED | REVIEW_REQUIRED
+  reviewStatus           String    @default("PENDING") // PENDING | APPROVED | REJECTED
+  validationDetailsJson  String?
+  reviewedBy             String?
+  reviewedAt             DateTime?
+  createdAt              DateTime  @default(now())
+
+  @@index([questionId])
+  @@index([validationStatus])
+  @@index([reviewStatus])
+}
+
+// ============================================================================
+// PHASE 11: NEET PERSONAL AI STUDY OPERATING SYSTEM
+// ============================================================================
+
+model StudentPreparationProfile {
+  id                         String    @id @default(cuid())
+  userId                     String    @unique
+  user                       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  targetExamEditionId        String?
+  targetDate                 DateTime?
+  dailyStudyCapacityMinutes  Int       @default(180)
+  weeklyStudyCapacityMinutes Int       @default(1260)
+  preferredStudyWindows      String?   // JSON array: ["MORNING", "EVENING", "NIGHT"]
+  preferredSessionLength     Int       @default(45) // in minutes
+  preferredSubjects          String?   // JSON array: ["BIOLOGY", "PHYSICS", "CHEMISTRY"]
+  currentPreparationStage    String    @default("FOUNDATION") // FOUNDATION | SYLLABUS_COMPLETION | FIRST_REVISION | PYQ_PHASE | MOCK_PHASE | FINAL_REVISION | EXAM_READY
+  stageTransitionReason      String?
+  planningMode               String    @default("BALANCED") // BALANCED | INTENSIVE | RELAXED | REVISION_HEAVY
+  revisionPreference         String    @default("SPACED") // SPACED | FREQUENT | MOCK_DRIVEN
+  mockFrequency              String    @default("WEEKLY") // WEEKLY | BIWEEKLY | MONTHLY
+  lastPlanGeneratedAt        DateTime?
+  planVersion                Int       @default(1)
+  // Phase 12: Final Mile Preparation Mode
+  preparationMode            String    @default("NORMAL_PREPARATION") // NORMAL_PREPARATION | FINAL_MILE | EXAM_SIMULATION | EXAM_DAY | POST_EXAM
+  finalMileActivatedAt       DateTime?
+  finalMileReason            String?
+  createdAt                  DateTime  @default(now())
+  updatedAt                  DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([currentPreparationStage])
+  @@index([preparationMode])
+}
+
+model DailyStudyPlan {
+  id                    String           @id @default(cuid())
+  userId                String
+  user                  User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date                  String           // YYYY-MM-DD
+  targetCapacityMinutes Int              @default(180)
+  plannedMinutes        Int              @default(0)
+  actualMinutes         Int              @default(0)
+  status                String           @default("PLANNED") // PLANNED | IN_PROGRESS | COMPLETED | PARTIALLY_COMPLETED | MISSED | REPLANNED
+  preparationStage      String           @default("FOUNDATION")
+  planVersion           Int              @default(1)
+  replanCount           Int              @default(0)
+  replanReason          String?
+  summaryNotes          String?
+  aiDailyBrief          String?          // Grounded AI coach brief
+  eodStatus             String?          // PENDING | COMPLETED | MISSED
+  eodReason             String?          // TIME | DIFFICULT_CONTENT | TECHNICAL_ISSUE | PERSONAL_SCHEDULE | LOW_PRIORITY | OTHER
+  tasks                 DailyStudyTask[]
+  sessions              StudySession[]
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+
+  @@unique([userId, date, planVersion])
+  @@index([userId, date])
+  @@index([status])
+}
+
+model DailyStudyTask {
+  id               String          @id @default(cuid())
+  planId           String
+  plan             DailyStudyPlan  @relation(fields: [planId], references: [id], onDelete: Cascade)
+  userId           String
+  user             User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date             String          // YYYY-MM-DD
+  taskType         String          // NCERT_READ | NCERT_REVISION | CONCEPT_LEARNING | PRACTICE | PYQ | FINGERTIPS | MISTAKE_REVIEW | SPACED_REVISION | MOCK_TEST | TEST_REVIEW | AI_TUTOR | FORMULA_REVISION | DIAGRAM_REVISION | REMEDIATION_TASK
+  title            String
+  description      String?
+  subjectCode      String          // PHYSICS | CHEMISTRY | BIOLOGY
+  chapterSlug      String?
+  chapterTitle     String?
+  topicId          String?
+  conceptId        String?
+  sourceType       String          @default("NCERT") // NCERT | PYQ | FINGERTIPS | MISTAKE | MOCK | GENERAL
+  estimatedMinutes Int             @default(30)
+  actualMinutes    Int             @default(0)
+  priority         String          @default("CORE") // CORE | RECOMMENDED | OPTIONAL
+  priorityScore    Float           @default(50.0)
+  priorityReasons  String?         // JSON array: ["REVISION_DUE", "LOW_MASTERY"]
+  orderIndex       Int             @default(1)
+  status           String          @default("PENDING") // PENDING | IN_PROGRESS | COMPLETED | SKIPPED | MISSED | DEFERRED | CARRIED_FORWARD
+  routeUrl         String?         // Direct routing experience URL e.g. "/practice?conceptId=..."
+  metaJson         String?         // JSON payload: questionIds, testId, etc.
+  isMentorAssigned Boolean         @default(false)
+  mentorId         String?
+  mentorNote       String?
+  completedAt      DateTime?
+  sessions         StudySession[]
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  @@index([planId])
+  @@index([userId, date])
+  @@index([status])
+  @@index([taskType])
+  @@index([priority])
+}
+
+model StudySession {
+  id                    String          @id @default(cuid())
+  userId                String
+  user                  User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planId                String?
+  plan                  DailyStudyPlan? @relation(fields: [planId], references: [id])
+  taskId                String?
+  task                  DailyStudyTask? @relation(fields: [taskId], references: [id])
+  status                String          @default("PLANNED") // PLANNED | STARTED | PAUSED | RESUMED | COMPLETED | ABANDONED | EXPIRED
+  startTime             DateTime?
+  endTime               DateTime?
+  activeDurationSeconds Int             @default(0)
+  pausedDurationSeconds Int             @default(0)
+  plannedMinutes        Int             @default(30)
+  actualMinutes         Int             @default(0)
+  timerPreset           String?         // CUSTOM | 25_5 | 45_10 | 50_10 | 60_10
+  currentPositionJson   String?         // JSON: { questionIndex: 4, pageNumber: 12, scrollOffset: 340 }
+  events                StudyEvent[]
+  createdAt             DateTime        @default(now())
+  updatedAt             DateTime        @updatedAt
+
+  @@index([userId])
+  @@index([taskId])
+  @@index([planId])
+  @@index([status])
+}
+
+model StudyEvent {
+  id            String       @id @default(cuid())
+  sessionId     String
+  session       StudySession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  eventType     String       // SESSION_STARTED | CONTENT_OPENED | CONTENT_COMPLETED | QUESTION_STARTED | QUESTION_ANSWERED | REVISION_COMPLETED | TEST_STARTED | TEST_COMPLETED | AI_TUTOR_USED | SESSION_PAUSED | SESSION_RESUMED | FOCUS_TIMER_TICK
+  eventDataJson String?
+  timestamp     DateTime     @default(now())
+
+  @@index([sessionId])
+  @@index([userId])
+  @@index([eventType])
+}
+
+model PreparationBacklog {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sourceTaskId      String?
+  taskType          String
+  title             String
+  subjectCode       String
+  chapterTitle      String?
+  conceptId         String?
+  estimatedMinutes  Int      @default(30)
+  priority          String   @default("RECOMMENDED")
+  originalDate      String   // YYYY-MM-DD
+  status            String   @default("ACTIVE") // ACTIVE | DEFERRED | SCHEDULED | COMPLETED | DROPPED | SUPERSEDED
+  reason            String?
+  rescheduledToDate String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([userId, status])
+  @@index([priority])
+}
+
+model PlanVersion {
+  id                String       @id @default(cuid())
+  userId            String
+  user              User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date              String       // YYYY-MM-DD
+  versionNumber     Int          @default(1)
+  reason            String       // DAILY_REFRESH | MISSED_DAY | PERFORMANCE_CHANGE | MOCK_COMPLETED | MENTOR_OVERRIDE | STUDENT_CHANGE | EXAM_UPDATE | MANUAL_REPLAN
+  generatedBy       String       @default("PLANNER_ENGINE") // STUDENT | MENTOR | PLANNER_CRON | ADAPTIVE_CHECKPOINT
+  inputSnapshotJson String
+  changesSummary    String?
+  changes           PlanChange[]
+  createdAt         DateTime     @default(now())
+
+  @@index([userId, date])
+  @@index([versionNumber])
+  @@index([reason])
+}
+
+model PlanChange {
+  id            String      @id @default(cuid())
+  planVersionId String
+  planVersion   PlanVersion @relation(fields: [planVersionId], references: [id], onDelete: Cascade)
+  changeType    String      // TASK_ADDED | TASK_REMOVED | DURATION_MODIFIED | ORDER_CHANGED | STATUS_CHANGED | RECOVERY_DISTRIBUTED
+  taskTitle     String
+  detailsJson   String?
+  createdAt     DateTime    @default(now())
+
+  @@index([planVersionId])
+  @@index([changeType])
+}
+
+model RecoveryPlan {
+  id                 String   @id @default(cuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  missedPlanDate     String   // YYYY-MM-DD
+  totalMissedMinutes Int
+  distributionJson   String   // JSON: [{ dayOffset: 1, date: "...", addedMinutes: 30, tasks: [...] }, ...]
+  status             String   @default("PENDING") // PENDING | APPLIED | CANCELLED
+  explanation        String
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+model WeeklyPreparationReview {
+  id                     String   @id @default(cuid())
+  userId                 String
+  user                   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  weekStartDate          String   // YYYY-MM-DD
+  weekEndDate            String   // YYYY-MM-DD
+  completedMinutes       Int      @default(0)
+  plannedMinutes         Int      @default(0)
+  completionRate         Float    @default(0.0)
+  questionsAttempted     Int      @default(0)
+  accuracyRate           Float    @default(0.0)
+  improvedConceptsJson   String?  // JSON array
+  declinedConceptsJson   String?  // JSON array
+  attentionConceptsJson  String?  // JSON array
+  revisionBacklogCount   Int      @default(0)
+  pyqCoverageRate        Float    @default(0.0)
+  mockSummaryJson        String?  // JSON object
+  nextWeekPrioritiesJson String?  // JSON array
+  createdAt              DateTime @default(now())
+
+  @@unique([userId, weekStartDate])
+  @@index([userId])
+}
+
+model MonthlyPreparationReview {
+  id                                String   @id @default(cuid())
+  userId                            String
+  user                              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  monthKey                          String   // YYYY-MM e.g. "2026-09"
+  completedHours                    Float    @default(0.0)
+  contentCoverage                   Float    @default(0.0)
+  conceptMasteryAvg                 Float    @default(0.0)
+  pyqCoverageRate                   Float    @default(0.0)
+  questionAccuracy                  Float    @default(0.0)
+  mistakeRate                       Float    @default(0.0)
+  revisionCompletionRate            Float    @default(0.0)
+  mockScoresJson                    String?  // JSON array
+  comparisonWithPreviousMonthJson   String?  // JSON object: percentage point changes
+  createdAt                         DateTime @default(now())
+
+  @@unique([userId, monthKey])
+  @@index([userId])
+}
+
+model StudyStreak {
+  id                   String   @id @default(cuid())
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  currentDailyStreak   Int      @default(0)
+  currentCorePlanStreak Int     @default(0)
+  bestDailyStreak      Int      @default(0)
+  bestCorePlanStreak   Int      @default(0)
+  totalStudyDays       Int      @default(0)
+  lastActiveDate       String?  // YYYY-MM-DD
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// ============================================================================
+// PHASE 12: FINAL-MILE EXAM READINESS & FULL EXAM SIMULATION OS
+// ============================================================================
+
+model FinalMileConfiguration {
+  id                        String    @id @default(cuid())
+  userId                    String    @unique
+  user                      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  isActive                  Boolean   @default(false)
+  activatedAt               DateTime?
+  activationReason          String?
+  officialExamDate          DateTime?
+  studentTargetDate         DateTime?
+  daysRemaining             Int?
+  syllabusCoverageThreshold Float     @default(70.0)
+  revisionCoverageThreshold Float     @default(60.0)
+  pyqCoverageThreshold      Float     @default(50.0)
+  freezeNewContent          Boolean   @default(true)
+  mode                      String    @default("NORMAL_PREPARATION") // NORMAL_PREPARATION | FINAL_MILE | EXAM_SIMULATION | EXAM_DAY | POST_EXAM
+  configJson                String?   // JSON configuration
+  createdAt                 DateTime  @default(now())
+  updatedAt                 DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([isActive])
+}
+
+model FinalRevisionPlan {
+  id                    String               @id @default(cuid())
+  userId                String
+  user                  User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date                  String               // YYYY-MM-DD
+  planVersion           Int                  @default(1)
+  isFrozen              Boolean              @default(false)
+  freezeActivatedAt     DateTime?
+  freezeRulesJson       String?              // JSON: { deprioritizeLowPriority: true, retainWeakConcepts: true, retainRevisions: true, retainMocks: true }
+  totalEstimatedMinutes Int                  @default(0)
+  status                String               @default("ACTIVE") // ACTIVE | COMPLETED | SUPERSEDED
+  blocks                FinalRevisionBlock[]
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+
+  @@index([userId])
+  @@index([date])
+  @@index([status])
+}
+
+model FinalRevisionBlock {
+  id               String            @id @default(cuid())
+  planId           String
+  plan             FinalRevisionPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  blockType        String            // NCERT | FORMULAS | DIAGRAMS | REACTIONS | DEFINITIONS | HIGH_ERROR_CONCEPTS | PYQS | MISTAKES | MOCK_REVIEW
+  title            String
+  subjectCode      String            // PHYSICS | CHEMISTRY | BOTANY | ZOOLOGY
+  chapterId        String?
+  conceptId        String?
+  estimatedMinutes Int               @default(30)
+  priority         String            @default("HIGH") // CRITICAL | HIGH | MEDIUM | LOW
+  evidence         String            // Factual grounded rationale
+  status           String            @default("PENDING") // PENDING | IN_PROGRESS | COMPLETED | SKIPPED
+  completedAt      DateTime?
+  metadataJson     String?           // JSON
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@index([planId])
+  @@index([blockType])
+  @@index([status])
+}
+
+model ExamSimulationBlueprint {
+  id                         String              @id @default(cuid())
+  title                      String
+  patternVersionId           String?
+  patternVersion             ExamPatternVersion? @relation(fields: [patternVersionId], references: [id])
+  totalQuestions             Int                 @default(200)
+  totalDurationMinutes       Int                 @default(200)
+  subjectDistributionJson    String              // JSON: {"PHYSICS": 50, "CHEMISTRY": 50, "BOTANY": 50, "ZOOLOGY": 50}
+  questionTypesJson          String              // JSON array
+  difficultyDistributionJson String              // JSON: {"EASY": 40, "MEDIUM": 50, "HARD": 10}
+  markingSchemeJson          String              // JSON: {"correct": 4, "incorrect": -1, "unanswered": 0}
+  navigationRulesJson        String?             // JSON
+  calculatorAllowed          Boolean             @default(false)
+  version                    Int                 @default(1)
+  isDefault                  Boolean             @default(false)
+  createdAt                  DateTime            @default(now())
+  updatedAt                  DateTime            @updatedAt
+  simulations                ExamSimulation[]
+
+  @@index([version])
+}
+
+model ExamSimulation {
+  id               String                       @id @default(cuid())
+  blueprintId      String?
+  blueprint        ExamSimulationBlueprint?     @relation(fields: [blueprintId], references: [id])
+  patternVersionId String?
+  patternVersion   ExamPatternVersion?          @relation(fields: [patternVersionId], references: [id])
+  title            String
+  simulationCode   String                       @unique // e.g. "SIM-2027-001"
+  status           String                       @default("READY") // SCHEDULED | READY | IN_PROGRESS | SUBMITTED | ANALYZING | ANALYZED | REVIEWED
+  isStrictExamDay  Boolean                      @default(false)
+  questionsCount   Int                          @default(200)
+  durationMinutes  Int                          @default(200)
+  testId           String?
+  test             Test?                        @relation(fields: [testId], references: [id])
+  createdAt        DateTime                     @default(now())
+  updatedAt        DateTime                     @updatedAt
+  attempts         ExamSimulationAttempt[]
+  snapshots        SimulationQuestionSnapshot[]
+  results          ExamSimulationResult[]
+
+  @@index([status])
+}
+
+model ExamSimulationAttempt {
+  id                  String                  @id @default(cuid())
+  simulationId        String
+  simulation          ExamSimulation          @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  userId              String
+  user                User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status              String                  @default("STARTED") // SCHEDULED | READY | IN_PROGRESS | PAUSED | SUBMITTED | ANALYZED | REVIEWED
+  isStrictExamDay     Boolean                 @default(false)
+  startedAt           DateTime                @default(now())
+  serverDeadline      DateTime
+  submittedAt         DateTime?
+  lastHeartbeatAt     DateTime                @default(now())
+  submissionToken     String?                 @unique
+  interruptionCount   Int                     @default(0)
+  activeQuestionIndex Int                     @default(0)
+  activeSection       String?
+  totalDurationSeconds Int                    @default(0)
+  examAttemptId       String?                 @unique
+  examAttempt         ExamAttempt?            @relation(fields: [examAttemptId], references: [id])
+  rulesAcknowledgedAt DateTime?
+  createdAt           DateTime                @default(now())
+  updatedAt           DateTime                @updatedAt
+  result              ExamSimulationResult?
+  reviewQueue         SimulationReviewQueue[]
+
+  @@index([userId])
+  @@index([simulationId])
+  @@index([status])
+}
+
+model SimulationQuestionSnapshot {
+  id             String         @id @default(cuid())
+  simulationId   String
+  simulation     ExamSimulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  questionId     String
+  question       Question       @relation(fields: [questionId], references: [id])
+  questionNumber Int
+  sectionName    String         // "PHYSICS", "CHEMISTRY", "BOTANY", "ZOOLOGY"
+  subjectCode    String
+  questionText   String
+  optionsJson    String         // JSON array of options
+  correctOption  String         // "A", "B", "C", "D"
+  questionType   String         // SINGLE_CORRECT, etc.
+  difficulty     String         // EASY, MEDIUM, HARD
+  chapterId      String?
+  conceptId      String?
+  createdAt      DateTime       @default(now())
+
+  @@unique([simulationId, questionId])
+  @@index([simulationId])
+}
+
+model ExamSimulationResult {
+  id                          String                @id @default(cuid())
+  simulationId                String
+  simulation                  ExamSimulation        @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  attemptId                   String                @unique
+  attempt                     ExamSimulationAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  userId                      String
+  user                        User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  totalScore                  Float
+  maxPossibleScore            Float                 @default(720)
+  accuracy                    Float
+  totalAttempted              Int
+  totalCorrect                Int
+  totalIncorrect              Int
+  totalUnanswered             Int
+  positiveMarks               Float                 @default(0.0)
+  negativeMarks               Float                 @default(0.0)
+  totalTimeSeconds            Int                   @default(0)
+  medianTimePerQuestion       Float                 @default(0.0)
+  p25Time                     Float                 @default(0.0)
+  p75Time                     Float                 @default(0.0)
+  p90Time                     Float                 @default(0.0)
+  subjectBreakdownJson        String                // JSON
+  questionTypeBreakdownJson   String                // JSON
+  difficultyBreakdownJson     String                // JSON
+  conceptGapsJson             String?               // JSON array
+  mistakesJson                String?               // JSON array
+  timePressureSignalsJson     String?               // JSON
+  answerChangesJson           String?               // JSON
+  confidenceBreakdownJson     String?               // JSON
+  revisionRecommendationsJson String?               // JSON array
+  createdAt                   DateTime              @default(now())
+
+  @@index([userId])
+  @@index([simulationId])
+}
+
+model SimulationReviewQueue {
+  id            String                @id @default(cuid())
+  attemptId     String
+  attempt       ExamSimulationAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId    String
+  question      Question              @relation(fields: [questionId], references: [id])
+  category      String                // WRONG | GUESSED | SLOW | MARKED_REVIEW | CHANGED_ANSWER | CORRECT_BUT_UNCERTAIN
+  isReviewed    Boolean               @default(false)
+  reviewedAt    DateTime?
+  reviewNotes   String?
+  remediationId String?
+  createdAt     DateTime              @default(now())
+
+  @@index([userId])
+  @@index([attemptId])
+  @@index([category])
+  @@index([isReviewed])
+}
+
+model FinalMileActionPlan {
+  id                   String   @id @default(cuid())
+  userId               String
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  simulationResultId   String?
+  date                 String   // YYYY-MM-DD
+  immediateActionsJson String   // JSON array
+  next24HoursJson      String   // JSON array
+  next3DaysJson        String   // JSON array
+  next7DaysJson        String   // JSON array
+  status               String   @default("ACTIVE") // ACTIVE | COMPLETED | SUPERSEDED
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([userId])
+  @@index([date])
+}
+
+model FinalDaysMode {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  modeType              String   @default("SEVEN_DAYS") // SEVEN_DAYS | THREE_DAYS | ONE_DAY | EXAM_DAY
+  daysCount             Int      @default(7)
+  activatedAt           DateTime @default(now())
+  allowedCategoriesJson String   // JSON
+  sleepConstraintHours  Float    @default(8.0)
+  dailyCapMinutes       Int      @default(240)
+  notes                 String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model ExamDayChecklist {
+  id                String       @id @default(cuid())
+  userId            String
+  user              User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  editionId         String?
+  edition           ExamEdition? @relation(fields: [editionId], references: [id])
+  sectionName       String       // BEFORE_LEAVING | REQUIRED_DOCUMENTS | TRAVEL_BUFFER | REPORTING_REQUIREMENT | EXAM_INSTRUCTIONS | PERSONAL_PREPARATION
+  itemKey           String
+  itemLabel         String
+  officialSourceUrl String?
+  isChecked         Boolean      @default(false)
+  checkedAt         DateTime?
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  @@unique([userId, itemKey])
+  @@index([userId])
+}
+
+model ExamReadinessSnapshot {
+  id                     String   @id @default(cuid())
+  userId                 String
+  user                   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date                   String   // YYYY-MM-DD
+  syllabusStatus         String   // NOT_STARTED | DEVELOPING | ON_TRACK | NEEDS_ATTENTION | COMPLETED
+  revisionStatus         String
+  pyqStatus              String
+  questionAccuracyStatus String
+  mockStatus             String
+  mockReviewStatus       String
+  mistakeRecoveryStatus  String
+  timeManagementStatus   String
+  conceptStatus          String
+  overallStatus          String   // DESCRIPTIVE, NOT PREDICTIVE
+  evidenceSummaryJson    String   // JSON
+  createdAt              DateTime @default(now())
+
+  @@index([userId])
+  @@index([date])
+}
+
+model SimulationComparison {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  baseAttemptId     String
+  compareAttemptId  String
+  scoreDelta        Float
+  accuracyDelta     Float
+  timeDeltaSeconds  Int
+  subjectDeltasJson String   // JSON
+  mistakeTrendsJson String   // JSON
+  comparisonText    String
+  createdAt         DateTime @default(now())
+
+  @@index([userId])
+  @@index([baseAttemptId])
+}
+
+// ============================================================================
+// PHASE 14: CONTENT LIFECYCLE, SCIENTIFIC VALIDATION & CONTINUOUS QUALITY
+// ============================================================================
+
+model ContentLifecycle {
+  id              String   @id @default(cuid())
+  contentId       String   @unique
+  contentType     String   // NCERT | PYQ | FINGERTIPS | QUESTION | CONCEPT | TOPIC | CHAPTER | FIGURE | TABLE | EXPLANATION | SOLUTION | REVISION_NOTE | AI_GENERATED_CONTENT | AI_GENERATED_QUESTION
+  status          String   @default("DISCOVERED") // DISCOVERED | INGESTED | EXTRACTED | STRUCTURED | MAPPED | VALIDATING | REVIEW_REQUIRED | APPROVED | PUBLISHED | MONITORED | SUPERSEDED | RETIRED
+  currentVersion  Int      @default(1)
+  sourceType      String   // NCERT | PYQ | FINGERTIPS | AI_GENERATED | MANUAL
+  provenanceJson  String?  // Source document, drive ID, page, section, file hash
+  contentHash     String?
+  isPublished     Boolean  @default(false)
+  isEligibleForAI Boolean  @default(false)
+  licenseStatus   String   @default("LICENSE_ALLOWED") // PRIVATE_SOURCE | LICENSE_ALLOWED | LICENSE_RESTRICTED | LICENSE_UNKNOWN
+  reviewStatus    String   @default("NOT_REVIEWED") // NOT_REVIEWED | IN_REVIEW | APPROVED | REJECTED | DISPUTED
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([contentType, status])
+  @@index([sourceType])
+  @@index([isPublished])
+  @@index([isEligibleForAI])
+}
+
+model ContentDiff {
+  id                String   @id @default(cuid())
+  contentId         String
+  contentType       String
+  oldVersion        Int
+  newVersion        Int
+  changeType        String   // UNCHANGED | TEXT_CHANGED | FIGURE_CHANGED | TABLE_CHANGED | PAGE_CHANGED | STRUCTURE_CHANGED | METADATA_CHANGED | REMOVED | ADDED
+  oldValue          String?
+  newValue          String?
+  affectedConcepts  String?  // JSON array of concept IDs
+  affectedQuestions String?  // JSON array of question IDs
+  severity          String   @default("LOW") // LOW | MEDIUM | HIGH | CRITICAL
+  reviewStatus      String   @default("OPEN") // OPEN | APPROVED | REJECTED | SNOOZED
+  createdAt         DateTime @default(now())
+
+  @@index([contentId])
+  @@index([severity, reviewStatus])
+}
+
+model ContentReview {
+  id            String    @id @default(cuid())
+  contentId     String
+  contentType   String
+  reviewType    String    // SOURCE | SCIENTIFIC | MAPPING | QUESTION | FIGURE | TABLE | LICENSE | AI_CONTENT
+  severity      String    @default("MEDIUM") // LOW | MEDIUM | HIGH | CRITICAL
+  status        String    @default("OPEN") // OPEN | ASSIGNED | IN_REVIEW | NEEDS_MORE_EVIDENCE | APPROVED | CORRECTED | REJECTED | CLOSED
+  assignedToId  String?
+  assignedTo    User?     @relation(fields: [assignedToId], references: [id])
+  reviewerAId   String?
+  reviewerBId   String?   // For two-person approval
+  evidenceJson  String?   // Original source, page, extracted content, diff
+  reviewNotes   String?
+  actionTaken   String?   // APPROVED | CORRECTED | REJECTED | SUPPRESSED
+  resolvedAt    DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([contentId])
+  @@index([status, severity])
+  @@index([reviewType])
+}
+
+model ScientificValidationRecord {
+  id                String   @id @default(cuid())
+  contentId         String
+  contentType       String
+  category          String   // FACTUAL | FORMULA | CALCULATION | CHEMICAL | BIOLOGICAL | PHYSICAL | DIAGRAM | CLASSIFICATION | DEFINITION
+  status            String   @default("NOT_REVIEWED") // NOT_REVIEWED | VALIDATED | REVIEW_REQUIRED | DISPUTED | REJECTED
+  validatorType     String   // AUTOMATED | RULE_BASED | AI_ASSISTED | HUMAN | OFFICIAL_SOURCE
+  validatorId       String?
+  method            String
+  evidence          String?
+  validationVersion Int      @default(1)
+  isContradiction   Boolean  @default(false)
+  timestamp         DateTime @default(now())
+
+  @@index([contentId, category])
+  @@index([status])
+}
+
+model PYQValidationRecord {
+  id             String    @id @default(cuid())
+  questionId     String    @unique
+  exam           String    // NEET_UG | AIPMT | AIIMS | JIPMER
+  year           Int
+  questionText   String
+  optionsJson    String
+  correctAnswer  String
+  sourceDocument String
+  provenanceJson String?
+  status         String    @default("UNVERIFIED") // VERIFIED | REVIEW_REQUIRED | UNVERIFIED | REJECTED
+  verifiedBy     String?
+  verifiedAt     DateTime?
+  createdAt      DateTime  @default(now())
+
+  @@index([exam, year])
+  @@index([status])
+}
+
+model ContentLicensePolicy {
+  id                    String    @id @default(cuid())
+  sourceType            String    @unique // NCERT | PYQ | FINGERTIPS | AI_GENERATED | INSTITUTIONAL
+  licenseStatus         String    @default("LICENSE_ALLOWED") // PRIVATE_SOURCE | LICENSE_ALLOWED | LICENSE_RESTRICTED | LICENSE_UNKNOWN
+  allowedUse            String    @default("STUDY_AND_ASSESSMENT")
+  allowedAudience       String    @default("ENROLLED_STUDENTS")
+  redistributionAllowed Boolean   @default(false)
+  exportAllowed         Boolean   @default(false)
+  publicServingAllowed  Boolean   @default(true)
+  expiresAt             DateTime?
+  updatedAt             DateTime  @updatedAt
+}
+
+model ContentHealthProfile {
+  id                     String   @id @default(cuid())
+  contentId              String   @unique
+  contentType            String
+  provenanceCompleteness Float    @default(1.0)
+  mappingCompleteness    Float    @default(1.0)
+  validationStatus       String   @default("VALIDATED") // VALIDATED | REVIEW_REQUIRED | DISPUTED
+  reviewStatus           String   @default("APPROVED")
+  versionFreshness       String   @default("FRESH") // FRESH | REVIEW_DUE | STALE | BLOCKED
+  anomalyCount           Int      @default(0)
+  sourceIntegrity        String   @default("INTACT") // INTACT | MODIFIED | BROKEN
+  updatedAt              DateTime @updatedAt
+
+  @@index([contentType, versionFreshness])
+}
+
+model ContentDependency {
+  id              String   @id @default(cuid())
+  upstreamId      String   // e.g. NCERT Section ID, Concept ID, Figure ID
+  upstreamType    String   // NCERT_SECTION | CONCEPT | FIGURE | TABLE | SOURCE_DOCUMENT
+  downstreamId    String   // e.g. Concept ID, Question ID, Test ID, AI Index ID
+  downstreamType  String   // CONCEPT | QUESTION | TEST | MOCK | ASSIGNMENT | AI_INDEX
+  relationship    String   @default("MAPS_TO") // MAPS_TO | DEPENDS_ON | ASSIGNED_IN | RETRIEVED_BY
+  createdAt       DateTime @default(now())
+
+  @@unique([upstreamId, downstreamId, relationship])
+  @@index([upstreamId])
+  @@index([downstreamId])
+}
+
+model ContentImpactReport {
+  id                String   @id @default(cuid())
+  contentId         String
+  contentType       String
+  changeType        String
+  affectedConcepts  Int      @default(0)
+  affectedQuestions Int      @default(0)
+  affectedTests     Int      @default(0)
+  affectedPlans     Int      @default(0)
+  affectedAiIndices Int      @default(0)
+  detailsJson       String?
+  createdAt         DateTime @default(now())
+
+  @@index([contentId])
+}
+
+model ContentBacklogItem {
+  id          String   @id @default(cuid())
+  contentId   String?
+  chapterId   String?
+  conceptId   String?
+  type        String   // MISSING_CONTENT | MISSING_QUESTION | MISSING_FIGURE | MISSING_MAPPING | VALIDATION | REVIEW | LICENSE | DUPLICATE | STALE
+  priority    String   @default("MEDIUM") // CRITICAL | HIGH | MEDIUM | LOW
+  title       String
+  explanation String
+  status      String   @default("OPEN") // OPEN | IN_PROGRESS | RESOLVED | DISMISSED
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([type, priority])
+  @@index([chapterId])
+  @@index([status])
+}
+
+model ContentQualityEvent {
+  id           String   @id @default(cuid())
+  eventType    String   // CONTENT_INGESTED | CONTENT_CHANGED | CONTENT_FLAGGED | CONTENT_REVIEWED | CONTENT_APPROVED | CONTENT_CORRECTED | CONTENT_PUBLISHED | CONTENT_SUPPRESSED | CONTENT_RETIRED | LICENSE_CHANGED | SOURCE_CHANGED
+  contentId    String
+  contentType  String
+  actorId      String?
+  metadataJson String?
+  timestamp    DateTime @default(now())
+
+  @@index([eventType, timestamp])
+  @@index([contentId])
+}
+
+model RetrievalEligibility {
+  id              String   @id @default(cuid())
+  contentId       String   @unique
+  contentType     String
+  status          String   @default("ELIGIBLE") // ELIGIBLE | REVIEW_REQUIRED | BLOCKED | LICENSE_RESTRICTED | RETIRED
+  reason          String?
+  lastRefreshedAt DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([status])
+}
+
+model ContentGoldenDataset {
+  id          String                     @id @default(cuid())
+  name        String                     @unique
+  version     Int                        @default(1)
+  description String?
+  itemsCount  Int                        @default(0)
+  createdAt   DateTime                   @default(now())
+  items       ContentGoldenDatasetItem[]
+}
+
+model ContentGoldenDatasetItem {
+  id             String               @id @default(cuid())
+  datasetId      String
+  dataset        ContentGoldenDataset @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  subject        String               // PHYSICS | CHEMISTRY | BOTANY | ZOOLOGY
+  sourceType     String               // NCERT | PYQ | FINGERTIPS
+  contentSubtype String               // QUESTION | CONCEPT | FIGURE | TABLE
+  goldenText     String
+  goldenHash     String
+  goldenMetadata String?              // Correct answer, options, figure URL
+  createdAt      DateTime             @default(now())
+
+  @@index([datasetId, subject])
+}
+
+// ==============================================================================
+// PHASE 15: ADVANCED STUDENT ANALYTICS, LEARNING RESEARCH & PERSONALIZATION INTELLIGENCE
+// ==============================================================================
+
+model StudentLearningProfile {
+  id                    String   @id @default(cuid())
+  studentId             String   @unique
+  student               User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  tenantId              String?
+  conceptMasteryScore   Float    @default(0.0)
+  questionAccuracy      Float    @default(0.0)
+  medianResponseTimeMs  Int      @default(0)
+  retentionRate         Float    @default(0.0)
+  pyqAccuracy           Float    @default(0.0)
+  mockAverageScore      Float    @default(0.0)
+  studyExecutionRate    Float    @default(0.0)
+  contentCoverageRate   Float    @default(0.0)
+  volatilityScore       Float    @default(0.0)
+  calculationVersion    String   @default("profile-v1")
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([studentId])
+  @@index([tenantId])
+}
+
+model StudentLearningSnapshot {
+  id                     String   @id @default(cuid())
+  studentId              String
+  student                User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  snapshotType           String   // DAILY | WEEKLY | MONTHLY | MOCK | MILESTONE
+  planVersion            Int      @default(1)
+  assessmentVersion      Int      @default(1)
+  contentCoverageSnapshot String? // JSON: subject/chapter breakdown
+  masterySnapshot        String?  // JSON: concept mastery values
+  accuracySnapshot       String?  // JSON: subject/type accuracy
+  mistakeSnapshot        String?  // JSON: mistake category counts
+  revisionSnapshot       String?  // JSON: revision retention/overdue
+  mockSnapshot           String?  // JSON: recent mock scores
+  studyExecutionSnapshot String?  // JSON: planned vs actual minutes
+  calculationVersion     String   @default("snapshot-v1")
+  isImmutable            Boolean  @default(true)
+  timestamp              DateTime @default(now())
+  createdAt              DateTime @default(now())
+
+  @@index([studentId, snapshotType, timestamp])
+}
+
+model StudentBaseline {
+  id                 String   @id @default(cuid())
+  studentId          String
+  student            User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  metricType         String   // ACCURACY_30D | RESPONSE_TIME_30D | SUBJECT_ACCURACY | CHAPTER_ACCURACY | QUESTION_TYPE_ACCURACY
+  scopeEntity        String?  // e.g. PHYSICS, chapterId, SINGLE_CORRECT
+  baselineValue      Float
+  p25                Float?
+  p50                Float?
+  p75                Float?
+  p90                Float?
+  sampleSize         Int
+  windowDays         Int      @default(30)
+  confidence         String   @default("MODERATE") // LOW | MODERATE | HIGH
+  calculationVersion String   @default("baseline-v1")
+  updatedAt          DateTime @updatedAt
+  createdAt          DateTime @default(now())
+
+  @@unique([studentId, metricType, scopeEntity])
+  @@index([studentId])
+}
+
+model LearningTrend {
+  id                 String   @id @default(cuid())
+  studentId          String
+  student            User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  domain             String   // OVERALL | SUBJECT | CHAPTER | QUESTION_TYPE | DIFFICULTY | RETENTION
+  entityId           String?  // e.g. PHYSICS, chapter-123
+  direction          String   // IMPROVING | STABLE | DECLINING | VOLATILE | INSUFFICIENT_DATA
+  deltaValue         Float    @default(0.0) // e.g. +0.13 (+13 percentage points)
+  currentValue       Float
+  previousValue      Float?
+  sampleSize         Int
+  measurementCount   Int
+  timeWindowDays     Int
+  confidence         String   @default("INSUFFICIENT_DATA") // HIGH | MODERATE | LOW | INSUFFICIENT_DATA
+  evidenceText       String
+  calculationVersion String   @default("trend-v1")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([studentId, domain])
+  @@index([direction])
+}
+
+model ConceptStabilityProfile {
+  id                     String   @id @default(cuid())
+  studentId              String
+  conceptId              String
+  state                  String   @default("INSUFFICIENT_DATA") // UNSTABLE | DEVELOPING | STABLE | STRONG | INSUFFICIENT_DATA
+  correctAcrossSessions  Int      @default(0)
+  correctAcrossDays      Int      @default(0)
+  correctAfterRevision   Int      @default(0)
+  correctAfterDelay      Int      @default(0)
+  incorrectAfterMastery  Int      @default(0)
+  lastAttemptAccuracy    Float    @default(0.0)
+  delayedDropPercentage  Float    @default(0.0)
+  sampleSize             Int      @default(0)
+  evidenceJson           String?
+  calculationVersion     String   @default("stability-v1")
+  updatedAt              DateTime @updatedAt
+
+  @@unique([studentId, conceptId])
+  @@index([studentId, state])
+  @@index([conceptId])
+}
+
+model MistakeRecurrenceProfile {
+  id                     String   @id @default(cuid())
+  studentId              String
+  conceptId              String?
+  chapterId              String?
+  subject                String?  // PHYSICS | CHEMISTRY | BOTANY | ZOOLOGY
+  errorCategory          String   // CONCEPTUAL | FORMULA | CALCULATION | SILLY | TIME_PRESSURE | READING | UNKNOWN
+  questionType           String?
+  difficulty             String?
+  occurrenceCount        Int      @default(1)
+  distinctSessionsCount  Int      @default(1)
+  lastOccurredAt         DateTime @default(now())
+  isClustered            Boolean  @default(false)
+  clusterLabel           String?  // e.g. "Physics / Numerical / Calculation"
+  targetedIntervention   String?
+  calculationVersion     String   @default("mistake-recurrence-v1")
+  updatedAt              DateTime @updatedAt
+
+  @@index([studentId, errorCategory])
+  @@index([studentId, isClustered])
+}
+
+model LearningIntervention {
+  id                 String                        @id @default(cuid())
+  studentId          String
+  student            User                          @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  type               String                        // REVISION | REMEDIATION | PYQ_SET | MOCK | AI_TUTOR | MENTOR_ASSIGNMENT | CONTENT_REVIEW | QUESTION_REATTEMPT
+  targetEntityId     String?                       // conceptId, chapterId, mistakeId
+  reason             String                        // why recommended
+  evidenceText       String                        // factual evidence supporting assignment
+  assignedBy         String                        @default("SYSTEM_PLANNER") // SYSTEM_PLANNER | MENTOR | ADMIN | STUDENT
+  status             String                        @default("ASSIGNED") // ASSIGNED | IN_PROGRESS | COMPLETED | SKIPPED | EXPIRED
+  beforeAccuracy     Float?
+  beforeMastery      Float?
+  startedAt          DateTime?
+  completedAt        DateTime?
+  durationMinutes    Int?
+  calculationVersion String                        @default("intervention-v1")
+  createdAt          DateTime                      @default(now())
+  updatedAt          DateTime                      @updatedAt
+  outcomes           LearningInterventionOutcome[]
+
+  @@index([studentId, status])
+  @@index([type])
+}
+
+model LearningInterventionOutcome {
+  id                     String               @id @default(cuid())
+  interventionId         String
+  intervention           LearningIntervention @relation(fields: [interventionId], references: [id], onDelete: Cascade)
+  outcomeHorizon         String               // IMMEDIATE | SHORT_TERM_7D | DELAYED_30D
+  performanceBefore      Float
+  performanceAfter       Float
+  deltaPercentagePoints  Float
+  sampleSizeAfter        Int
+  observedEffect         String               // IMPROVED | NO_CHANGE | DECLINED | INSUFFICIENT_DATA
+  observedNotes          String?              // strictly descriptive factual notes, no causal overreach
+  measuredAt             DateTime             @default(now())
+  calculationVersion     String               @default("intervention-outcome-v1")
+
+  @@index([interventionId, outcomeHorizon])
+}
+
+model LearningExperiment {
+  id                          String                         @id @default(cuid())
+  name                        String                         @unique
+  hypothesis                  String
+  interventionType            String                         // REVISION_FORMAT | PRACTICE_INTENSITY | DASHBOARD_LAYOUT | REMINDER_TIMING | QUESTION_ORDERING
+  variantAConfig              String                         // JSON configuration
+  variantBConfig              String                         // JSON configuration
+  targetPopulation            String                         @default("ENROLLED_STUDENTS")
+  minSampleSize               Int                            @default(30)
+  status                      String                         @default("DRAFT") // DRAFT | ACTIVE | PAUSED | COMPLETED | CANCELLED
+  startedAt                   DateTime?
+  endedAt                     DateTime?
+  outcomeSummary              String?
+  isStatisticallySignificant  Boolean                        @default(false)
+  createdAt                   DateTime                       @default(now())
+  assignments                 LearningExperimentAssignment[]
+
+  @@index([status])
+}
+
+model LearningExperimentAssignment {
+  id                String             @id @default(cuid())
+  experimentId      String
+  experiment        LearningExperiment @relation(fields: [experimentId], references: [id], onDelete: Cascade)
+  studentId         String
+  assignedVariant   String             // A | B
+  assignedAt        DateTime           @default(now())
+  metricsBeforeJson String?
+  metricsAfterJson  String?
+  outcomeDelta      Float?
+  completedAt       DateTime?
+
+  @@unique([experimentId, studentId])
+  @@index([studentId])
+}
+
+model LearningInsight {
+  id                 String                    @id @default(cuid())
+  studentId          String
+  student            User                      @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  category           String                    // ACCURACY | MISTAKE | RETENTION | STUDY_HABIT | REVISION | PYQ
+  headline           String
+  detailText         String
+  evidenceDataJson   String?                   // factual numbers linked to insight
+  confidence         String                    @default("MODERATE") // HIGH_CONFIDENCE | MODERATE | LOW | INSUFFICIENT_DATA
+  sampleSize         Int
+  timeWindowDays     Int
+  calculationVersion String                    @default("insight-v1")
+  createdAt          DateTime                  @default(now())
+  feedbacks          LearningInsightFeedback[]
+
+  @@index([studentId, category])
+}
+
+model LearningInsightFeedback {
+  id         String          @id @default(cuid())
+  insightId  String
+  insight    LearningInsight @relation(fields: [insightId], references: [id], onDelete: Cascade)
+  studentId  String
+  feedback   String          // HELPFUL | NOT_HELPFUL | INCORRECT
+  comments   String?
+  createdAt  DateTime        @default(now())
+
+  @@index([insightId])
+  @@index([studentId])
+}
+
+model CohortAnalyticsSnapshot {
+  id                    String   @id @default(cuid())
+  tenantId              String?
+  cohortId              String?
+  subject               String?
+  chapterId             String?
+  periodStart           DateTime
+  periodEnd             DateTime
+  studentCount          Int
+  p25Accuracy           Float
+  medianAccuracy        Float
+  p75Accuracy           Float
+  p90Accuracy           Float
+  meanAccuracy          Float
+  medianResponseTimeMs  Int
+  meanStudyMinutes      Float
+  sampleSizeAttempts    Int
+  distributionJson      String?  // histogram / distribution buckets
+  calculationVersion    String   @default("cohort-v1")
+  createdAt             DateTime @default(now())
+
+  @@index([tenantId, cohortId])
+  @@index([periodStart, periodEnd])
+}
+
+model LearningDataQualityEvent {
+  id                      String   @id @default(cuid())
+  eventType               String   // INVALID_DURATION | IMPOSSIBLE_TIMESTAMP | DUPLICATE_EVENT | MISSING_REFERENCE | BROKEN_RELATION | OUTLIER_DETECTED
+  severity                String   @default("WARNING") // INFO | WARNING | ERROR | CRITICAL
+  entityType              String   // STUDY_EVENT | ATTEMPT | SESSION | TELEMETRY
+  entityId                String
+  studentId               String?
+  detailsJson             String?
+  isExcludedFromAnalytics Boolean  @default(true)
+  timestamp               DateTime @default(now())
+
+  @@index([eventType, severity])
+  @@index([studentId])
+}
+
+model AnalyticsCalculationVersion {
+  id              String   @id @default(cuid())
+  subsystem       String   @unique // TREND | RETENTION | STABILITY | MISTAKE_CLUSTER | BASELINE | COHORT | PERSONALIZATION
+  currentVersion  String   // e.g. "trend-v2", "stability-v1"
+  description     String?
+  minSampleSize   Int      @default(5)
+  isAuthoritative Boolean  @default(true)
+  updatedAt       DateTime @updatedAt
+}
+
+// ============================================================================
+// PHASE 16: NTA NOTIFICATIONS & OFFICIAL EXAM INTELLIGENCE CENTER
+// ============================================================================
+
+model OfficialSource {
+  id                  String               @id @default(cuid())
+  name                String               // e.g. "NTA Main Portal", "NTA NEET Portal", "NMC / UGMEB"
+  code                String               @unique // "NTA" | "NEET_PORTAL" | "NMC"
+  authority           String               // "NTA" | "NMC_UGMEB"
+  websiteUrl          String
+  noticeBoardUrl      String
+  tier                String               @default("TIER_1") // TIER_1
+  status              String               @default("HEALTHY") // HEALTHY | DEGRADED | OUTAGE
+  lastCheckedAt       DateTime?
+  lastSuccessAt       DateTime?
+  lastFailureAt       DateTime?
+  lastFailureReason   String?
+  contentHash         String?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  checks              OfficialSourceCheck[]
+  documents           OfficialDocument[]
+  notifications       OfficialNotification[]
+
+  @@index([status])
+  @@index([code])
+}
+
+model OfficialSourceCheck {
+  id                 String         @id @default(cuid())
+  sourceId           String
+  source             OfficialSource @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  checkedAt          DateTime       @default(now())
+  httpStatus         Int
+  latencyMs          Int
+  contentHash        String?
+  status             String         // SUCCESS | FAILED
+  errorMessage       String?
+  newDocumentsFound  Int            @default(0)
+
+  @@index([sourceId])
+  @@index([checkedAt])
+}
+
+model OfficialDocument {
+  id                  String                    @id @default(cuid())
+  sourceId            String
+  source              OfficialSource            @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  title               String
+  documentUrl         String
+  canonicalUrl        String                    @unique
+  documentHash        String                    // SHA-256
+  fileSize            Int?
+  mimeType            String                    @default("application/pdf")
+  publishedAt         DateTime?
+  detectedAt          DateTime                  @default(now())
+  lastVerifiedAt      DateTime                  @default(now())
+  rawTextContent      String?
+  isParsed            Boolean                   @default(false)
+  versions            OfficialDocumentVersion[]
+  notifications       OfficialNotification[]
+  createdAt           DateTime                  @default(now())
+  updatedAt           DateTime                  @updatedAt
+
+  @@index([sourceId])
+  @@index([documentHash])
+}
+
+model OfficialDocumentVersion {
+  id             String           @id @default(cuid())
+  documentId     String
+  document       OfficialDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  versionNumber  Int              @default(1)
+  documentHash   String           // SHA-256
+  documentUrl    String
+  changeType     String           // INITIAL | REVISED | CORRECTED | CORRIGENDUM
+  detectedAt     DateTime         @default(now())
+  changeSummary  String?
+
+  @@index([documentId])
+  @@index([documentHash])
+}
+
+model OfficialNotification {
+  id                       String                          @id @default(cuid())
+  sourceId                 String
+  source                   OfficialSource                  @relation(fields: [sourceId], references: [id])
+  documentId               String?
+  document                 OfficialDocument?               @relation(fields: [documentId], references: [id])
+  examEditionId            String?
+  examEdition              ExamEdition?                    @relation(fields: [examEditionId], references: [id])
+  noticeNumber             String?                         // e.g. "NTA/NEET/2026/01"
+  title                    String
+  authority                String                          // "NTA" | "NMC" | "UGMEB"
+  category                 String                          // EXAM_DATE | EXAM_MODE | APPLICATION | SYLLABUS | etc.
+  alertLevel               String                          @default("INFO") // INFO | IMPORTANT | ACTION_REQUIRED | CRITICAL
+  status                   String                          @default("PUBLISHED") // DETECTED | FETCHED | VERIFIED | CLASSIFIED | PUBLISHED | SUPERSEDED | CORRECTED | ARCHIVED | REJECTED
+  isNeetRelevant           Boolean                         @default(true)
+  examYear                 Int?                            // 2026, 2027 or null if UNKNOWN
+  isHistorical             Boolean                         @default(false) // True for historical reference
+  publishedAt              DateTime
+  effectiveDate            DateTime?
+  detectedAt               DateTime                        @default(now())
+  lastVerifiedAt           DateTime                        @default(now())
+  officialSourceUrl        String
+  officialDocumentUrl      String?
+  documentHash             String?
+  officialFactExtractJson  String?                         // JSON structured facts
+  aiSummary                String?                         // Grounded AI summary strictly with citation
+  aiSummaryEvidence        String?                         // Grounded page/section citation
+  studentActionRequired    String?                         // Only if explicitly mandated
+  affectedSectionsJson     String?                         // JSON
+  relatedNoticeId          String?                         // For Corrigendums / Superseded notices
+  versions                 OfficialNotificationVersion[]
+  readStates               OfficialNotificationReadState[]
+  impacts                  NotificationImpact[]
+  auditLogs                NotificationAuditLog[]
+  createdAt                DateTime                        @default(now())
+  updatedAt                DateTime                        @updatedAt
+
+  @@index([sourceId])
+  @@index([status])
+  @@index([category])
+  @@index([examYear])
+  @@index([isHistorical])
+  @@index([publishedAt])
+}
+
+model OfficialNotificationVersion {
+  id             String               @id @default(cuid())
+  notificationId String
+  notification   OfficialNotification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+  versionNumber  Int                  @default(1)
+  title          String
+  summary        String?
+  changeSummary  String
+  documentHash   String?
+  createdAt      DateTime             @default(now())
+
+  @@index([notificationId])
+}
+
+model OfficialNotificationReadState {
+  id             String               @id @default(cuid())
+  userId         String
+  user           User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notificationId String
+  notification   OfficialNotification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+  readAt         DateTime             @default(now())
+
+  @@unique([userId, notificationId])
+  @@index([userId])
+  @@index([notificationId])
+}
+
+model NotificationSubscription {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  allUpdates     Boolean  @default(true)
+  syllabusOnly   Boolean  @default(false)
+  examDateOnly   Boolean  @default(false)
+  applicationOnly Boolean @default(false)
+  admitCardOnly  Boolean  @default(false)
+  resultsOnly    Boolean  @default(false)
+  importantOnly  Boolean  @default(false)
+  inApp          Boolean  @default(true)
+  email          Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model OfficialSyllabusVersion {
+  id             String                   @id @default(cuid())
+  versionCode    String                   @unique // e.g. "NMC_UGMEB_2024_V1"
+  examYear       Int                      // 2026, 2027
+  authority      String                   // "NMC" | "UGMEB"
+  title          String
+  sourceUrl      String
+  documentHash   String                   // SHA-256
+  publishedAt    DateTime
+  effectiveFrom  DateTime
+  status         String                   @default("ACTIVE") // ACTIVE | SUPERSEDED | DRAFT
+  totalUnits     Int                      @default(0)
+  totalChapters  Int                      @default(0)
+  totalTopics    Int                      @default(0)
+  syllabusJson   String                   // Structured JSON
+  createdAt      DateTime                 @default(now())
+  updatedAt      DateTime                 @updatedAt
+  changesAsNew   OfficialSyllabusChange[] @relation("NewSyllabus")
+  changesAsOld   OfficialSyllabusChange[] @relation("OldSyllabus")
+
+  @@index([examYear])
+  @@index([status])
+}
+
+model OfficialSyllabusChange {
+  id               String                   @id @default(cuid())
+  oldVersionId     String?
+  oldVersion       OfficialSyllabusVersion? @relation("OldSyllabus", fields: [oldVersionId], references: [id])
+  newVersionId     String
+  newVersion       OfficialSyllabusVersion  @relation("NewSyllabus", fields: [newVersionId], references: [id])
+  changeType       String                   // ADDED | REMOVED | MODIFIED | RENAMED | UNCHANGED
+  subject          String                   // BIOLOGY | PHYSICS | CHEMISTRY
+  chapterTitle     String
+  topicTitle       String
+  previousDetails  String?
+  newDetails       String?
+  sourceEvidence   String
+  createdAt        DateTime                 @default(now())
+
+  @@index([oldVersionId])
+  @@index([newVersionId])
+  @@index([changeType])
+}
+
+model NotificationImpact {
+  id                     String               @id @default(cuid())
+  notificationId         String
+  notification           OfficialNotification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+  impactType             String               // PLANNER_RECALCULATION | CALENDAR_DEADLINE | SYLLABUS_UPDATE | EXAM_MODE_CHANGE | ADMISSION_RULE
+  affectedTopicsCount    Int                  @default(0)
+  affectedChaptersCount  Int                  @default(0)
+  plannerEventTitle      String?
+  requiresStudentAction  Boolean              @default(false)
+  actionDescription      String?
+  createdAt              DateTime             @default(now())
+
+  @@index([notificationId])
+}
+
+model NotificationAuditLog {
+  id             String                @id @default(cuid())
+  notificationId String?
+  notification   OfficialNotification? @relation(fields: [notificationId], references: [id])
+  action         String                // DETECTED | FETCHED | HASHED | CLASSIFIED | PUBLISHED | REPROCESSED | SUPERSEDED | ARCHIVED | REJECTED
+  actor          String                // "WORKER_NTA_MONITOR" | "ADMIN"
+  oldStatus      String?
+  newStatus      String?
+  detailsJson    String?
+  timestamp      DateTime              @default(now())
+
+  @@index([notificationId])
+  @@index([action])
+  @@index([timestamp])
+}
+
+
+
+
+
+
+
+
